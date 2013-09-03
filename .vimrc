@@ -57,6 +57,9 @@ let maplocalleader = "\\"
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr> :nohl <cr>
 
+" Reinstall/update bundles using vundle
+nnoremap <leader>bv :BundleInstall<cr>
+
 " quickly escape insert mode with jj
 inoremap jj <ESC>
 
