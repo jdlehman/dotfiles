@@ -46,6 +46,8 @@ set showmatch
 set showcmd
 set history=1000
 set wildignore=*.swp,*.class,*.o
+set splitright        " open vertical splits to the right
+set splitbelow        " open horizontal splits below
 
 " set key mappings
 " =================
