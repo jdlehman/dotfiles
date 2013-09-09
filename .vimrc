@@ -66,9 +66,8 @@ nnoremap <leader>bv :BundleInstall<cr>
 inoremap jj <ESC>
 
 " open splits (v vertical, s horizontal)
-" move cursor to new split
-nnoremap <leader>v <C-w>v<C-w>l
-nnoremap <leader>s <C-w>s<C-w>j
+nnoremap <leader>v <C-w>v
+nnoremap <leader>s <C-w>s
 
 " move around splits
 nnoremap <C-h> <C-w>h
