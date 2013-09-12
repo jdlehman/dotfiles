@@ -75,6 +75,13 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
+" open tabs
+nnoremap <leader>t :tabnew<cr>
+
+" switch betwen tabs
+nnoremap <C-n> :tabn<cr>    " next tab
+nnoremap <C-p> :tabp<cr>    " previous tab
+
 " Q=q and W=w in command mode
 cnoreabbrev W w
 cnoreabbrev Q q
