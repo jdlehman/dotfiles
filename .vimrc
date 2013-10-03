@@ -12,6 +12,7 @@ Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-surround'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'bling/vim-airline'
+Bundle 'kien/ctrlp.vim'
 
 filetype plugin indent on   " required by vundle
 
@@ -77,10 +78,6 @@ nnoremap <C-l> <C-w>l
 
 " open tabs
 nnoremap <leader>t :tabnew<cr>
-
-" switch betwen tabs
-nnoremap <C-n> :tabn<cr>    " next tab
-nnoremap <C-p> :tabp<cr>    " previous tab
 
 " Q=q and W=w in command mode
 cnoreabbrev W w
