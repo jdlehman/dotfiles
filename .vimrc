@@ -13,6 +13,7 @@ Bundle 'tpope/vim-surround'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'bling/vim-airline'
 Bundle 'kien/ctrlp.vim'
+Bundle 'mileszs/ack.vim'
 
 filetype plugin indent on   " required by vundle
 
@@ -28,6 +29,9 @@ colorscheme solarized
 " use vim-airline status bar
 let g:airline_powerline_fonts = 1
 set laststatus=2
+
+" prevent ack from leaking into terminal
+set shellpipe=>
 
 " set standard vim attributes/settings
 " ===================
@@ -46,7 +50,7 @@ set hlsearch
 set showmatch
 set showcmd
 set history=1000
-set wildignore=*.swp,*.class,*.o
+set wildignore+=*.swp,*.class,*.o
 set splitright        " open vertical splits to the right
 set splitbelow        " open horizontal splits below
 
