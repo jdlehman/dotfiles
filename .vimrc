@@ -14,6 +14,7 @@ Bundle 'altercation/vim-colors-solarized'
 Bundle 'bling/vim-airline'
 Bundle 'kien/ctrlp.vim'
 Bundle 'mileszs/ack.vim'
+Bundle 'kchmck/vim-coffee-script'
 
 filetype plugin indent on   " required by vundle
 
@@ -51,6 +52,8 @@ set showmatch
 set showcmd
 set history=1000
 set wildignore+=*.swp,*.class,*.o
+set backupdir=~/.vim/backup
+set directory=~/.vim/backup
 set splitright        " open vertical splits to the right
 set splitbelow        " open horizontal splits below
 
@@ -86,6 +89,7 @@ nnoremap <leader>t :tabnew<cr>
 " Q=q and W=w in command mode
 cnoreabbrev W w
 cnoreabbrev Q q
+cnoreabbrev Wq wq
 
 " comment mappings based on file type
 augroup comment_group
