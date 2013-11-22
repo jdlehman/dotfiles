@@ -1,6 +1,6 @@
 " Set up vundle
 " ==================
-filetype off    " required by vundle
+filetype off    " Required by vundle
 
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
@@ -16,82 +16,86 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'rking/ag.vim'
 Bundle 'kchmck/vim-coffee-script'
 
-filetype plugin indent on   " required by vundle
+filetype plugin indent on   " Required by vundle
 
 " Bundle specific settings
 " ==================
 
-" use solarized theme
+" Use solarized theme
 syntax enable
 set background=dark
 let g:solarized_hitrail=1
 colorscheme solarized
 
-" use vim-airline status bar
+" Use vim-airline status bar
 let g:airline_powerline_fonts = 1
 set laststatus=2
 
-" prevent ack from leaking into terminal
+" Prevent ag from leaking into terminal
 set shellpipe=>
 
-" set standard vim attributes/settings
+" Set standard vim attributes/settings
 " ===================
-set mouse=a
-set hidden
-set ts=2 sts=2 shiftwidth=2 expandtab
-set incsearch
-set autoindent
-set smartindent
-set smartcase
-set title
-set number
-set nowrap
-set listchars=extends:»,precedes:«
-set hlsearch
-set showmatch
-set showcmd
-set history=1000
-set wildignore+=*.swp,*.class,*.o
-set backupdir=~/.vim/backup
-set directory=~/.vim/backup
-set splitright        " open vertical splits to the right
-set splitbelow        " open horizontal splits below
+set mouse=a                           " Allow scrolling and make vim clickable
+set hidden                            " Allow buffers to be hidden with unwritten changes
+set tabstop=2                         " Tabs are 2 space characters
+set shiftwidth=2                      " Indentatons are 2 space characters
+set softtabstop=2                     " Tabs in insert mode are 2 space characters
+set expandtab                         " Expand tabs to spaces
+set autoindent                        " Use indentation from previous line
+set smartindent                       " Auto indent based on c-like rules
+set incsearch                         " Begin searching as soon as text is entered
+set hlsearch                          " Highlight search results
+set smartcase                         " Case insensitive searches
+set number                            " Show line numbers
+set nowrap                            " Do not wrap text
+set listchars=extends:»,precedes:«    " Chars to display on text off screen
+set showmatch                         " Shows matching {,(,if etc. when typing closing },),end
+"set showcmd                          " Show command that is being typed
+set history=1000                      " Set # of commands to keep in history
+set wildignore+=*.swp,*.class,*.o     " Ignore files with these extensions
+set backupdir=~/.vim/backup           " Set backup directory
+set directory=~/.vim/backup           " Set backup directory
+set splitright                        " open vertical splits to the right
+set splitbelow                        " open horizontal splits below
 
-" set key mappings
+" Set key mappings
 " =================
-" map leaders
+" Map leaders
 let mapleader=','
 let maplocalleader = "\\"
 
-" quickly open and reload vimrc
+" Quickly open and reload vimrc
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr> :nohl <cr>
 
 " Reinstall/update bundles using vundle
 nnoremap <leader>bv :BundleInstall<cr>
 
-" quickly escape insert mode with jj
+" Quickly escape insert mode with jj
 inoremap jj <ESC>
 
-" open splits (v vertical, s horizontal)
+" Open splits (v vertical, s horizontal)
 nnoremap <leader>v <C-w>v
 nnoremap <leader>s <C-w>s
 
-" move around splits
+" Move around splits
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
-" open tabs
+" Open new tabs
 nnoremap <leader>t :tabnew<cr>
+" Switch between tabs is gt
 
 " Q=q and W=w in command mode
+" Prevents typos when writing or quitting
 cnoreabbrev W w
 cnoreabbrev Q q
 cnoreabbrev Wq wq
 
-" comment mappings based on file type
+" Comment mappings based on file type
 augroup comment_group
   autocmd FileType javascript nnoremap <buffer> <localleader>c I//<esc>
   autocmd FileType python     nnoremap <buffer> <localleader>c I#<esc>
@@ -99,7 +103,7 @@ augroup comment_group
   autocmd FileType vim        nnoremap <buffer> <localleader>c I"<esc>
 augroup END
 
-" get content inside parenthesis
+" Get content inside parenthesis
 onoremap p i(
 
 " vimrc graveyard
