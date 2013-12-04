@@ -31,6 +31,9 @@ colorscheme solarized
 let g:airline_powerline_fonts = 1
 set laststatus=2
 
+" Use ag for ctrlp
+let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+
 " Prevent ag from leaking into terminal
 set shellpipe=>
 
@@ -71,6 +74,17 @@ nnoremap <leader>sv :source $MYVIMRC<cr> :nohl <cr>
 
 " Reinstall/update bundles using vundle
 nnoremap <leader>bv :BundleInstall<cr>
+
+" Use ag.vim quickly
+" ==================
+" Search all text in quickfix window
+nnoremap <leader>a :Ag!<space>
+" Search file names in quickfix window
+nnoremap <leader>af :AgFile!<space>
+" open quickfix window
+nnoremap <leader>ao :copen<cr>
+" close quickfix window
+nnoremap <leader>ac :ccl<cr>
 
 " Quickly escape insert mode with jj
 inoremap jj <ESC>
