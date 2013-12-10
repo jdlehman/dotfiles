@@ -102,6 +102,8 @@ nnoremap <C-l> <C-w>l
 " Open new tabs
 nnoremap <leader>t :tabnew<cr>
 " Switch between tabs is gt
+" open current split in new tab
+nnoremap <leader>nt <C-w>T
 
 " Q=q and W=w in command mode
 " Prevents typos when writing or quitting
