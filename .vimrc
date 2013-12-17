@@ -47,6 +47,7 @@ set softtabstop=2                     " Tabs in insert mode are 2 space characte
 set expandtab                         " Expand tabs to spaces
 set autoindent                        " Use indentation from previous line
 set smartindent                       " Auto indent based on c-like rules
+set backspace=indent,eol,start        " Allow vim to backspace like normal in insert mode
 set incsearch                         " Begin searching as soon as text is entered
 set hlsearch                          " Highlight search results
 set smartcase                         " Case insensitive searches
