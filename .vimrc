@@ -76,6 +76,11 @@ nnoremap <leader>sv :source $MYVIMRC<cr> :nohl <cr>
 " Reinstall/update bundles using vundle
 nnoremap <leader>bv :BundleInstall<cr>
 
+" Copy to system clipboard
+vnoremap <leader>c "+y
+" paste from system clipboard
+nnoremap <leader>p "+p
+
 " Use ag.vim quickly
 " ==================
 " Search all text in quickfix window
