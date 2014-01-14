@@ -62,7 +62,8 @@ set backupdir=~/.vim/backup           " Set backup directory
 set directory=~/.vim/backup           " Set backup directory
 set splitright                        " open vertical splits to the right
 set splitbelow                        " open horizontal splits below
-
+set timeoutlen=1000                   " Set key stroke timeout
+set ttimeoutlen=10    
 " Set key mappings
 " =================
 " Map leaders
