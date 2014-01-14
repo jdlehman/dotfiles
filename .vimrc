@@ -6,15 +6,22 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 " Bundles
+" =================
 Bundle 'gmarik/vundle'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-rails'
-Bundle 'tpope/vim-surround'
+
+" Style
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'bling/vim-airline'
+Bundle 'kchmck/vim-coffee-script'
+
+" Language specific
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-rails'
+
+" Helpful tools
+Bundle 'tpope/vim-surround'
 Bundle 'kien/ctrlp.vim'
 Bundle 'rking/ag.vim'
-Bundle 'kchmck/vim-coffee-script'
 
 filetype plugin indent on   " Required by vundle
 
