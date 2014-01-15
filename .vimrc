@@ -72,6 +72,13 @@ set splitright                        " open vertical splits to the right
 set splitbelow                        " open horizontal splits below
 set timeoutlen=1000                   " Set key stroke timeout
 set ttimeoutlen=10    
+
+" persist undos across sessions
+if has("persistent_undo")
+  set undodir=~/.vim/undodir
+  set undofile
+endif
+
 " Set key mappings
 " =================
 " Map leaders
