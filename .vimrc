@@ -73,11 +73,19 @@ set splitbelow                        " open horizontal splits below
 set timeoutlen=1000                   " Set key stroke timeout
 set ttimeoutlen=10    
 
-" persist undos across sessions
+" persist undos across sessions (github/joelhooks/dotfiles)
 if has("persistent_undo")
   set undodir=~/.vim/undodir
   set undofile
 endif
+
+" Return to last edit position when opening files (github/joelhooks/dotfiles)
+autocmd BufReadPost *
+  \ if line("'\"") > 0 && line("'\"") <= line("$") |
+  \   exe "normal! g`\"" |
+  \ endif
+" Remember info about open buffers on close
+set viminfo^=%
 
 " Set key mappings
 " =================
