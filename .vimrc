@@ -22,7 +22,6 @@ Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-surround'
 Bundle 'kien/ctrlp.vim'
 Bundle 'rking/ag.vim'
-Bundle 'Valloric/YouCompleteMe'
 
 filetype plugin indent on   " Required by vundle
 
