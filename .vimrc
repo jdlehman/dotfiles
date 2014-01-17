@@ -156,8 +156,10 @@ augroup comment_group
   autocmd FileType vim        nnoremap <buffer> <localleader>c I"<esc>
 augroup END
 
-" Get content inside parenthesis
-onoremap p i(
+" Make folds persistent
+autocmd BufWinLeave *.* mkview
+autocmd BufWinEnter *.* silent loadview
+
 
 " vimrc graveyard
 " =====================
@@ -167,3 +169,6 @@ onoremap p i(
 
 " logger
 " autocmd VimEnter * -W '~/vimlog2.log'
+" Get content inside parenthesis
+" onoremap p i(
+
