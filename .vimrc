@@ -138,8 +138,8 @@ nnoremap <leader>nt <C-w>T
 " Arrow keys resize current viewport
 nnoremap <Left> :vertical resize +5<CR>
 nnoremap <Right> :vertical resize -5<CR>
-nnoremap <Up> :resize +5<CR>
-nnoremap <Down> :resize -5<CR>
+nnoremap <Up> :resize -5<CR>
+nnoremap <Down> :resize +5<CR>
 
 " Q=q and W=w in command mode
 " Prevents typos when writing or quitting
