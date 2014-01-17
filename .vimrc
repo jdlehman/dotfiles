@@ -119,6 +119,8 @@ nnoremap <leader>ac :ccl<cr>
 " Quickly escape insert mode with jj
 inoremap jj <ESC>
 
+nnoremap ; :
+
 " Open splits (v vertical, s horizontal)
 nnoremap <leader>v <C-w>v
 nnoremap <leader>s <C-w>s
