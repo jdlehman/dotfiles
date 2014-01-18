@@ -71,6 +71,8 @@ set splitright                        " open vertical splits to the right
 set splitbelow                        " open horizontal splits below
 set timeoutlen=1000                   " Set key stroke timeout
 set ttimeoutlen=10    
+set wildmenu                          " enable bash style tab completion
+set wildmode=list:longest,full
 
 " persist undos across sessions (github/joelhooks/dotfiles)
 if has("persistent_undo")
