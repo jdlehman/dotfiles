@@ -59,6 +59,7 @@ set incsearch                         " Begin searching as soon as text is enter
 set hlsearch                          " Highlight search results
 set smartcase                         " Case insensitive searches
 set number                            " Show line numbers
+set relativenumber                    " Show relative line numbers (in conjuction with number, shows relative numbers and line number on cursor)
 set nowrap                            " Do not wrap text
 set listchars=extends:»,precedes:«    " Chars to display on text off screen
 set showmatch                         " Shows matching {,(,if etc. when typing closing },),end
@@ -162,6 +163,8 @@ augroup END
 autocmd BufWinLeave *.* mkview
 autocmd BufWinEnter *.* silent loadview
 
+autocmd InsertEnter * :set number | :set norelativenumber
+autocmd InsertLeave * :set relativenumber
 
 " vimrc graveyard
 " =====================
