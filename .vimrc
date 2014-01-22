@@ -1,3 +1,4 @@
+set nocompatible
 " Set up vundle
 " ==================
 filetype off    " Required by vundle
@@ -63,7 +64,6 @@ set relativenumber                    " Show relative line numbers (in conjuctio
 set nowrap                            " Do not wrap text
 set listchars=extends:»,precedes:«    " Chars to display on text off screen
 set showmatch                         " Shows matching {,(,if etc. when typing closing },),end
-"set showcmd                          " Show command that is being typed
 set history=1000                      " Set # of commands to keep in history
 set wildignore+=*.swp,*.class,*.o     " Ignore files with these extensions
 set backupdir=~/.vim/backup           " Set backup directory
@@ -74,20 +74,15 @@ set timeoutlen=1000                   " Set key stroke timeout
 set ttimeoutlen=10    
 set wildmenu                          " enable bash style tab completion
 set wildmode=list:longest,full
+set lazyredraw                        " only redraw when necessary
+set cursorline                        " highlight current line
+"set showcmd                          " Show command that is being typed
 
 " persist undos across sessions (github/joelhooks/dotfiles)
 if has("persistent_undo")
   set undodir=~/.vim/undodir
   set undofile
 endif
-
-" Return to last edit position when opening files (github/joelhooks/dotfiles)
-autocmd BufReadPost *
-  \ if line("'\"") > 0 && line("'\"") <= line("$") |
-  \   exe "normal! g`\"" |
-  \ endif
-" Remember info about open buffers on close
-set viminfo^=%
 
 " Set key mappings
 " =================
@@ -121,6 +116,7 @@ nnoremap <leader>ac :ccl<cr>
 " Quickly escape insert mode with jj
 inoremap jj <ESC>
 
+" Map semicolon to colon
 nnoremap ; :
 
 " Open splits (v vertical, s horizontal)
@@ -158,6 +154,14 @@ augroup comment_group
   autocmd FileType ruby       nnoremap <buffer> <localleader>c I#<esc>
   autocmd FileType vim        nnoremap <buffer> <localleader>c I"<esc>
 augroup END
+
+" Return to last edit position when opening files (github/joelhooks/dotfiles)
+autocmd BufReadPost *
+  \ if line("'\"") > 0 && line("'\"") <= line("$") |
+  \   exe "normal! g`\"" |
+  \ endif
+" Remember info about open buffers on close
+set viminfo^=%
 
 " Make folds persistent
 autocmd BufWinLeave *.* mkview
