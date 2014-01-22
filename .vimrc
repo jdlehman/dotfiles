@@ -23,6 +23,7 @@ Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-surround'
 Bundle 'kien/ctrlp.vim'
 Bundle 'rking/ag.vim'
+Bundle 'sjl/gundo.vim'
 
 filetype plugin indent on   " Required by vundle
 
@@ -112,6 +113,9 @@ nnoremap <leader>af :AgFile!<space>
 nnoremap <leader>ao :copen<cr>
 " close quickfix window
 nnoremap <leader>ac :ccl<cr>
+
+" toggle gundo
+nnoremap <leader>u :GundoToggle<CR>
 
 " Quickly escape insert mode with jj
 inoremap jj <ESC>
