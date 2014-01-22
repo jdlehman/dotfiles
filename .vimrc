@@ -171,8 +171,14 @@ set viminfo^=%
 autocmd BufWinLeave *.* mkview
 autocmd BufWinEnter *.* silent loadview
 
+" show number when in insert mode
+" show relative number with number on current line outside
+" of insert mode
 autocmd InsertEnter * :set number | :set norelativenumber
 autocmd InsertLeave * :set relativenumber
+
+" File Types
+autocmd BufNewFile,BufRead *.erb set filetype=html
 
 " vimrc graveyard
 " =====================
