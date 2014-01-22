@@ -167,10 +167,6 @@ autocmd BufReadPost *
 " Remember info about open buffers on close
 set viminfo^=%
 
-" Make folds persistent
-autocmd BufWinLeave *.* mkview
-autocmd BufWinEnter *.* silent loadview
-
 " show number when in insert mode
 " show relative number with number on current line outside
 " of insert mode
@@ -182,6 +178,10 @@ autocmd BufNewFile,BufRead *.erb set filetype=html
 
 " vimrc graveyard
 " =====================
+
+" Make folds persistent
+"autocmd BufWinLeave *.* mkview
+"autocmd BufWinEnter *.* silent loadview
 
 " format html on read and save
 " autocmd BufWritePre,BufRead *.html :normal gg=G
