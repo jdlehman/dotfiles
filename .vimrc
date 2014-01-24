@@ -153,6 +153,7 @@ cnoreabbrev Wq wq
 
 " Comment mappings based on file type
 augroup comment_group
+  autocmd!
   autocmd FileType javascript nnoremap <buffer> <localleader>c I//<esc>
   autocmd FileType python     nnoremap <buffer> <localleader>c I#<esc>
   autocmd FileType ruby       nnoremap <buffer> <localleader>c I#<esc>
