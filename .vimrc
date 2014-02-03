@@ -117,8 +117,10 @@ nnoremap <leader>ac :ccl<cr>
 " toggle gundo
 nnoremap <leader>u :GundoToggle<CR>
 
-" Quickly escape insert mode with jj
-inoremap jj <ESC>
+" Quickly escape insert mode with space
+inoremap <space> <ESC>
+" quickly escape visual mode with space
+vnoremap <space> <ESC>
 
 " Map semicolon to colon
 nnoremap ; :
@@ -174,6 +176,8 @@ set viminfo^=%
 autocmd InsertEnter * :set number | :set norelativenumber
 autocmd InsertLeave * :set relativenumber
 
+" File Types
+"autocmd BufNewFile,BufRead *.erb set filetype=html
 
 " vimrc graveyard
 " =====================
@@ -184,9 +188,6 @@ autocmd InsertLeave * :set relativenumber
 
 " format html on read and save
 " autocmd BufWritePre,BufRead *.html :normal gg=G
-
-" File Types
-"autocmd BufNewFile,BufRead *.erb set filetype=html
 
 " logger
 " autocmd VimEnter * -W '~/vimlog2.log'
