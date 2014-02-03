@@ -117,8 +117,8 @@ nnoremap <leader>ac :ccl<cr>
 " toggle gundo
 nnoremap <leader>u :GundoToggle<CR>
 
-" Quickly escape insert mode with space
-inoremap <space> <ESC>
+" Quickly escape insert mode with jk
+inoremap jk <ESC>
 " quickly escape visual mode with space
 vnoremap <space> <ESC>
 
