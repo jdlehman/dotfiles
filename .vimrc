@@ -77,6 +77,7 @@ set wildmenu                          " enable bash style tab completion
 set wildmode=list:longest,full
 set lazyredraw                        " only redraw when necessary
 set cursorline                        " highlight current line
+set autoread                          " reload files changed outside of vim
 "set showcmd                          " Show command that is being typed
 
 " persist undos across sessions (github/joelhooks/dotfiles)
