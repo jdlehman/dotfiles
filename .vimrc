@@ -148,6 +148,12 @@ nnoremap <Right> :vertical resize +5<CR>
 nnoremap <Up> :resize +5<CR>
 nnoremap <Down> :resize -5<CR>
 
+" move visual blocks of text
+vnoremap <Left> <gv^
+vnoremap <Right> >gv^
+vnoremap <Up> xkP`[V`]
+vnoremap <Down> xp`[V`]
+
 " Q=q and W=w in command mode
 " Prevents typos when writing or quitting
 cnoreabbrev W w
