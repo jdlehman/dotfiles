@@ -154,6 +154,11 @@ vnoremap <Right> >gv^
 vnoremap <Up> xkP`[V`]
 vnoremap <Down> xp`[V`]
 
+" select last text visual selected
+" normal gv does this based on line numbers
+" so is inaccurate if the visual line is moved
+nnoremap gv `[v`]
+
 " Q=q and W=w in command mode
 " Prevents typos when writing or quitting
 cnoreabbrev W w
