@@ -170,31 +170,44 @@ inoremap { {}<ESC>i
 inoremap [ []<ESC>i
 inoremap ( ()<ESC>i
 
-" Comment mappings based on file type
+" *************
+" Auto commands
+" *************
 augroup comment_group
   autocmd!
+  " Comment mappings based on file type
   autocmd FileType javascript nnoremap <buffer> <localleader>c I//<esc>
   autocmd FileType python     nnoremap <buffer> <localleader>c I#<esc>
   autocmd FileType ruby       nnoremap <buffer> <localleader>c I#<esc>
   autocmd FileType vim        nnoremap <buffer> <localleader>c I"<esc>
 augroup END
 
-" Return to last edit position when opening files (github/joelhooks/dotfiles)
-autocmd BufReadPost *
-  \ if line("'\"") > 0 && line("'\"") <= line("$") |
-  \   exe "normal! g`\"" |
-  \ endif
+augroup buf_read_group
+  autocmd!
+  " Return to last edit position when opening files (github/joelhooks/dotfiles)
+  autocmd BufReadPost *
+    \ if line("'\"") > 0 && line("'\"") <= line("$") |
+    \   exe "normal! g`\"" |
+    \ endif
+augroup END
 " Remember info about open buffers on close
 set viminfo^=%
 
-" show number when in insert mode
-" show relative number with number on current line outside
-" of insert mode
-autocmd InsertEnter * :set number | :set norelativenumber
-autocmd InsertLeave * :set relativenumber
+augroup insert_group
+  autocmd!
+  " show number when in insert mode
+  " show relative number with number on current line outside
+  " of insert mode
+  autocmd InsertEnter * :set number | :set norelativenumber
+  autocmd InsertLeave * :set relativenumber
+augroup END
 
 " File Types
-autocmd BufNewFile,BufRead *.json set filetype=javascript
+augroup file_type_group
+  autocmd!
+  " set json filetype to javascript
+  autocmd BufNewFile,BufRead *.json set filetype=javascript
+augroup END
 
 " vimrc graveyard
 " =====================
