@@ -165,6 +165,11 @@ cnoreabbrev W w
 cnoreabbrev Q q
 cnoreabbrev Wq wq
 
+" automatically insert ending bracket/parenthesis
+inoremap { {}<ESC>i
+inoremap [ []<ESC>i
+inoremap ( ()<ESC>i
+
 " Comment mappings based on file type
 augroup comment_group
   autocmd!
