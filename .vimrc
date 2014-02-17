@@ -1,13 +1,15 @@
 set nocompatible
+" =============
 " Set up vundle
-" ==================
+" =============
 filetype off    " Required by vundle
 
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
+" =======
 " Bundles
-" =================
+" =======
 Bundle 'gmarik/vundle'
 
 " Style
@@ -27,13 +29,14 @@ Bundle 'sjl/gundo.vim'
 
 filetype plugin indent on   " Required by vundle
 
+" ========================
 " Bundle specific settings
-" ==================
+" ========================
 
 " Use solarized theme
 syntax enable
+let g:solarized_hitrail = 1
 set background=dark
-let g:solarized_hitrail=1
 colorscheme solarized
 
 " Use vim-airline status bar
@@ -46,8 +49,9 @@ let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 " Prevent ag from leaking into terminal
 set shellpipe=>
 
+" ====================================
 " Set standard vim attributes/settings
-" ===================
+" ====================================
 set mouse=a                           " Allow scrolling and make vim clickable
 set hidden                            " Allow buffers to be hidden with unwritten changes
 set tabstop=2                         " Tabs are 2 space characters
@@ -72,12 +76,13 @@ set directory=~/.vim/backup           " Set backup directory
 set splitright                        " open vertical splits to the right
 set splitbelow                        " open horizontal splits below
 set timeoutlen=300                   " Set key stroke timeout
-set ttimeoutlen=10    
+set ttimeoutlen=10
 set wildmenu                          " enable bash style tab completion
 set wildmode=list:longest,full
 set lazyredraw                        " only redraw when necessary
 set cursorline                        " highlight current line
 set autoread                          " reload files changed outside of vim
+set viminfo^=%                        " Remember info about open buffers on close
 "set showcmd                          " Show command that is being typed
 
 " persist undos across sessions (github/joelhooks/dotfiles)
@@ -86,8 +91,9 @@ if has("persistent_undo")
   set undofile
 endif
 
+" ================
 " Set key mappings
-" =================
+" ================
 " Map leaders
 let mapleader=','
 let maplocalleader = "\\"
@@ -104,6 +110,7 @@ vnoremap <leader>c "+y
 " paste from system clipboard
 nnoremap <leader>p "+p
 
+" ==================
 " Use ag.vim quickly
 " ==================
 " Search all text in quickfix window
@@ -170,9 +177,9 @@ inoremap { {}<ESC>i
 inoremap [ []<ESC>i
 inoremap ( ()<ESC>i
 
-" *************
+" =============
 " Auto commands
-" *************
+" =============
 augroup comment_group
   autocmd!
   " Comment mappings based on file type
@@ -182,22 +189,10 @@ augroup comment_group
   autocmd FileType vim        nnoremap <buffer> <localleader>c I"<esc>
 augroup END
 
-augroup buf_read_group
-  autocmd!
-  " Return to last edit position when opening files (github/joelhooks/dotfiles)
-  autocmd BufReadPost *
-    \ if line("'\"") > 0 && line("'\"") <= line("$") |
-    \   exe "normal! g`\"" |
-    \ endif
-augroup END
-" Remember info about open buffers on close
-set viminfo^=%
-
 augroup insert_group
   autocmd!
-  " show number when in insert mode
-  " show relative number with number on current line outside
-  " of insert mode
+  " show number when in insert mode show relative number with
+  " number on current line outside of insert mode
   autocmd InsertEnter * :set number | :set norelativenumber
   autocmd InsertLeave * :set relativenumber
 augroup END
@@ -209,18 +204,19 @@ augroup file_type_group
   autocmd BufNewFile,BufRead *.json set filetype=javascript
 augroup END
 
+" Autocommands that do not fit anywhere else
+augroup wildcard_group
+  autocmd!
+  " Return to last edit position when opening files (github/joelhooks/dotfiles)
+  autocmd BufReadPost *
+    \ if line("'\"") > 0 && line("'\"") <= line("$") |
+    \   exe "normal! g`\"" |
+    \ endif
+augroup END
+
+" ===============
 " vimrc graveyard
-" =====================
-
+" ===============
 " Make folds persistent
-"autocmd BufWinLeave *.* mkview
-"autocmd BufWinEnter *.* silent loadview
-
-" format html on read and save
-" autocmd BufWritePre,BufRead *.html :normal gg=G
-
-" logger
-" autocmd VimEnter * -W '~/vimlog2.log'
-" Get content inside parenthesis
-" onoremap p i(
-
+" autocmd BufWinLeave *.* mkview
+" autocmd BufWinEnter *.* silent loadview
