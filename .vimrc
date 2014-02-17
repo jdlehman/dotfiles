@@ -194,7 +194,7 @@ autocmd InsertEnter * :set number | :set norelativenumber
 autocmd InsertLeave * :set relativenumber
 
 " File Types
-"autocmd BufNewFile,BufRead *.erb set filetype=html
+autocmd BufNewFile,BufRead *.json set filetype=javascript
 
 " vimrc graveyard
 " =====================
