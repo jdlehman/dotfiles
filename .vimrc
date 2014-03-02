@@ -172,23 +172,9 @@ cnoreabbrev W w
 cnoreabbrev Q q
 cnoreabbrev Wq wq
 
-" automatically insert ending bracket/parenthesis
-inoremap { {}<ESC>i
-inoremap [ []<ESC>i
-inoremap ( ()<ESC>i
-
 " =============
 " Auto commands
 " =============
-augroup comment_group
-  autocmd!
-  " Comment mappings based on file type
-  autocmd FileType javascript nnoremap <buffer> <localleader>c I//<esc>
-  autocmd FileType python     nnoremap <buffer> <localleader>c I#<esc>
-  autocmd FileType ruby       nnoremap <buffer> <localleader>c I#<esc>
-  autocmd FileType vim        nnoremap <buffer> <localleader>c I"<esc>
-augroup END
-
 augroup insert_group
   autocmd!
   " show number when in insert mode show relative number with
