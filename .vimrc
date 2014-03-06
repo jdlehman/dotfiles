@@ -15,11 +15,12 @@ Bundle 'gmarik/vundle'
 " Style
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'bling/vim-airline'
-Bundle 'kchmck/vim-coffee-script'
 
 " Language specific
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-rails'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'pangloss/vim-javascript'
 
 " Helpful tools
 Bundle 'tpope/vim-surround'
