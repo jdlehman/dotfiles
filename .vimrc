@@ -27,6 +27,7 @@ Bundle 'tpope/vim-surround'
 Bundle 'kien/ctrlp.vim'
 Bundle 'rking/ag.vim'
 Bundle 'sjl/gundo.vim'
+Bundle 'mattn/emmet-vim'
 
 filetype plugin indent on   " Required by vundle
 
