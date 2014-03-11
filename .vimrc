@@ -30,8 +30,8 @@ Bundle 'rking/ag.vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-commentary'
+Bundle 'tpope/vim-vinegar'
 Bundle 'sjl/gundo.vim'
-Bundle 'scrooloose/nerdtree'
 
 filetype plugin indent on   " Required by vundle
 
