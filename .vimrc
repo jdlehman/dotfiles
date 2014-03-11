@@ -28,6 +28,7 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'rking/ag.vim'
 Bundle 'sjl/gundo.vim'
 Bundle 'mattn/emmet-vim'
+Bundle 'scrooloose/nerdtree'
 
 filetype plugin indent on   " Required by vundle
 
@@ -111,6 +112,9 @@ nnoremap <leader>bv :BundleInstall<cr>
 vnoremap <leader>c "+y
 " paste from system clipboard
 nnoremap <leader>p "+p
+
+" NerdTree Toggle
+nnoremap <leader>n :NERDTreeToggle<CR>
 
 " ==================
 " Use ag.vim quickly
