@@ -17,17 +17,19 @@ Bundle 'altercation/vim-colors-solarized'
 Bundle 'bling/vim-airline'
 
 " Language specific
-Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-rails'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'pangloss/vim-javascript'
+Bundle 'mattn/emmet-vim'
 
-" Helpful tools
-Bundle 'tpope/vim-surround'
+" Searching
 Bundle 'kien/ctrlp.vim'
 Bundle 'rking/ag.vim'
+
+" Helpful tools
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-surround'
 Bundle 'sjl/gundo.vim'
-Bundle 'mattn/emmet-vim'
 Bundle 'scrooloose/nerdtree'
 
 filetype plugin indent on   " Required by vundle
