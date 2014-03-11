@@ -29,6 +29,7 @@ Bundle 'rking/ag.vim'
 " Helpful tools
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-commentary'
 Bundle 'sjl/gundo.vim'
 Bundle 'scrooloose/nerdtree'
 
