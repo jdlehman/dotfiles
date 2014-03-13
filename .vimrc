@@ -30,7 +30,6 @@ Bundle 'rking/ag.vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-commentary'
-Bundle 'tpope/vim-vinegar'
 Bundle 'sjl/gundo.vim'
 
 filetype plugin indent on   " Required by vundle
@@ -51,6 +50,10 @@ set laststatus=2
 
 " Use ag for ctrlp
 let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+
+" netrw settings
+" hide help text at top
+let g:netrw_banner=0
 
 " Prevent ag from leaking into terminal
 set shellpipe=>
