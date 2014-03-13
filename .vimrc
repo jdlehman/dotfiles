@@ -119,9 +119,6 @@ vnoremap <leader>c "+y
 " paste from system clipboard
 nnoremap <leader>p "+p
 
-" NerdTree Toggle
-nnoremap <leader>n :NERDTreeToggle<CR>
-
 " ==================
 " Use ag.vim quickly
 " ==================
@@ -142,8 +139,8 @@ inoremap jk <ESC>
 " quickly escape visual mode with space
 vnoremap <space> <ESC>
 
-" Map semicolon to colon
-nnoremap ; :
+" Map space to colon
+nnoremap <space> :
 
 " Open splits (v vertical, s horizontal)
 nnoremap <leader>v <C-w>v
