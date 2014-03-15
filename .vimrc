@@ -114,6 +114,10 @@ nnoremap <leader>sv :source $MYVIMRC<cr> :nohl <cr>
 " Reinstall/update bundles using vundle
 nnoremap <leader>bv :BundleInstall<cr>
 
+" Toggle between light/dark theme
+nnoremap <leader>l :set background=light<cr>
+nnoremap <leader>d :set background=dark<cr>
+
 " Copy to system clipboard
 vnoremap <leader>c "+y
 " paste from system clipboard
