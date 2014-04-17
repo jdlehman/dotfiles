@@ -92,6 +92,7 @@ set lazyredraw                        " only redraw when necessary
 set cursorline                        " highlight current line
 set autoread                          " reload files changed outside of vim
 set viminfo^=%                        " Remember info about open buffers on close
+set nofoldenable                      " disable folding
 "set showcmd                          " Show command that is being typed
 
 " persist undos across sessions (github/joelhooks/dotfiles)
