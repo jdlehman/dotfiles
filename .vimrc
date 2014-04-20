@@ -124,6 +124,9 @@ vnoremap <leader>c "+y
 " paste from system clipboard
 nnoremap <leader>p "+p
 
+" Toggle paste
+nnoremap <leader>pp :set paste!<cr>
+
 " ==================
 " Use ag.vim quickly
 " ==================
