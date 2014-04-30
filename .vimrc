@@ -150,6 +150,9 @@ vnoremap <space> <ESC>
 " Map space to colon
 nnoremap <space> :
 
+" Remove trailing spaces
+nnoremap <leader><space> :%s/\s\+$<cr>
+
 " Open splits (v vertical, s horizontal)
 nnoremap <leader>v <C-w>v
 nnoremap <leader>s <C-w>s
