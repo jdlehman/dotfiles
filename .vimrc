@@ -153,6 +153,9 @@ nnoremap <space> :
 " Remove trailing spaces
 nnoremap <leader><space> :%s/\s\+$<cr>
 
+" Turn off highlight
+nnoremap <leader>h :nohl<cr>
+
 " Open splits (v vertical, s horizontal)
 nnoremap <leader>v <C-w>v
 nnoremap <leader>s <C-w>s
