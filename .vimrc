@@ -127,6 +127,9 @@ nnoremap <leader>p "+p
 " Toggle paste
 nnoremap <leader>pp :set paste!<cr>
 
+" Go to mark
+nnoremap <leader>g `
+
 " ==================
 " Use ag.vim quickly
 " ==================
