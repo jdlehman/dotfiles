@@ -1,0 +1,13 @@
+[user]
+  name = jdlehman
+  email = jonathan.lehman91@gmail.com
+[core]
+  editor = vim
+  excludesfile = ./.gitignore_global
+[color]
+  ui = true
+[alias]
+  st = status
+  co = checkout
+  br = branch
+  ci = commit
