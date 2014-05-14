@@ -63,6 +63,16 @@ bind h:ctrl;alt resize +10% +0 bottom-right
 bind k:ctrl;alt resize +0 +0% bottom-right
 bind j:ctrl;alt resize +0 -10% bottom-right
 
+# Precision Resize Bindings
+bind l:cmd;alt;shift  resize +5% +0
+bind h:cmd;alt;shift  resize -5% +0
+bind k:cmd;alt;shift  resize +0 -5%
+bind j:cmd;alt;shift  resize +0 +5%
+bind l:ctrl;alt;shift resize -5% +0 bottom-right
+bind h:ctrl;alt;shift resize +5% +0 bottom-right
+bind k:ctrl;alt;shift resize +0 +0% bottom-right
+bind j:ctrl;alt;shift resize +0 -5% bottom-right
+
 # Push Bindings
 bind l:ctrl;cmd ${righthalf}
 bind h:ctrl;cmd ${lefthalf}
@@ -74,6 +84,12 @@ bind l:alt nudge +10% +0
 bind h:alt nudge -10% +0
 bind k:alt nudge +0 -10%
 bind j:alt nudge +0 +10%
+
+# Precision Nudge Bindings
+bind l:alt;shift nudge +5% +0
+bind h:alt;shift nudge -5% +0
+bind k:alt;shift nudge +0 -5%
+bind j:alt;shift nudge +0 +5%
 
 # Throw Bindings
 bind right:${hyper} throw next
