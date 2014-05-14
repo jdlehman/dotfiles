@@ -80,7 +80,7 @@ bind right:${hyper} throw next
 bind left:${hyper}  throw previous
 
 # Focus Bindings
-bind up:cmd;alt   focus behind
+bind space:alt focus behind
 
 # Window Hints
 bind esc:cmd hint
