@@ -1,3 +1,6 @@
+# Using vim style navigation
+# h-left, j-down, k-up, l-right
+
 # Global configurations
 config defaultToCurrentScreen true
 config nudgePercentOf screenSize
@@ -22,7 +25,7 @@ alias bottomleft  corner bottom-left resize:screenSizeX/2;screenSizeY/2
 alias bottomright corner bottom-right resize:screenSizeX/2;screenSizeY/2
 
 # Grid Bindings
-bind g:cmd grid padding:4 0:8,4 1:8,4
+bind g:cmd grid padding:4 0:8,4 1:8,4 2:8,4
 
 # Numpad location Bindings
 bind pad1 ${bottomleft}
@@ -34,48 +37,53 @@ bind pad6 ${righthalf}
 bind pad7 ${topleft}
 bind pad8 ${tophalf}
 bind pad9 ${topright}
+bind pad- throw previous
 bind pad+ throw next
 bind pad. focus behind
 
+# Simulate numpad locations bindings on
+# keyboards without numpad
+bind n:${hyper} ${bottomleft}
+bind m:${hyper} ${bottomhalf}
+bind ,:${hyper} ${bottomright}
+bind j:${hyper} ${lefthalf}
+bind k:${hyper} ${full}
+bind l:${hyper} ${righthalf}
+bind u:${hyper} ${topleft}
+bind i:${hyper} ${tophalf}
+bind o:${hyper} ${topright}
+
 # Resize Bindings
-bind right:alt       resize +5% +0
-bind left:alt        resize -5% +0
-bind up:alt          resize +0 -5%
-bind down:alt        resize +0 +5%
-bind right:ctrl;alt  resize -5% +0 bottom-right
-bind left:ctrl;alt   resize +5% +0 bottom-right
-bind up:ctrl;alt     resize +0 +0% bottom-right
-bind down:ctrl;alt   resize +0 -5% bottom-right
+bind l:cmd;alt  resize +10% +0
+bind h:cmd;alt  resize -10% +0
+bind k:cmd;alt  resize +0 -10%
+bind j:cmd;alt  resize +0 +10%
+bind l:ctrl;alt resize -10% +0 bottom-right
+bind h:ctrl;alt resize +10% +0 bottom-right
+bind k:ctrl;alt resize +0 +0% bottom-right
+bind j:ctrl;alt resize +0 -10% bottom-right
 
 # Push Bindings
-bind right:ctrl;cmd  ${righthalf}
-bind left:ctrl;cmd   ${lefthalf}
-bind up:ctrl;cmd     ${tophalf}
-bind down:ctrl;cmd   ${bottomhalf}
+bind l:ctrl;cmd ${righthalf}
+bind h:ctrl;cmd ${lefthalf}
+bind k:ctrl;cmd ${tophalf}
+bind j:ctrl;cmd ${bottomhalf}
 
 # Nudge Bindings
-bind right:shift;alt nudge +5% +0
-bind left:shift;alt  nudge -5% +0
-bind up:shift;alt    nudge +0 -5%
-bind down:shift;alt  nudge +0 +5%
+bind l:alt nudge +10% +0
+bind h:alt nudge -10% +0
+bind k:alt nudge +0 -10%
+bind j:alt nudge +0 +10%
 
 # Throw Bindings
-bind right:${hyper} throw right resize
-bind left:${hyper}  throw left  resize
+bind right:${hyper} throw next
+bind left:${hyper}  throw previous
 
 # Focus Bindings
-# bind right:cmd    focus right
-# bind left:cmd     focus left
-# bind up:cmd       focus up
-# bind down:cmd     focus down
-# bind up:cmd;alt   focus behind
-# bind down:cmd;alt focus behind
+bind up:cmd;alt   focus behind
 
 # Window Hints
 bind esc:cmd hint
-
-# Better application switcher
-# bind tab:cmd switch
 
 # Reload Slate configuration file
 bind r:${hyper} relaunch
