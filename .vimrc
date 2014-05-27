@@ -20,6 +20,7 @@ Bundle 'bling/vim-airline'
 Bundle 'tpope/vim-rails'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'pangloss/vim-javascript'
+Bundle 'cakebaker/scss-syntax.vim'
 Bundle 'mattn/emmet-vim'
 
 " Searching
