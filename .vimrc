@@ -59,6 +59,13 @@ let g:netrw_banner=0
 " Prevent ag from leaking into terminal
 set shellpipe=>
 
+" Fix mouse bug in iterm
+" Without this, clicking on parts of
+" rightmost split does not work correctly
+if has('mouse_sgr')
+  set ttymouse=sgr
+endif
+
 " ====================================
 " Set standard vim attributes/settings
 " ====================================
