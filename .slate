@@ -69,9 +69,9 @@ bind h:cmd;alt;shift  resize -5% +0
 bind k:cmd;alt;shift  resize +0 -5%
 bind j:cmd;alt;shift  resize +0 +5%
 bind l:ctrl;alt;shift resize -5% +0
-bind h:ctrl;alt;shift resize +5% +0 bottom-right
-bind k:ctrl;alt;shift resize +0 +5% bottom-right
-bind j:ctrl;alt;shift resize +0 -5% bottom-right
+bind h:ctrl;alt;shift resize -5% +0
+bind k:ctrl;alt;shift resize +0 -5%
+bind j:ctrl;alt;shift resize +0 -5%
 
 # Push Bindings
 bind l:ctrl;cmd ${righthalf}
