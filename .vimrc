@@ -32,6 +32,7 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-commentary'
 Bundle 'sjl/gundo.vim'
+Bundle 't9md/vim-ruby-xmpfilter'
 
 filetype plugin indent on   " Required by vundle
 
@@ -137,6 +138,10 @@ nnoremap <leader>pp :set paste!<cr>
 
 " Go to mark
 nnoremap <leader>g `
+
+" Evaluate ruby with xmpfilter
+nnoremap <leader>m :call xmpfilter#mark('n')<CR>
+nnoremap <leader>r :call xmpfilter#run('n', '')<CR>
 
 " ==================
 " Use ag.vim quickly
