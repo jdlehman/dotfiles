@@ -142,6 +142,8 @@ nnoremap <leader>g `
 " Evaluate ruby with xmpfilter
 nnoremap <leader>m :call xmpfilter#mark('n')<CR>
 nnoremap <leader>r :call xmpfilter#run('n', '')<CR>
+vnoremap <leader>m :call xmpfilter#mark('v')<CR>
+vnoremap <leader>r :call xmpfilter#run('v', '')<CR>
 
 " ==================
 " Use ag.vim quickly
