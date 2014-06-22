@@ -24,8 +24,8 @@ Bundle 'cakebaker/scss-syntax.vim'
 Bundle 'mattn/emmet-vim'
 
 " Searching
-Bundle 'kien/ctrlp.vim'
 Bundle 'rking/ag.vim'
+Bundle 'junegunn/fzf'
 
 " Helpful tools
 Bundle 'tpope/vim-fugitive'
@@ -48,9 +48,6 @@ colorscheme solarized
 " Use vim-airline status bar
 let g:airline_powerline_fonts = 1
 set laststatus=2
-
-" Use ag for ctrlp
-let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 
 " netrw settings
 " hide help text at top
@@ -149,6 +146,9 @@ nnoremap <leader>af :AgFile!<space>
 nnoremap <leader>ao :copen<cr>
 " close quickfix window
 nnoremap <leader>ac :ccl<cr>
+
+" fzf fuzzy search
+nnoremap <leader>f :FZF<cr>
 
 " toggle gundo
 nnoremap <leader>u :GundoToggle<CR>
