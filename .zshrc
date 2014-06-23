@@ -46,3 +46,10 @@ alias restart="touch tmp/restart.txt"
 alias restart_parent="touch ~/.pow/restart.txt"
 # Clean pow cache
 alias clean="dscacheutil -flushcache"
+
+# fzf fuzzy search
+source ~/.fzf.zsh
+
+export FZF_DEFAULT_OPTS='-x -m'
+# Setting ag as the default source for fzf
+# export FZF_DEFAULT_COMMAND='ag -l -g ""'
