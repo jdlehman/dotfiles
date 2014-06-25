@@ -124,6 +124,8 @@ nnoremap <leader>bv :BundleInstall<cr>
 nnoremap <leader>l :set background=light<cr>
 nnoremap <leader>d :set background=dark<cr>
 
+nnoremap <leader>w :set wrap!<cr>
+
 " Copy to system clipboard
 vnoremap <leader>c "+y
 " paste from system clipboard
@@ -233,6 +235,27 @@ augroup wildcard_group
     \   exe "normal! g`\"" |
     \ endif
 augroup END
+
+function! ExecuteAndUpdateMarkedRuby()
+ruby << EOF
+  marker = '# =>'
+  buf = VIM::Buffer.current
+  lines = File.readlines(buf.name)
+
+  bnd = binding
+  eval(lines.join("\n"), bnd)
+
+  lines.each_with_index do |line, i|
+      if line.match(/#{marker}/)
+          result = marker + ' ' + eval(line, bnd).inspect
+          buf[i+1] = line.sub(/#{marker}.*/, result).chomp
+      end
+  end
+EOF
+endfunction
+
+" nnoremap <leader>m A # =><ESC>:w<ESC>
+" nnoremap <leader>e :call ExecuteAndUpdateMarkedRuby()<CR>
 
 " ===============
 " vimrc graveyard
