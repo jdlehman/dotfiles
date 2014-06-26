@@ -225,6 +225,8 @@ augroup file_type_group
   autocmd!
   " set json filetype to javascript
   autocmd BufNewFile,BufRead *.json set filetype=javascript
+  " set md to markdown file type
+  autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 augroup END
 
 " Autocommands that do not fit anywhere else
