@@ -237,26 +237,6 @@ augroup wildcard_group
     \ endif
 augroup END
 
-function! ExecuteAndUpdateMarkedRuby()
-ruby << EOF
-  marker = '# =>'
-  buf = VIM::Buffer.current
-  lines = File.readlines(buf.name)
-
-  bnd = binding
-  eval(lines.join("\n"), bnd)
-
-  lines.each_with_index do |line, i|
-      if line.match(/#{marker}/)
-          result = marker + ' ' + eval(line, bnd).inspect
-          buf[i+1] = line.sub(/#{marker}.*/, result).chomp
-      end
-  end
-EOF
-endfunction
-
-" nnoremap <leader>m A # =><ESC>:w<ESC>
-" nnoremap <leader>e :call ExecuteAndUpdateMarkedRuby()<CR>
 
 " ===============
 " vimrc graveyard
