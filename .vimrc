@@ -14,7 +14,7 @@ Bundle 'gmarik/vundle'
 
 " Style
 Bundle 'altercation/vim-colors-solarized'
-Bundle 'bling/vim-airline'
+Bundle 'itchyny/lightline.vim'
 
 " Language specific
 Bundle 'tpope/vim-rails'
@@ -46,8 +46,27 @@ set background=dark
 colorscheme solarized
 
 " Use vim-airline status bar
-let g:airline_powerline_fonts = 1
 set laststatus=2
+let g:lightline = {
+  \ 'active': {
+  \   'left': [ ['mode', 'paste'], ['fugitive', 'readonly', 'filename', 'modified'] ],
+  \   'right': [ ['lineinfo'], ['percent'], ['filetype'] ]
+  \ },
+  \ 'component': {
+  \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
+  \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}',
+  \   'filetype': '%{winwidth(0) > 70 ? (strlen(&filetype) ? &filetype : "no ft") : ""}',
+  \ },
+  \ 'component_visible_condition': {
+  \   'readonly': '(&filetype!="help"&& &readonly)',
+  \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
+  \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())',
+  \ },
+  \ 'separator': { 'left': "\ue0b0", 'right': "\ue0b2" },
+  \ 'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3" },
+  \'component_function': {
+  \ },
+\ }
 
 " netrw settings
 " hide help text at top
