@@ -26,13 +26,23 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 # ------------------
 
-export EDITOR='vim'
-
-# enable vi editing mode
+# vim settings
+export EDITOR=vim
+export VISUAL=vim
+export GIT_EDITOR=vim
+# vim mode in terminal
 set -o vi
+# vimrc editing
+alias ve='vim ~/.vimrc'
+
+# zsh profile editing
+alias ze='vim ~/.zshrc'
+alias zr='source ~/.zshrc'
 
 # Ruby aliases
 alias rtest="ruby -I 'lib:test'"
+alias tfdl='tail -f log/development.log'
+alias tftl='tail -f log/test.log'
 
 # git aliases
 alias g="git status"
