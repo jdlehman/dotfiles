@@ -45,28 +45,55 @@ let g:solarized_hitrail = 1
 set background=dark
 colorscheme solarized
 
-" Use vim-airline status bar
+" *********************
+" Begin lightline setup
+" *********************
 set laststatus=2
 let g:lightline = {
   \ 'active': {
   \   'left': [ ['mode', 'paste'], ['fugitive', 'readonly', 'filename', 'modified'] ],
   \   'right': [ ['lineinfo'], ['percent'], ['filetype'] ]
   \ },
-  \ 'component': {
-  \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
-  \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}',
-  \   'filetype': '%{winwidth(0) > 70 ? (strlen(&filetype) ? &filetype : "no ft") : ""}',
-  \ },
-  \ 'component_visible_condition': {
-  \   'readonly': '(&filetype!="help"&& &readonly)',
-  \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
-  \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())',
+  \ 'component_function': {
+  \   'modified': 'MyModified',
+  \   'readonly': 'MyReadOnly',
+  \   'filename': 'MyFilename',
+  \   'filetype': 'MyFiletype',
+  \   'fugitive': 'MyFugitive',
   \ },
   \ 'separator': { 'left': "\ue0b0", 'right': "\ue0b2" },
   \ 'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3" },
-  \'component_function': {
-  \ },
 \ }
+
+function! MyModified()
+  return &filetype =~ 'help\|netrw\|gundo' ? '' : &modified ? '+' : &modifiable ? '' : '-'
+endfunction
+
+function! MyReadonly()
+  return &filetype !~? 'help\|netrw\|gundo' && &readonly ? 'RO' : ''
+endfunction
+
+function! MyFilename()
+  return ('' != MyReadonly() ? MyReadonly() . ' ' : '') .
+         \ ('' != expand('%:t') ? expand('%:t') : '[No Name]') .
+         \ ('' != MyModified() ? ' ' . MyModified() : '')
+endfunction
+
+function! MyFugitive()
+  if expand('%:t') !~? 'Gundo' && exists('*fugitive#head')
+    let mark = ''  " edit here for cool mark
+    let _ = fugitive#head()
+    return strlen(_) ? mark._ : ''
+  endif
+  return ''
+endfunction
+
+function! MyFiletype()
+  return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype : 'no filetype') : ''
+endfunction
+" *******************
+" End lightline setup
+" *******************
 
 " netrw settings
 " hide help text at top
