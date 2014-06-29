@@ -4,34 +4,38 @@ set nocompatible
 " =============
 filetype off    " Required by vundle
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+" set runtime path to include vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
 " =======
 " Bundles
 " =======
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/Vundle.vim'
 
 " Style
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'itchyny/lightline.vim'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'itchyny/lightline.vim'
 
 " Language specific
-Bundle 'tpope/vim-rails'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'pangloss/vim-javascript'
-Bundle 'cakebaker/scss-syntax.vim'
-Bundle 'mattn/emmet-vim'
+Plugin 'tpope/vim-rails'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'pangloss/vim-javascript'
+Plugin 'cakebaker/scss-syntax.vim'
+Plugin 'mattn/emmet-vim'
 
 " Searching
-Bundle 'rking/ag.vim'
-Bundle 'junegunn/fzf'
+Plugin 'rking/ag.vim'
+Plugin 'junegunn/fzf'
 
 " Helpful tools
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-commentary'
-Bundle 'sjl/gundo.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-commentary'
+Plugin 'sjl/gundo.vim'
+
+" all plugins must be added before here
+call vundle#end()
 
 filetype plugin indent on   " Required by vundle
 
@@ -165,7 +169,7 @@ nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr> :nohl <cr>
 
 " Reinstall/update bundles using vundle
-nnoremap <leader>bv :BundleInstall<cr>
+nnoremap <leader>bv :PluginClean<cr>:PluginInstall<cr>y
 
 " Toggle between light/dark theme
 nnoremap <leader>l :set background=light<cr>
