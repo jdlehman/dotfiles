@@ -185,8 +185,7 @@ nnoremap <leader>sv :source $MYVIMRC<cr> :nohl <cr>
 nnoremap <leader>bv :PluginClean<cr>y:PluginInstall<cr>
 
 " Toggle between light/dark theme
-nnoremap <leader>l :set background=light<cr>
-nnoremap <leader>d :set background=dark<cr>
+call togglebg#map("<leader>b")
 
 nnoremap <leader>w :set wrap!<cr>
 
