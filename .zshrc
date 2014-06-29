@@ -26,6 +26,9 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 # ------------------
 
+# allow cd with just dir name
+setopt AUTO_CD
+
 # vim settings
 export EDITOR=vim
 export VISUAL=vim
