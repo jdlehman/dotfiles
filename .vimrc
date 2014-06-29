@@ -58,7 +58,7 @@ colorscheme solarized
 set laststatus=2
 let g:lightline = {
   \ 'active': {
-  \   'left': [ ['mode', 'paste'], ['fugitive', 'readonly', 'filename', 'modified'] ],
+  \   'left': [ ['mode', 'paste'], ['gitgutter', 'fugitive', 'filename'] ],
   \   'right': [ ['lineinfo'], ['percent'], ['filetype'] ]
   \ },
   \ 'component_function': {
@@ -67,6 +67,7 @@ let g:lightline = {
   \   'filename': 'MyFilename',
   \   'filetype': 'MyFiletype',
   \   'fugitive': 'MyFugitive',
+  \   'gitgutter': 'MyGitGutter'
   \ },
   \ 'separator': { 'left': "\ue0b0", 'right': "\ue0b2" },
   \ 'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3" },
@@ -97,6 +98,14 @@ endfunction
 
 function! MyFiletype()
   return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype : 'no filetype') : ''
+endfunction
+
+function! MyGitGutter()
+  let gitdata = GitGutterGetHunkSummary()
+  let added = gitdata[0] > 0 ? gitdata[0] . '+ ' : ''
+  let modified = gitdata[1] > 0 ? gitdata[1] . '~ ' : ''
+  let deleted = gitdata[2] > 0 ? gitdata[2] . '-' : ''
+  return winwidth(0) > 80 ? (added . modified . deleted) : ''
 endfunction
 " *******************
 " End lightline setup
