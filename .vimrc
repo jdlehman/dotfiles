@@ -17,6 +17,10 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'itchyny/lightline.vim'
 
+" git related
+Plugin 'tpope/vim-fugitive'
+Plugin 'airblade/vim-gitgutter'
+
 " Language specific
 Plugin 'tpope/vim-rails'
 Plugin 'kchmck/vim-coffee-script'
@@ -29,7 +33,6 @@ Plugin 'rking/ag.vim'
 Plugin 'junegunn/fzf'
 
 " Helpful tools
-Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-commentary'
 Plugin 'sjl/gundo.vim'
@@ -98,6 +101,16 @@ endfunction
 " *******************
 " End lightline setup
 " *******************
+
+" gitgutter settings
+" performance gain
+let g:gitgutter_realtime = 0
+let g:gitgutter_eager = 0
+" appearance
+highlight SignColumn ctermbg=234
+highlight GitGutterAdd ctermfg=2 ctermbg=234
+highlight GitGutterChange ctermfg=3 ctermbg=234
+highlight GitGutterDelete ctermfg=1 ctermbg=234
 
 " netrw settings
 " hide help text at top
@@ -169,7 +182,7 @@ nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr> :nohl <cr>
 
 " Reinstall/update bundles using vundle
-nnoremap <leader>bv :PluginClean<cr>:PluginInstall<cr>y
+nnoremap <leader>bv :PluginClean<cr>y:PluginInstall<cr>
 
 " Toggle between light/dark theme
 nnoremap <leader>l :set background=light<cr>
