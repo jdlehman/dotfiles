@@ -82,8 +82,10 @@ function! MyReadonly()
 endfunction
 
 function! MyFilename()
+  " use full path or just file name depending on screen width
+  let filename = winwidth(0) > 90 ? expand('%:p') : expand('%:t')
   return ('' != MyReadonly() ? MyReadonly() . ' ' : '') .
-         \ ('' != expand('%:t') ? expand('%:t') : '[No Name]') .
+         \ ('' != filename ? filename : '[No Name]') .
          \ ('' != MyModified() ? ' ' . MyModified() : '')
 endfunction
 
