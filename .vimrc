@@ -206,12 +206,10 @@ nnoremap <leader>w :set wrap!<cr>
 nnoremap - :Explore<cr>
 
 " Copy to system clipboard
-vnoremap <leader>c "+y
-" paste from system clipboard
-nnoremap <leader>p "+p
-
-" Toggle paste
-nnoremap <leader>pp :set paste!<cr>
+vnoremap <leader>y "*y
+nnoremap <leader>y "*y
+" Paste from the system clipboard using paste mode
+noremap <leader>p :set paste<CR>:put  *<CR>:set nopaste<CR>
 
 " Go to mark
 nnoremap <leader>g `
