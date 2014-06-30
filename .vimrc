@@ -124,6 +124,8 @@ highlight GitGutterDelete ctermfg=1 ctermbg=234
 " netrw settings
 " hide help text at top
 let g:netrw_banner=0
+" use current files directory
+let g:netrw_keepdir= 0
 
 " Prevent ag from leaking into terminal
 set shellpipe=>
@@ -171,6 +173,7 @@ set autoread                          " reload files changed outside of vim
 set viminfo^=%                        " Remember info about open buffers on close
 set nofoldenable                      " disable folding
 set linebreak                         " do not split up words when wrapping
+set autochdir                         " automatically change working directory to directory of current file
 "set showcmd                          " Show command that is being typed
 
 " persist undos across sessions (github/joelhooks/dotfiles)
