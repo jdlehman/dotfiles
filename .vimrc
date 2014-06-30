@@ -176,6 +176,7 @@ set viminfo^=%                        " Remember info about open buffers on clos
 set nofoldenable                      " disable folding
 set linebreak                         " do not split up words when wrapping
 set autochdir                         " automatically change working directory to directory of current file
+set encoding=utf-8                    " use utf-8 encoding
 "set showcmd                          " Show command that is being typed
 
 " persist undos across sessions (github/joelhooks/dotfiles)
