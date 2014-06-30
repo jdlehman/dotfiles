@@ -199,7 +199,11 @@ nnoremap <leader>bv :PluginClean<cr>y:PluginInstall<cr>
 " Toggle between light/dark theme
 call togglebg#map("<leader>b")
 
+" toggle word wrap
 nnoremap <leader>w :set wrap!<cr>
+
+" map - to explore
+nnoremap - :Explore<cr>
 
 " Copy to system clipboard
 vnoremap <leader>c "+y
