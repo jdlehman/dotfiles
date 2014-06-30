@@ -202,6 +202,11 @@ nnoremap <leader>bv :PluginClean<cr>y:PluginInstall<cr>
 " Toggle between light/dark theme
 call togglebg#map("<leader>b")
 
+" use magic regex by default
+" don't have to escape everything anymore
+nnoremap / /\v
+vnoremap / /\v
+
 " toggle word wrap
 nnoremap <leader>w :set wrap!<cr>
 
