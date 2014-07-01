@@ -258,6 +258,9 @@ nnoremap <leader><space> :%s/\s\+$<cr>
 " Turn off highlight
 nnoremap <leader>h :nohl<cr>
 
+" Highlight git gutter change lines
+nnoremap <leader>c :GitGutterLineHighlightsToggle<cr>
+
 " Open splits (v vertical, s horizontal)
 nnoremap <leader>v <C-w>v
 nnoremap <leader>s <C-w>s
