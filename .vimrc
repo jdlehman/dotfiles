@@ -127,7 +127,7 @@ highlight GitGutterDelete ctermfg=1 ctermbg=234
 " hide help text at top
 let g:netrw_banner=0
 " use current files directory
-let g:netrw_keepdir= 0
+let g:netrw_keepdir=0
 
 " Prevent ag from leaking into terminal
 set shellpipe=>
@@ -175,7 +175,6 @@ set autoread                          " reload files changed outside of vim
 set viminfo^=%                        " Remember info about open buffers on close
 set nofoldenable                      " disable folding
 set linebreak                         " do not split up words when wrapping
-set autochdir                         " automatically change working directory to directory of current file
 set encoding=utf-8                    " use utf-8 encoding
 "set showcmd                          " Show command that is being typed
 
@@ -293,6 +292,20 @@ cnoreabbrev W w
 cnoreabbrev Q q
 cnoreabbrev Wq wq
 
+" =========
+" Functions
+" =========
+function! SetProjectRoot()
+  lcd %:p:h
+  let gitdir=system("git rev-parse --show-toplevel")
+  " See if the command output starts with 'fatal' (if it does, not in a git repo)
+  let isnotgitdir=matchstr(gitdir, '^fatal:.*')
+  " if git project, change local directory to git project root
+  if empty(isnotgitdir)
+    lcd `=gitdir`
+  endif
+endfunction
+
 " =============
 " Auto commands
 " =============
@@ -311,6 +324,12 @@ augroup file_type_group
   autocmd BufNewFile,BufRead *.json set filetype=javascript
   " set md to markdown file type
   autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+augroup END
+
+" open buffer
+augroup buf_enter
+  autocmd!
+  autocmd BufRead * call SetProjectRoot()
 augroup END
 
 " Autocommands that do not fit anywhere else
