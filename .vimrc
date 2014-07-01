@@ -153,7 +153,7 @@ set smartindent                       " Auto indent based on c-like rules
 set backspace=indent,eol,start        " Allow vim to backspace like normal in insert mode
 set incsearch                         " Begin searching as soon as text is entered
 set hlsearch                          " Highlight search results
-set smartcase                         " Case insensitive searches
+set ignorecase smartcase              " Case insensitive searches unless capital letter used
 set number                            " Show line numbers
 set relativenumber                    " Show relative line numbers (in conjuction with number, shows relative numbers and line number on cursor)
 set nowrap                            " Do not wrap text
