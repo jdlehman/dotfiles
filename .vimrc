@@ -209,6 +209,11 @@ vnoremap / /\v
 " toggle word wrap
 nnoremap <leader>w :set wrap!<cr>
 
+" move up and down by screen line, not file line
+" makes dealing with line wrapping easier
+nnoremap j gj
+nnoremap k gk
+
 " map - to explore
 nnoremap - :Explore<cr>
 
