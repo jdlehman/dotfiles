@@ -161,8 +161,8 @@ endif
   set showmatch                         " Shows matching {,(,if etc. when typing closing },),end
   set history=1000                      " Set # of commands to keep in history
   set wildignore+=*.swp,*.class,*.o     " Ignore files with these extensions
-  set backupdir=~/.vim/backup           " Set backup directory
-  set directory=~/.vim/backup           " Set backup directory
+  set backupdir^=~/.vim/.backup//       " Where to store backup files
+  set directory^=~/.vim/.tmp//          " Where to store swap files
   set splitright                        " open vertical splits to the right
   set splitbelow                        " open horizontal splits below
   set timeoutlen=300                    " Set key stroke timeout
@@ -181,7 +181,7 @@ endif
 
 " persist undos across sessions (github/joelhooks/dotfiles)
 if has("persistent_undo")
-  set undodir=~/.vim/undodir
+  set undodir^=~/.vim/.undo//
   set undofile
 endif
 
