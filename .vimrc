@@ -178,6 +178,11 @@ endif
   "set showcmd                          " Show command that is being typed
 " }}}
 
+" use Ag if available instead of grep
+if executable("ag")
+  set grepprg=ag\ --nogroup\ --nocolor\ --column\ --smart-case
+endif
+
 " persist undos across sessions (github/joelhooks/dotfiles)
 if has("persistent_undo")
   set undodir^=~/.vim/.undo//
