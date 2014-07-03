@@ -211,6 +211,8 @@ endif
   " makes dealing with line wrapping easier
   nnoremap j gj
   nnoremap k gk
+  vnoremap j gj
+  vnoremap k gk
 
   " map - to explore
   nnoremap - :Explore<cr>
