@@ -173,7 +173,6 @@ endif
   set cursorline                        " highlight current line
   set autoread                          " reload files changed outside of vim
   set viminfo^=%                        " Remember info about open buffers on close
-  set nofoldenable                      " disable folding
   set linebreak                         " do not split up words when wrapping
   set encoding=utf-8                    " use utf-8 encoding
   "set showcmd                          " Show command that is being typed
