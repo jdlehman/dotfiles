@@ -18,7 +18,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
     Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
     Plug 'cakebaker/scss-syntax.vim', { 'for': 'scss' }
-    Plug 'mattn/emmet-vim', { 'for': ['html', 'eruby'] }
+    Plug 'tristen/vim-sparkup', { 'for': ['html', 'eruby'] }
 
     " Searching
     Plug 'rking/ag.vim', { 'on': 'Ag' }
