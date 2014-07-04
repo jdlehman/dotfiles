@@ -60,34 +60,34 @@ filetype plugin indent on   " Required by vundle
     \   'right': [ ['lineinfo'], ['percent'], ['filetype'] ]
     \ },
     \ 'component_function': {
-    \   'modified': 'MyModified',
-    \   'readonly': 'MyReadOnly',
-    \   'filename': 'MyFilename',
-    \   'filetype': 'MyFiletype',
-    \   'fugitive': 'MyFugitive',
-    \   'gitgutter': 'MyGitGutter'
+    \   'modified': 'JLModified',
+    \   'readonly': 'JLReadOnly',
+    \   'filename': 'JLFilename',
+    \   'filetype': 'JLFiletype',
+    \   'fugitive': 'JLFugitive',
+    \   'gitgutter': 'JLGitGutter'
     \ },
     \ 'separator': { 'left': "\ue0b0", 'right': "\ue0b2" },
     \ 'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3" },
   \ }
 
-  function! MyModified()
+  function! JLModified()
     return &filetype =~ 'help\|netrw\|gundo' ? '' : &modified ? '+' : &modifiable ? '' : '-'
   endfunction
 
-  function! MyReadonly()
+  function! JLReadonly()
     return &filetype !~? 'help\|netrw\|gundo' && &readonly ? 'RO' : ''
   endfunction
 
-  function! MyFilename()
+  function! JLFilename()
     " use full path or just file name depending on screen width
     let filename = winwidth(0) > 90 ? expand('%:p') : expand('%:t')
-    return ('' != MyReadonly() ? MyReadonly() . ' ' : '') .
+    return ('' != JLReadonly() ? JLReadonly() . ' ' : '') .
            \ ('' != filename ? filename : '[No Name]') .
-           \ ('' != MyModified() ? ' ' . MyModified() : '')
+           \ ('' != JLModified() ? ' ' . JLModified() : '')
   endfunction
 
-  function! MyFugitive()
+  function! JLFugitive()
     if expand('%:t') !~? 'Gundo' && exists('*fugitive#head')
       let mark = ''  " edit here for cool mark
       let _ = fugitive#head()
@@ -96,11 +96,11 @@ filetype plugin indent on   " Required by vundle
     return ''
   endfunction
 
-  function! MyFiletype()
+  function! JLFiletype()
     return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype : 'no filetype') : ''
   endfunction
 
-  function! MyGitGutter()
+  function! JLGitGutter()
     let gitdata = GitGutterGetHunkSummary()
     let added = gitdata[0] > 0 ? gitdata[0] . '+ ' : ''
     let modified = gitdata[1] > 0 ? gitdata[1] . '~ ' : ''
@@ -308,7 +308,7 @@ endif
 " }}}
 
 " FUNCTIONS {{{
-  function! SetProjectRoot()
+  function! JLSetProjectRoot()
     lcd %:p:h
     let gitdir=system("git rev-parse --show-toplevel")
     " See if the command output starts with 'fatal' (if it does, not in a git repo)
@@ -341,7 +341,7 @@ endif
   " open buffer
   augroup buf_enter
     autocmd!
-    autocmd BufRead * call SetProjectRoot()
+    autocmd BufRead * call JLSetProjectRoot()
   augroup END
 
   " Autocommands that do not fit anywhere else
