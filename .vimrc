@@ -308,7 +308,15 @@ endif
 " }}}
 
 " FUNCTIONS {{{
+  " set working directory to git project root
+  " or directory of current file if not git project
   function! JLSetProjectRoot()
+    let currentFile = expand('%:p')
+    " do not mess with 'fugitive://' etc
+    if currentFile =~ '^\w\+:/'
+      return
+    endif
+
     lcd %:p:h
     let gitdir=system("git rev-parse --show-toplevel")
     " See if the command output starts with 'fatal' (if it does, not in a git repo)
