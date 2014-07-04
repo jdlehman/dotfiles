@@ -2,41 +2,33 @@ set nocompatible
 " SET UP VUNDLE {{{
   filetype off    " Required by vundle
 
-  " set runtime path to include vundle and initialize
-  set rtp+=~/.vim/bundle/Vundle.vim
-  call vundle#begin()
-
+call plug#begin('~/.vim/plugged')
   " PLUGINS {{{
-    Plugin 'gmarik/Vundle.vim'
-
     " Style
-    Plugin 'altercation/vim-colors-solarized'
-    Plugin 'itchyny/lightline.vim'
+    Plug 'altercation/vim-colors-solarized'
+    Plug 'itchyny/lightline.vim'
 
     " git related
-    Plugin 'tpope/vim-fugitive'
-    Plugin 'airblade/vim-gitgutter'
+    Plug 'tpope/vim-fugitive'
+    Plug 'airblade/vim-gitgutter'
 
     " Language specific
-    Plugin 'tpope/vim-rails'
-    Plugin 'kchmck/vim-coffee-script'
-    Plugin 'pangloss/vim-javascript'
-    Plugin 'cakebaker/scss-syntax.vim'
-    Plugin 'mattn/emmet-vim'
+    Plug 'tpope/vim-rails'
+    Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
+    Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
+    Plug 'cakebaker/scss-syntax.vim', { 'for': 'scss' }
+    Plug 'mattn/emmet-vim', { 'for': ['html', 'eruby'] }
 
     " Searching
-    Plugin 'rking/ag.vim'
-    Plugin 'junegunn/fzf'
+    Plug 'rking/ag.vim', { 'on': 'Ag' }
+    Plug 'junegunn/fzf', { 'on': 'FZF' }
 
     " Helpful tools
-    Plugin 'tpope/vim-surround'
-    Plugin 'tpope/vim-commentary'
-    Plugin 'sjl/gundo.vim'
+    Plug 'tpope/vim-surround'
+    Plug 'tpope/vim-commentary'
+    Plug 'sjl/gundo.vim', { 'on': 'GundoToggle' }
   " }}}
-
-  " all plugins must be added before here
-  call vundle#end()
-" }}}
+call plug#end()
 
 filetype plugin indent on   " Required by vundle
 
@@ -199,7 +191,7 @@ endif
   nnoremap <leader>sv :source $MYVIMRC<cr> :nohl <cr>
 
   " Reinstall/update bundles using vundle
-  nnoremap <leader>bv :PluginClean<cr>:PluginInstall<cr>
+  nnoremap <leader>bv :PlugUpdate<cr>:PlugClean!<cr>:PlugInstall<cr>
 
   " Toggle between light/dark theme
   call togglebg#map("<leader>b")
