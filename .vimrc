@@ -326,7 +326,20 @@ endif
       lcd `=gitdir`
     endif
   endfunction
-" }}}
+
+  " follow symlinked file
+  function! JLFollowSymlink()
+    let currentFile = expand('%:p')
+    " do not mess with 'fugitive://' etc
+    if currentFile =~ '^\w\+:/'
+      return
+    endif
+    if getftype(currentFile) == 'link'
+      let actualFile = resolve(currentFile)
+      silent! exec 'file ' . actualFile
+    end
+  endfunction
+  " }}}
 
 " AUTO COMMANDS {{{
   augroup insert_group
@@ -349,7 +362,9 @@ endif
   " open buffer
   augroup buf_enter
     autocmd!
-    autocmd BufRead * call JLSetProjectRoot()
+    autocmd BufRead *
+      \ call JLFollowSymlink() |
+      \ call JLSetProjectRoot()
   augroup END
 
   " Autocommands that do not fit anywhere else
