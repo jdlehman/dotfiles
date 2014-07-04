@@ -7,6 +7,7 @@ call plug#begin('~/.vim/plugged')
     " Style
     Plug 'altercation/vim-colors-solarized'
     Plug 'itchyny/lightline.vim'
+    Plug 'junegunn/limelight.vim', { 'on': 'Limelight' }
 
     " git related
     Plug 'tpope/vim-fugitive'
@@ -38,6 +39,10 @@ filetype plugin indent on   " Required by vundle
   let g:solarized_hitrail = 1
   set background=dark
   colorscheme solarized
+
+  " Limelight settings
+  let g:limelight_conceal_ctermfg = 'gray'
+  let g:limelight_conceal_ctermfg = 240
 
   nnoremap <leader>z :call Test()<cr>
   function! Test()
@@ -256,6 +261,9 @@ endif
 
   " Highlight git gutter change lines
   nnoremap <leader>c :GitGutterLineHighlightsToggle<cr>
+
+  " Toggle Limelight highlighting
+  nnoremap <leader>l :Limelight!!<cr>
 
   " Open splits (v vertical, s horizontal)
   nnoremap <leader>v <C-w>v
