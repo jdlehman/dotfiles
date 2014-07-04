@@ -199,7 +199,7 @@ endif
   nnoremap <leader>bv :PlugUpdate<cr>:PlugClean!<cr>:PlugInstall<cr>
 
   " Toggle between light/dark theme
-  call togglebg#map("<leader>b")
+  call togglebg#map("<leader>bg")
 
   " use magic regex by default
   " don't have to escape everything anymore
