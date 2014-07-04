@@ -325,8 +325,8 @@ endif
     autocmd!
     " show number when in insert mode show relative number with
     " number on current line outside of insert mode
-    autocmd InsertEnter * :set number | :set norelativenumber
-    autocmd InsertLeave * :set relativenumber
+    autocmd InsertEnter * set number | set norelativenumber
+    autocmd InsertLeave * set relativenumber
   augroup END
 
   " File Types
