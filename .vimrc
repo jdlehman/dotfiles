@@ -223,7 +223,7 @@ endif
   vnoremap <leader>y "*y
   nnoremap <leader>y "*y
   " Paste from the system clipboard using paste mode
-  noremap <leader>p :set paste<CR>:put  *<CR>:set nopaste<CR>
+  noremap <leader>p :set paste<cr>:put  *<cr>:set nopaste<cr>
 
   " Go to mark
   nnoremap <leader>g `
@@ -243,12 +243,12 @@ endif
   nnoremap <leader>f :FZF<cr>
 
   " toggle gundo
-  nnoremap <leader>u :GundoToggle<CR>
+  nnoremap <leader>u :GundoToggle<cr>
 
   " Quickly escape insert mode with jk
-  inoremap jk <ESC>
+  inoremap jk <esc>
   " quickly escape visual mode with space
-  vnoremap <space> <ESC>
+  vnoremap <space> <esc>
 
   " Map space to colon
   nnoremap <space> :
@@ -266,32 +266,32 @@ endif
   nnoremap <leader>l :Limelight!!<cr>
 
   " Open splits (v vertical, s horizontal)
-  nnoremap <leader>v <C-w>v
-  nnoremap <leader>s <C-w>s
+  nnoremap <leader>v <c-w>v
+  nnoremap <leader>s <c-w>s
 
   " Move around splits
-  nnoremap <C-h> <C-w>h
-  nnoremap <C-j> <C-w>j
-  nnoremap <C-k> <C-w>k
-  nnoremap <C-l> <C-w>l
+  nnoremap <c-h> <c-w>h
+  nnoremap <c-j> <c-w>j
+  nnoremap <c-k> <c-w>k
+  nnoremap <c-l> <c-w>l
 
   " Open new tabs
   nnoremap <leader>t :tabnew<cr>
   " Switch between tabs is gt
   " open current split in new tab
-  nnoremap <leader>nt <C-w>T
+  nnoremap <leader>nt <c-w>T
 
   " Arrow keys resize current viewport
-  nnoremap <Left> :vertical resize -5<CR>
-  nnoremap <Right> :vertical resize +5<CR>
-  nnoremap <Up> :resize +5<CR>
-  nnoremap <Down> :resize -5<CR>
+  nnoremap <left> :vertical resize -5<cr>
+  nnoremap <right> :vertical resize +5<cr>
+  nnoremap <up> :resize +5<cr>
+  nnoremap <Down> :resize -5<cr>
 
   " move visual blocks of text
-  vnoremap <Left> <gv^
-  vnoremap <Right> >gv^
-  vnoremap <Up> xkP`[V`]
-  vnoremap <Down> xp`[V`]
+  vnoremap <left> <gv^
+  vnoremap <right> >gv^
+  vnoremap <up> xkP`[V`]
+  vnoremap <down> xp`[V`]
 
   " select last text visual selected
   " normal gv does this based on line numbers
