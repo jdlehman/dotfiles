@@ -39,12 +39,6 @@ filetype plugin indent on   " Required by vundle
   set background=dark
   colorscheme solarized
 
-  nnoremap <leader>z :call Test()<cr>
-  function! Test()
-    let items = fzf#run({ 'options': '-m +c', 'dir': '&pwd', 'source': 'Ag' })
-    echo items
-  endfunction
-
   " *********************
   " Begin lightline setup
   " *********************
