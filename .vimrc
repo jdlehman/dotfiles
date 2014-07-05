@@ -167,6 +167,7 @@ endif
   set viminfo^=%                        " Remember info about open buffers on close
   set linebreak                         " do not split up words when wrapping
   set encoding=utf-8                    " use utf-8 encoding
+  set path=**                           " set path to ** off current directory
   "set showcmd                          " Show command that is being typed
 " }}}
 
