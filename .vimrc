@@ -1,8 +1,6 @@
 set nocompatible
-" SET UP VUNDLE {{{
-  filetype off    " Required by vundle
-
-call plug#begin('~/.vim/plugged')
+" SET UP vim-plug {{{
+  call plug#begin('~/.vim/plugged')
   " PLUGINS {{{
     " Style
     Plug 'altercation/vim-colors-solarized'
@@ -28,104 +26,87 @@ call plug#begin('~/.vim/plugged')
     Plug 'tpope/vim-commentary'
     Plug 'sjl/gundo.vim', { 'on': 'GundoToggle' }
   " }}}
-call plug#end()
+  call plug#end()
 
-filetype plugin indent on   " Required by vundle
-
-" PLUGIN SETTINGS {{{
-  " Use solarized theme
-  syntax enable
-  let g:solarized_hitrail = 1
-  set background=dark
-  colorscheme solarized
-
-  " *********************
-  " Begin lightline setup
-  " *********************
-  set laststatus=2
-  let g:lightline = {
-    \ 'active': {
-    \   'left': [ ['mode', 'paste'], ['gitgutter', 'fugitive', 'filename'] ],
-    \   'right': [ ['lineinfo'], ['percent'], ['filetype'] ]
-    \ },
-    \ 'component_function': {
-    \   'modified': 'JLModified',
-    \   'readonly': 'JLReadOnly',
-    \   'filename': 'JLFilename',
-    \   'filetype': 'JLFiletype',
-    \   'fugitive': 'JLFugitive',
-    \   'gitgutter': 'JLGitGutter'
-    \ },
-    \ 'separator': { 'left': "\ue0b0", 'right': "\ue0b2" },
-    \ 'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3" },
-  \ }
-
-  function! JLModified()
-    return &filetype =~ 'help\|netrw\|gundo' ? '' : &modified ? '+' : &modifiable ? '' : '-'
-  endfunction
-
-  function! JLReadonly()
-    return &filetype !~? 'help\|netrw\|gundo' && &readonly ? 'RO' : ''
-  endfunction
-
-  function! JLFilename()
-    " use full path or just file name depending on screen width
-    let filename = winwidth(0) > 90 ? expand('%:p') : expand('%:t')
-    return ('' != JLReadonly() ? JLReadonly() . ' ' : '') .
-           \ ('' != filename ? filename : '[No Name]') .
-           \ ('' != JLModified() ? ' ' . JLModified() : '')
-  endfunction
-
-  function! JLFugitive()
-    if expand('%:t') !~? 'Gundo' && exists('*fugitive#head')
-      let mark = ''  " edit here for cool mark
-      let _ = fugitive#head()
-      return strlen(_) ? mark._ : ''
-    endif
-    return ''
-  endfunction
-
-  function! JLFiletype()
-    return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype : 'no filetype') : ''
-  endfunction
-
-  function! JLGitGutter()
-    let gitdata = GitGutterGetHunkSummary()
-    let added = gitdata[0] > 0 ? gitdata[0] . '+ ' : ''
-    let modified = gitdata[1] > 0 ? gitdata[1] . '~ ' : ''
-    let deleted = gitdata[2] > 0 ? gitdata[2] . '-' : ''
-    return winwidth(0) > 80 ? (added . modified . deleted) : ''
-  endfunction
-  " *******************
-  " End lightline setup
-  " *******************
-
-  " gitgutter settings
-  " performance gain
-  let g:gitgutter_realtime = 0
-  let g:gitgutter_eager = 0
-  " appearance
-  highlight SignColumn ctermbg=234
-  highlight GitGutterAdd ctermfg=2 ctermbg=234
-  highlight GitGutterChange ctermfg=3 ctermbg=234
-  highlight GitGutterDelete ctermfg=1 ctermbg=234
+  filetype plugin indent on   " Required by vundle
 " }}}
 
-" netrw settings
-" hide help text at top
-let g:netrw_banner=0
-" use current files directory
-let g:netrw_keepdir=0
+" PLUGIN SETTINGS {{{
+  " SOLARIZED {{{
+    syntax enable
+    let g:solarized_hitrail = 1
+    set background=dark
+    colorscheme solarized
+  " }}}
 
-" Prevent ag from leaking into terminal
-set shellpipe=>
+  " LIGHTLINE {{{
+    set laststatus=2
+    let g:lightline = {
+      \ 'active': {
+      \   'left': [ ['mode', 'paste'], ['gitgutter', 'fugitive', 'filename'] ],
+      \   'right': [ ['lineinfo'], ['percent'], ['filetype'] ]
+      \ },
+      \ 'component_function': {
+      \   'modified': 'JLModified',
+      \   'readonly': 'JLReadOnly',
+      \   'filename': 'JLFilename',
+      \   'filetype': 'JLFiletype',
+      \   'fugitive': 'JLFugitive',
+      \   'gitgutter': 'JLGitGutter'
+      \ },
+      \ 'separator': { 'left': "\ue0b0", 'right': "\ue0b2" },
+      \ 'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3" },
+    \ }
 
-" Fix mouse bug in iterm
-" Without this, clicking on parts of
-" rightmost split does not work correctly
-if has('mouse_sgr')
-  set ttymouse=sgr
-endif
+    function! JLModified()
+      return &filetype =~ 'help\|netrw\|gundo' ? '' : &modified ? '+' : &modifiable ? '' : '-'
+    endfunction
+
+    function! JLReadonly()
+      return &filetype !~? 'help\|netrw\|gundo' && &readonly ? 'RO' : ''
+    endfunction
+
+    function! JLFilename()
+      " use full path or just file name depending on screen width
+      let filename = winwidth(0) > 90 ? expand('%:p') : expand('%:t')
+      return ('' != JLReadonly() ? JLReadonly() . ' ' : '') .
+             \ ('' != filename ? filename : '[No Name]') .
+             \ ('' != JLModified() ? ' ' . JLModified() : '')
+    endfunction
+
+    function! JLFugitive()
+      if expand('%:t') !~? 'Gundo' && exists('*fugitive#head')
+        let mark = ''  " edit here for cool mark
+        let _ = fugitive#head()
+        return strlen(_) ? mark._ : ''
+      endif
+      return ''
+    endfunction
+
+    function! JLFiletype()
+      return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype : 'no filetype') : ''
+    endfunction
+
+    function! JLGitGutter()
+      let gitdata = GitGutterGetHunkSummary()
+      let added = gitdata[0] > 0 ? gitdata[0] . '+ ' : ''
+      let modified = gitdata[1] > 0 ? gitdata[1] . '~ ' : ''
+      let deleted = gitdata[2] > 0 ? gitdata[2] . '-' : ''
+      return winwidth(0) > 80 ? (added . modified . deleted) : ''
+    endfunction
+  " }}}
+
+  " GITGUTTER {{{
+    " performance gain
+    let g:gitgutter_realtime = 0
+    let g:gitgutter_eager = 0
+    " appearance
+    highlight SignColumn ctermbg=234
+    highlight GitGutterAdd ctermfg=2 ctermbg=234
+    highlight GitGutterChange ctermfg=3 ctermbg=234
+    highlight GitGutterDelete ctermfg=1 ctermbg=234
+  " }}}
+" }}}
 
 " STANDARD VIM ATTRIBUTES/SETTINGS {{{
   set mouse=a                           " Allow scrolling and make vim clickable
@@ -162,128 +143,173 @@ endif
   set linebreak                         " do not split up words when wrapping
   set encoding=utf-8                    " use utf-8 encoding
   set path=**                           " set path to ** off current directory
+  " set colorcolumn=80                    " set highlighted column
   "set showcmd                          " Show command that is being typed
-" }}}
 
-" use Ag if available instead of grep
-if executable("ag")
-  set grepprg=ag\ --nogroup\ --nocolor\ --column\ --smart-case
-endif
-
-" persist undos across sessions (github/joelhooks/dotfiles)
-if has("persistent_undo")
-  set undodir^=~/.vim/.undo//
-  set undofile
-endif
-
-" KEY MAPPINGS {{{
-  " Map leaders
-  let mapleader=','
-  let maplocalleader = "\\"
-
-  " Quickly open and reload vimrc
-  nnoremap <leader>ev :vsplit $MYVIMRC<cr>
-  nnoremap <leader>sv :source $MYVIMRC<cr> :nohl <cr>
-
-  " Reinstall/update bundles using vundle
-  nnoremap <leader>bv :PlugUpdate<cr>:PlugClean!<cr>:PlugInstall<cr>
-
-  " Toggle between light/dark theme
-  call togglebg#map("<leader>bg")
-
-  " use magic regex by default
-  " don't have to escape everything anymore
-  nnoremap / /\v
-  vnoremap / /\v
-
-  " toggle word wrap
-  nnoremap <leader>w :set wrap!<cr>
-
-  " move up and down by screen line, not file line
-  " makes dealing with line wrapping easier
-  nnoremap j gj
-  nnoremap k gk
-  vnoremap j gj
-  vnoremap k gk
-
-  " map - to explore
-  nnoremap - :Explore<cr>
-
-  " Copy to system clipboard
-  vnoremap <leader>y "*y
-  nnoremap <leader>y "*y
-  " Paste from the system clipboard using paste mode
-  noremap <leader>p :set paste<cr>:put  *<cr>:set nopaste<cr>
-
-  " Go to mark
-  nnoremap <leader>g `
-
-  " AG.VIM {{{
-    " Search all text in quickfix window
-    nnoremap <leader>a :Ag!<space>
-    " Search file names in quickfix window
-    nnoremap <leader>af :AgFile!<space>
-    " open quickfix window
-    nnoremap <leader>ao :copen<cr>
-    " close quickfix window
-    nnoremap <leader>ac :ccl<cr>
+  " NETRW {{{
+    " hide help text at top
+    let g:netrw_banner=0
+    " use current files directory
+    let g:netrw_keepdir=0
   " }}}
 
-  " fzf fuzzy search
-  nnoremap <leader>f :FZF<cr>
+  " Prevent ag from leaking into terminal
+  set shellpipe=>
 
-  " toggle gundo
-  nnoremap <leader>u :GundoToggle<cr>
+  " Fix mouse bug in iterm
+  " Without this, clicking on parts of
+  " rightmost split does not work correctly
+  if has('mouse_sgr')
+    set ttymouse=sgr
+  endif
 
-  " Quickly escape insert mode with jk
-  inoremap jk <esc>
-  " quickly escape visual mode with space
-  vnoremap <space> <esc>
+  " use Ag if available instead of grep
+  if executable("ag")
+    set grepprg=ag\ --nogroup\ --nocolor\ --column\ --smart-case
+  endif
 
-  " Map space to colon
-  nnoremap <space> :
+  " persist undos across sessions (github/joelhooks/dotfiles)
+  if has("persistent_undo")
+    set undodir^=~/.vim/.undo//
+    set undofile
+  endif
+" }}}
 
-  " Remove trailing spaces
-  nnoremap <leader><space> :%s/\s\+$<cr>
+" KEY MAPPINGS {{{
+  " LEADERS {{{
+    let mapleader=','
+    let maplocalleader = "\\"
+  " }}}
 
-  " Turn off highlight
-  nnoremap <leader>h :nohl<cr>
+  " VIMRC {{{
+    " Quickly open and reload vimrc
+    nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+    nnoremap <leader>sv :source $MYVIMRC<cr> :nohl <cr>
 
-  " Highlight git gutter change lines
-  nnoremap <leader>c :GitGutterLineHighlightsToggle<cr>
+    " Reinstall/update bundles using vim-plug
+    nnoremap <leader>bv :PlugUpdate<cr>:PlugClean!<cr>:PlugInstall<cr>
+  " }}}
 
-  " Open splits (v vertical, s horizontal)
-  nnoremap <leader>v <c-w>v
-  nnoremap <leader>s <c-w>s
+  " PLUGINS {{{
+    " SOLARIZED {{{
+      " Toggle between light/dark theme
+      call togglebg#map("<leader>bg")
+    " }}}
 
-  " Move around splits
-  nnoremap <c-h> <c-w>h
-  nnoremap <c-j> <c-w>j
-  nnoremap <c-k> <c-w>k
-  nnoremap <c-l> <c-w>l
+    " AG.VIM {{{
+      " Search all text in quickfix window
+      nnoremap <leader>a :Ag!<space>
+      " Search file names in quickfix window
+      nnoremap <leader>af :AgFile!<space>
+      " open quickfix window
+      nnoremap <leader>ao :copen<cr>
+      " close quickfix window
+      nnoremap <leader>ac :ccl<cr>
+    " }}}
 
-  " Open new tabs
-  nnoremap <leader>t :tabnew<cr>
-  " Switch between tabs is gt
-  " open current split in new tab
-  nnoremap <leader>nt <c-w>T
+    " FZF {{{
+      nnoremap <leader>f :FZF<cr>
+    " }}}
 
-  " Arrow keys resize current viewport
-  nnoremap <left> :vertical resize -5<cr>
-  nnoremap <right> :vertical resize +5<cr>
-  nnoremap <up> :resize +5<cr>
-  nnoremap <Down> :resize -5<cr>
+    " GUNDO {{{
+      " toggle gundo
+      nnoremap <leader>u :GundoToggle<cr>
+    " }}}
 
-  " move visual blocks of text
-  vnoremap <left> <gv^
-  vnoremap <right> >gv^
-  vnoremap <up> xkP`[V`]
-  vnoremap <down> xp`[V`]
+    " GITGUTTER {{{
+      " Highlight git gutter change lines
+      nnoremap <leader>c :GitGutterLineHighlightsToggle<cr>
+    " }}}
+  " }}}
 
-  " select last text visual selected
-  " normal gv does this based on line numbers
-  " so is inaccurate if the visual line is moved
-  nnoremap gv `[v`]
+  " MOVEMENT {{{
+    " move up and down by screen line, not file line
+    " makes dealing with line wrapping easier
+    nnoremap j gj
+    nnoremap k gk
+    vnoremap j gj
+    vnoremap k gk
+
+    " Arrow keys resize current viewport
+    nnoremap <left> :vertical resize -5<cr>
+    nnoremap <right> :vertical resize +5<cr>
+    nnoremap <up> :resize +5<cr>
+    nnoremap <Down> :resize -5<cr>
+
+    " move visual blocks of text
+    vnoremap <left> <gv^
+    vnoremap <right> >gv^
+    vnoremap <up> xkP`[V`]
+    vnoremap <down> xp`[V`]
+  " }}}
+
+  " SEARCHING/REGEX {{{
+    " use magic regex by default
+    " don't have to escape everything anymore
+    nnoremap / /\v
+    vnoremap / /\v
+  " }}}
+
+  " SPLITS/TABS/BUFFERS {{{
+    " Open splits (v vertical, s horizontal)
+    nnoremap <leader>v <c-w>v
+    nnoremap <leader>s <c-w>s
+    " Move around splits
+    nnoremap <c-h> <c-w>h
+    nnoremap <c-j> <c-w>j
+    nnoremap <c-k> <c-w>k
+    nnoremap <c-l> <c-w>l
+
+    " Open new tabs
+    nnoremap <leader>t :tabnew<cr>
+    " Switch between tabs is gt
+    " open current split in new tab
+    nnoremap <leader>nt <c-w>T
+
+    " see open buffers and select one
+    nnoremap <leader>l :ls<cr>:b<space>
+  " }}}
+
+  " COPY/PASTING {{{
+    " Copy to system clipboard
+    vnoremap <leader>y "*y
+    nnoremap <leader>y "*y
+    " Paste from the system clipboard using paste mode
+    noremap <leader>p :set paste<cr>:put  *<cr>:set nopaste<cr>
+  " }}}
+
+  " FILE EXPLORATION {{{
+    " map - to explore
+    nnoremap - :Explore<cr>
+  " }}}
+
+  " PRESENTATION UTILITIES {{{
+    " toggle word wrap
+    nnoremap <leader>w :set wrap!<cr>
+
+    " Turn off highlight
+    nnoremap <leader>h :nohl<cr>
+
+    " Remove trailing spaces
+    nnoremap <leader><space> :%s/\s\+$<cr>``
+  " }}}
+
+  " MODE CHANGING {{{
+    " Quickly escape insert mode with jk
+    inoremap jk <esc>
+    " quickly escape visual mode with space
+    vnoremap <space> <esc>
+  " }}}
+
+  " MISC {{{
+    " Map space to colon
+    nnoremap <space> :
+
+    " select last text visual selected
+    " normal gv does this based on line numbers
+    " so is inaccurate if the visual line is moved
+    nnoremap gv `[v`]
+  " }}}
 " }}}
 
 " ABBREVIATIONS {{
