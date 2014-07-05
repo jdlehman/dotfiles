@@ -65,7 +65,8 @@ source ~/.fzf.zsh
 
 export FZF_DEFAULT_OPTS='-x -m'
 # Setting ag as the default source for fzf
-# export FZF_DEFAULT_COMMAND='ag -l -g ""'
+# also forces FZF to respect .gitignore
+export FZF_DEFAULT_COMMAND='ag -l -g ""'
 
 
 # -------------
