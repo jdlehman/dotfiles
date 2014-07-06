@@ -285,7 +285,7 @@ set nocompatible
 
   " PRESENTATION UTILITIES {{{
     " toggle word wrap
-    nnoremap <leader>w :set wrap!<cr>
+    nnoremap <leader>w :setlocal wrap!<cr>
 
     " Turn off highlight
     nnoremap <leader>h :nohl<cr>
