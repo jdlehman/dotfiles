@@ -174,7 +174,7 @@ set nocompatible
   endif
 
   " highlight trailing whitespaces
-  highlight TrailingWhiteSpace ctermfg=red
+  highlight TrailingWhiteSpace ctermbg=red
   match TrailingWhiteSpace /\s\+$/
 " }}}
 
@@ -377,6 +377,11 @@ set nocompatible
     " number on current line outside of insert mode
     autocmd InsertEnter * set number | set norelativenumber
     autocmd InsertLeave * set relativenumber
+
+    " do not show trailing whitespace in insert mode
+    autocmd InsertEnter * match TrailingWhiteSpace /\s\+\%#\@<!$/
+    " show trailing whitespace
+    autocmd InsertLeave * match TrailingWhiteSpace /\s\+$/
   augroup END
 
   " File Types
@@ -386,15 +391,21 @@ set nocompatible
     autocmd BufNewFile,BufRead *.json set filetype=javascript
     " set md to markdown file type
     autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+    " wrap on markdown files
     autocmd Filetype markdown setlocal wrap
   augroup END
 
-  " open buffer
-  augroup buf_enter
+  " buffer events
+  augroup buffer_events
     autocmd!
+    " follow symlink and set working directory
     autocmd BufRead *
       \ call JLFollowSymlink() |
       \ call JLSetProjectRoot()
+
+    " toggle trailing whitespace on bufwin enter/leave
+    autocmd BufWinEnter * match TrailingWhiteSpace /\s\+$/
+    autocmd BufWinLeave * call clearmatches()
   augroup END
 
   " Autocommands that do not fit anywhere else
