@@ -373,6 +373,7 @@ set nocompatible
     autocmd BufNewFile,BufRead *.json set filetype=javascript
     " set md to markdown file type
     autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+    autocmd Filetype markdown setlocal wrap
   augroup END
 
   " open buffer
