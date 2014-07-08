@@ -312,6 +312,10 @@ set nocompatible
     " normal gv does this based on line numbers
     " so is inaccurate if the visual line is moved
     nnoremap gv `[v`]
+
+    " show syntax Highlighting group for item under cursor
+    " useful for creating color schemes
+    nnoremap <c-s-h> :call <sid>SynStack()<cr>
   " }}}
 " }}}
 
@@ -355,7 +359,16 @@ set nocompatible
       silent! exec 'file ' . actualFile
     end
   endfunction
-  " }}}
+
+  " Show syntax highlighting groups for word under cursor
+  " via: http://vimcasts.org/episodes/creating-colorschemes-for-vim/
+  function! <sid>SynStack()
+    if !exists("*synstack")
+      return
+    endif
+    echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+  endfunction
+" }}}
 
 " AUTO COMMANDS {{{
   augroup insert_group
