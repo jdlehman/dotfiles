@@ -34,7 +34,6 @@ set nocompatible
 " PLUGIN SETTINGS {{{
   " SOLARIZED {{{
     syntax enable
-    let g:solarized_hitrail = 1
     set background=dark
     colorscheme solarized
   " }}}
@@ -173,6 +172,10 @@ set nocompatible
     set undodir^=~/.vim/.undo//
     set undofile
   endif
+
+  " highlight trailing whitespaces
+  highlight TrailingWhiteSpace ctermfg=red
+  match TrailingWhiteSpace /\s\+$/
 " }}}
 
 " KEY MAPPINGS {{{
