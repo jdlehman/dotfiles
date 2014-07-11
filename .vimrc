@@ -147,7 +147,8 @@ set nocompatible
   set linebreak                         " do not split up words when wrapping
   set encoding=utf-8                    " use utf-8 encoding
   set path=**                           " set path to ** off current directory
-  " set colorcolumn=80                    " set highlighted column
+  set display+=lastline                 " display as much of lastline as possible
+  " set colorcolumn=80                  " set highlighted column
   "set showcmd                          " Show command that is being typed
 
   " NETRW {{{
