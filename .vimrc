@@ -148,6 +148,8 @@ set nocompatible
   set encoding=utf-8                    " use utf-8 encoding
   set path=**                           " set path to ** off current directory
   set display+=lastline                 " display as much of lastline as possible
+  set scrolloff=5                       " minimum rows to keep above/below cursor
+  set sidescrolloff=5                   " minimum cols to keep left/right of cursor
   " set colorcolumn=80                  " set highlighted column
   "set showcmd                          " Show command that is being typed
 
