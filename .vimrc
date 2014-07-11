@@ -16,6 +16,7 @@ set nocompatible
     Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
     Plug 'cakebaker/scss-syntax.vim', { 'for': 'scss' }
     Plug 'tristen/vim-sparkup', { 'for': ['html', 'eruby'] }
+    Plug 'mustache/vim-mustache-handlebars', { 'for': 'html' }
 
     " Searching
     Plug 'rking/ag.vim', { 'on': 'Ag' }
@@ -104,6 +105,10 @@ set nocompatible
     highlight GitGutterAdd ctermfg=2 ctermbg=234
     highlight GitGutterChange ctermfg=3 ctermbg=234
     highlight GitGutterDelete ctermfg=1 ctermbg=234
+  " }}}
+
+  " MUSTACHE-HANDLEBARS {{{
+    let g:mustache_abbreviations = 1
   " }}}
 " }}}
 
