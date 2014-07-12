@@ -35,10 +35,13 @@ set nocompatible
 " PLUGIN SETTINGS {{{
   " SEOUL256 {{{
     syntax enable
-    set background=dark
-    let g:jl_theme='dark'
-    let g:seoul256_background = 234
     colorscheme seoul256
+    " default to dark colorscheme, unless already set to light
+    if exists('g:jl_theme') && g:jl_theme == 'light'
+      call JLSetTheme('light')
+    else
+      call JLSetTheme('dark')
+    endif
   " }}}
 
   " LIGHTLINE {{{
