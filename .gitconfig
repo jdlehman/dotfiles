@@ -10,7 +10,14 @@
   st = status
   co = checkout
   br = branch
-  ci = commit
+  ci = commit --verbose
+  di = diff
+  amend = commit --amend
+  noff = merge --no-ff
+  fa = fetch --all
+  pom = push origin master
   l = log  --pretty=\"format:%C(yellow)%h%Cblue%d%Creset %s %C(white) %an, %ar%Creset\" --graph
 [push]
   default = simple
+[merge]
+  tool = vimdiff
