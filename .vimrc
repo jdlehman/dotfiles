@@ -167,6 +167,12 @@ set nocompatible
   " Prevent ag from leaking into terminal
   set shellpipe=>
 
+  " Normally, Vim messes with iskeyword when you open a shell file. This can
+  " leak out, polluting other file types even after a 'set ft=' change. This
+  " variable prevents the iskeyword change so it can't hurt anyone.
+  " Via Gary Bernhardt
+  let g:sh_noisk=1
+
   " Fix mouse bug in iterm
   " Without this, clicking on parts of
   " rightmost split does not work correctly
