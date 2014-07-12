@@ -156,8 +156,8 @@ set nocompatible
   set scrolloff=5                       " minimum rows to keep above/below cursor
   set sidescrolloff=5                   " minimum cols to keep left/right of cursor
   set hidden                            " allow unsaved buffers to be hidden
+  set showcmd                           " Show command that is being typed
   " set colorcolumn=80                  " set highlighted column
-  "set showcmd                          " Show command that is being typed
 
   " NETRW {{{
     " hide help text at top
