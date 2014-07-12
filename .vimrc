@@ -19,7 +19,7 @@ set nocompatible
     Plug 'mustache/vim-mustache-handlebars', { 'for': 'html' }
 
     " Searching
-    Plug 'rking/ag.vim', { 'on': 'Ag' }
+    Plug 'rking/ag.vim', { 'on': ['Ag', 'AgAdd', 'AgHelp'] }
     Plug 'junegunn/fzf', { 'on': 'FZF' }
 
     " Helpful tools
@@ -29,7 +29,7 @@ set nocompatible
   " }}}
   call plug#end()
 
-  filetype plugin indent on   " Required by vundle
+  filetype plugin indent on
 " }}}
 
 " PLUGIN SETTINGS {{{
@@ -109,6 +109,11 @@ set nocompatible
 
   " MUSTACHE-HANDLEBARS {{{
     let g:mustache_abbreviations = 1
+  " }}}
+
+  " AG VIM {{{
+    " do not display mapping message
+    let g:ag_mapping_message=0
   " }}}
 " }}}
 
@@ -207,14 +212,20 @@ set nocompatible
     " }}}
 
     " AG.VIM {{{
-      " Search all text in quickfix window
+      " Search all text and add results tp location-list window
       nnoremap <leader>a :Ag!<space>
-      " Search file names in quickfix window
-      nnoremap <leader>af :AgFile!<space>
+      " append search to existing location-list
+      nnoremap <leader>aa :AgAdd<space>
+      " Search help files and add results to location-list window
+      nnoremap <leader>ah :AgHelp!<space>
       " open quickfix window
       nnoremap <leader>ao :copen<cr>
       " close quickfix window
       nnoremap <leader>ac :ccl<cr>
+      " next item in clearfix list
+      nnoremap <leader>j :cnext<cr>
+      " previous item in clearfix list
+      nnoremap <leader>k :cprev<cr>
     " }}}
 
     " FZF {{{
