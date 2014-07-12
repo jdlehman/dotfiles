@@ -3,7 +3,7 @@ set nocompatible
   call plug#begin('~/.vim/plugged')
   " PLUGINS {{{
     " Style
-    Plug 'altercation/vim-colors-solarized'
+    Plug 'junegunn/seoul256.vim'
     Plug 'itchyny/lightline.vim'
 
     " git related
@@ -33,10 +33,12 @@ set nocompatible
 " }}}
 
 " PLUGIN SETTINGS {{{
-  " SOLARIZED {{{
+  " SEOUL256 {{{
     syntax enable
     set background=dark
-    colorscheme solarized
+    let g:jl_theme='dark'
+    let g:seoul256_background = 234
+    colorscheme seoul256
   " }}}
 
   " LIGHTLINE {{{
@@ -214,9 +216,9 @@ set nocompatible
   " }}}
 
   " PLUGINS {{{
-    " SOLARIZED {{{
+    " SEOUL256 {{{
       " Toggle between light/dark theme
-      call togglebg#map("<leader>bg")
+      nnoremap <leader>bg :call JLToggleTheme()<cr>
     " }}}
 
     " AG.VIM {{{
@@ -412,6 +414,28 @@ set nocompatible
       return "\<c-p>"
     endif
   endfunction
+
+  " set theme light/dark
+  function! JLSetTheme(color)
+    if a:color == 'dark'
+      let g:seoul256_background = 234
+      colorscheme seoul256
+      let g:jl_theme = 'dark'
+    else
+      let g:seoul256_light_background = 253
+      colorscheme seoul256-light
+      let g:jl_theme = 'light'
+    endif
+  endfunction
+
+  " toggle theme light/dark
+  function! JLToggleTheme()
+    if g:jl_theme == 'dark'
+      call JLSetTheme('light')
+    else
+      call JLSetTheme('dark')
+    endif
+  endfunction
 " }}}
 
 " AUTO COMMANDS {{{
@@ -422,6 +446,7 @@ set nocompatible
     autocmd InsertEnter * set number | set norelativenumber
     autocmd InsertLeave * set relativenumber
 
+    " trailing whitespace
     " do not show trailing whitespace in insert mode
     autocmd InsertEnter * match TrailingWhiteSpace /\s\+\%#\@<!$/
     " show trailing whitespace
