@@ -157,6 +157,7 @@ set nocompatible
   set sidescrolloff=5                   " minimum cols to keep left/right of cursor
   set hidden                            " allow unsaved buffers to be hidden
   set showcmd                           " Show command that is being typed
+  set switchbuf=useopen,usetab          " Use already open buffers when switching buffers
   " set colorcolumn=80                  " set highlighted column
 
   " NETRW {{{
