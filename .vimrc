@@ -342,6 +342,11 @@ set nocompatible
     " show syntax Highlighting group for item under cursor
     " useful for creating color schemes
     nnoremap <c-s-h> :call <sid>SynStack()<cr>
+
+    " tab indents at beginning of line, otherwise forward completions
+    inoremap <tab> <c-r>=InsertTabWrapper()<cr>
+    " shift tab goes backwards through completions
+    inoremap <s-tab> <c-n>
   " }}}
 " }}}
 
@@ -393,6 +398,17 @@ set nocompatible
       return
     endif
     echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+  endfunction
+
+  " Multipurpose tab key via Gary Bernhardt
+  " indent if at beginning of line, else completion
+  function! InsertTabWrapper()
+    let col = col('.') - 1
+    if !col || getline('.')[col - 1] !~ '\k'
+      return "\<tab>"
+    else
+      return "\<c-p>"
+    endif
   endfunction
 " }}}
 
