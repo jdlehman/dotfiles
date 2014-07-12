@@ -32,6 +32,93 @@ set nocompatible
   filetype plugin indent on
 " }}}
 
+" at top to ensure functions are defined before use
+" FUNCTIONS {{{
+  " set working directory to git project root
+  " or directory of current file if not git project
+  function! JLSetProjectRoot()
+    let currentFile = expand('%:p')
+    " do not mess with 'fugitive://' etc
+    if currentFile =~ '^\w\+:/'
+      return
+    endif
+
+    lcd %:p:h
+    let gitdir=system("git rev-parse --show-toplevel")
+    " See if the command output starts with 'fatal' (if it does, not in a git repo)
+    let isnotgitdir=matchstr(gitdir, '^fatal:.*')
+    " if git project, change local directory to git project root
+    if empty(isnotgitdir)
+      lcd `=gitdir`
+    endif
+  endfunction
+
+  " follow symlinked file
+  function! JLFollowSymlink()
+    let currentFile = expand('%:p')
+    " do not mess with 'fugitive://' etc
+    if currentFile =~ '^\w\+:/'
+      return
+    endif
+    if getftype(currentFile) == 'link'
+      let actualFile = resolve(currentFile)
+      silent! exec 'file ' . actualFile
+    end
+  endfunction
+
+  " Show syntax highlighting groups for word under cursor
+  " via: http://vimcasts.org/episodes/creating-colorschemes-for-vim/
+  function! <sid>SynStack()
+    if !exists("*synstack")
+      return
+    endif
+    echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+  endfunction
+
+  " Multipurpose tab key via Gary Bernhardt
+  " indent if at beginning of line, else completion
+  function! InsertTabWrapper()
+    let col = col('.') - 1
+    if !col || getline('.')[col - 1] !~ '\k'
+      return "\<tab>"
+    else
+      return "\<c-p>"
+    endif
+  endfunction
+
+  " set theme light/dark
+  function! JLSetTheme(color)
+    if a:color == 'dark'
+      let g:seoul256_background = 234
+      colorscheme seoul256
+      let g:jl_theme = 'dark'
+    else
+      let g:seoul256_light_background = 253
+      colorscheme seoul256-light
+      let g:jl_theme = 'light'
+    endif
+  endfunction
+
+  " toggle theme light/dark
+  function! JLToggleTheme()
+    if g:jl_theme == 'dark'
+      call JLSetTheme('light')
+    else
+      call JLSetTheme('dark')
+    endif
+  endfunction
+
+  command! -nargs=0 -bar Qargs execute 'args ' . QuickfixFilenames()
+  function! QuickfixFilenames()
+    " Building a hash ensures we get each buffer only once
+    let buffer_numbers = {}
+    for quickfix_item in getqflist()
+      let buffer_numbers[quickfix_item['bufnr']] = bufname(quickfix_item['bufnr'])
+    endfor
+    return join(values(buffer_numbers))
+  endfunction
+" }}}
+
 " PLUGIN SETTINGS {{{
   " SEOUL256 {{{
     syntax enable
@@ -363,82 +450,6 @@ set nocompatible
   cnoreabbrev W w
   cnoreabbrev Q q
   cnoreabbrev Wq wq
-" }}}
-
-" FUNCTIONS {{{
-  " set working directory to git project root
-  " or directory of current file if not git project
-  function! JLSetProjectRoot()
-    let currentFile = expand('%:p')
-    " do not mess with 'fugitive://' etc
-    if currentFile =~ '^\w\+:/'
-      return
-    endif
-
-    lcd %:p:h
-    let gitdir=system("git rev-parse --show-toplevel")
-    " See if the command output starts with 'fatal' (if it does, not in a git repo)
-    let isnotgitdir=matchstr(gitdir, '^fatal:.*')
-    " if git project, change local directory to git project root
-    if empty(isnotgitdir)
-      lcd `=gitdir`
-    endif
-  endfunction
-
-  " follow symlinked file
-  function! JLFollowSymlink()
-    let currentFile = expand('%:p')
-    " do not mess with 'fugitive://' etc
-    if currentFile =~ '^\w\+:/'
-      return
-    endif
-    if getftype(currentFile) == 'link'
-      let actualFile = resolve(currentFile)
-      silent! exec 'file ' . actualFile
-    end
-  endfunction
-
-  " Show syntax highlighting groups for word under cursor
-  " via: http://vimcasts.org/episodes/creating-colorschemes-for-vim/
-  function! <sid>SynStack()
-    if !exists("*synstack")
-      return
-    endif
-    echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
-  endfunction
-
-  " Multipurpose tab key via Gary Bernhardt
-  " indent if at beginning of line, else completion
-  function! InsertTabWrapper()
-    let col = col('.') - 1
-    if !col || getline('.')[col - 1] !~ '\k'
-      return "\<tab>"
-    else
-      return "\<c-p>"
-    endif
-  endfunction
-
-  " set theme light/dark
-  function! JLSetTheme(color)
-    if a:color == 'dark'
-      let g:seoul256_background = 234
-      colorscheme seoul256
-      let g:jl_theme = 'dark'
-    else
-      let g:seoul256_light_background = 253
-      colorscheme seoul256-light
-      let g:jl_theme = 'light'
-    endif
-  endfunction
-
-  " toggle theme light/dark
-  function! JLToggleTheme()
-    if g:jl_theme == 'dark'
-      call JLSetTheme('light')
-    else
-      call JLSetTheme('dark')
-    endif
-  endfunction
 " }}}
 
 " AUTO COMMANDS {{{
