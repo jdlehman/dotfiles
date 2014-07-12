@@ -295,6 +295,8 @@ set nocompatible
 
     " see open buffers and select one
     nnoremap <leader>l :ls<cr>:b<space>
+    " switch to alternate file
+    nnoremap <leader><leader> <c-^>
   " }}}
 
   " COPY/PASTING {{{
