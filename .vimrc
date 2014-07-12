@@ -415,6 +415,9 @@ set nocompatible
 
     " Remove trailing spaces
     nnoremap <leader><space> :%s/\s\+$<cr>``
+
+    " Fix indent on code block (paragraph)
+    nnoremap <leader>= =ip
   " }}}
 
   " MODE CHANGING {{{
