@@ -9,6 +9,7 @@
 [alias]
   st = status
   co = checkout
+  cob = checkout -b
   br = branch
   ci = commit --verbose
   di = diff
