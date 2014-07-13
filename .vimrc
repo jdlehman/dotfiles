@@ -39,7 +39,7 @@ set nocompatible
   function! JLSetProjectRoot()
     let currentFile = expand('%:p')
     " do not mess with 'fugitive://' etc
-    if currentFile =~ '^\w\+:/'
+    if currentFile =~ '^\w\+:/' || &filetype =~ '^git'
       return
     endif
 
@@ -57,7 +57,7 @@ set nocompatible
   function! JLFollowSymlink()
     let currentFile = expand('%:p')
     " do not mess with 'fugitive://' etc
-    if currentFile =~ '^\w\+:/'
+    if currentFile =~ '^\w\+:/' || &filetype =~ '^git'
       return
     endif
     if getftype(currentFile) == 'link'
