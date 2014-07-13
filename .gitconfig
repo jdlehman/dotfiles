@@ -7,17 +7,23 @@
 [color]
 	ui = true
 [alias]
+  ; info
+  di = diff
   st = status
+  l = log  --pretty=\"format:%C(yellow)%h%Cblue%d%Creset %s %C(white) %an, %ar%Creset\" --graph
+  ; branching
   co = checkout
   cob = checkout -b
   br = branch
+  ; committing
   ci = commit --verbose
-  di = diff
   amend = commit --amend
-  noff = merge --no-ff
+  ; pulling/fetching
   fa = fetch --all
+  ; pushing
   pom = push origin master
-  l = log  --pretty=\"format:%C(yellow)%h%Cblue%d%Creset %s %C(white) %an, %ar%Creset\" --graph
+  ; merging
+  noff = merge --no-ff
 [push]
   default = simple
 [merge]
