@@ -287,6 +287,7 @@ set nocompatible
   set showcmd                           " Show command that is being typed
   set switchbuf=useopen,usetab          " Use already open buffers when switching buffers
   set autoread                          " Automatically update when a file is changed outside of vim
+  set formatoptions-=o                  " don't continue comments when pushing o/O
   " set colorcolumn=80                  " set highlighted column
 
   " NETRW {{{
