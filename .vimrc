@@ -108,6 +108,7 @@ set nocompatible
     endif
   endfunction
 
+  " http://stackoverflow.com/a/5686810
   command! -nargs=0 -bar Qargs execute 'args ' . QuickfixFilenames()
   function! QuickfixFilenames()
     " Building a hash ensures we get each buffer only once
@@ -117,6 +118,37 @@ set nocompatible
     endfor
     return join(values(buffer_numbers))
   endfunction
+
+  " returns whether or not the quickfix window is open
+  function! JL_IsQuickFixOpen()
+    return JL_GetCommandOutput("buffers") =~ 'QuickFix'
+  endfunction
+
+  " toggle quickfix window
+  function! JL_ToggleQuickFix()
+    if JL_IsQuickFixOpen()
+      cclose
+    else
+      copen 10
+    endif
+  endfunction
+
+  " UTILITY FUNCTIONS {{{
+    " returns vim command output
+    function! JL_GetCommandOutput(command)
+      let save_a = @a
+      try
+        silent! redir @a
+        silent! exe a:command
+        redir END
+      finally
+        " restore register
+        let result = @a
+        let @a = save_a
+        return result
+      endtry
+    endfunction
+  " }}}
 " }}}
 
 " PLUGIN SETTINGS {{{
@@ -322,14 +354,6 @@ set nocompatible
       nnoremap <leader>aa :AgAdd<space>
       " Search help files and add results to location-list window
       nnoremap <leader>ah :AgHelp!<space>
-      " open quickfix window
-      nnoremap <leader>ao :copen<cr>
-      " close quickfix window
-      nnoremap <leader>ac :ccl<cr>
-      " next item in clearfix list
-      nnoremap <leader>j :cnext<cr>
-      " previous item in clearfix list
-      nnoremap <leader>k :cprev<cr>
     " }}}
 
     " FZF {{{
@@ -345,6 +369,15 @@ set nocompatible
       " Highlight git gutter change lines
       nnoremap <leader>c :GitGutterLineHighlightsToggle<cr>
     " }}}
+  " }}}
+
+  " QUICKFIX {{{
+    " toggle quickfix window
+    nnoremap <leader>q :call JL_ToggleQuickFix()<cr>
+    " next item in clearfix list
+    nnoremap <leader>j :cnext<cr>
+    " previous item in clearfix list
+    nnoremap <leader>k :cprev<cr>
   " }}}
 
   " MOVEMENT {{{
