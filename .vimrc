@@ -446,9 +446,9 @@ set nocompatible
     " so is inaccurate if the visual line is moved
     nnoremap gv `[v`]
 
-    " show syntax Highlighting group for item under cursor
+    " show Syntax Highlighting group for item under cursor
     " useful for creating color schemes
-    nnoremap <c-s-h> :call <sid>SynStack()<cr>
+    nnoremap sh :call <sid>SynStack()<cr>
 
     " tab indents at beginning of line, otherwise forward completions
     inoremap <tab> <c-r>=InsertTabWrapper()<cr>
