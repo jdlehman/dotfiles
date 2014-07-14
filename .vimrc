@@ -366,6 +366,12 @@ set nocompatible
     vnoremap <right> >gv^
     vnoremap <up> xkP`[V`]
     vnoremap <down> xp`[V`]
+
+    " move around in insert mode
+    inoremap <c-h> <esc>^i
+    inoremap <c-j> <esc>lji
+    inoremap <c-k> <esc>lki
+    inoremap <c-l> <esc>A
   " }}}
 
   " SEARCHING/REGEX {{{
