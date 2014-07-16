@@ -403,8 +403,8 @@ set nocompatible
 
     " move around in insert mode
     inoremap <c-h> <esc>^i
-    inoremap <c-j> <esc>lji
-    inoremap <c-k> <esc>lki
+    inoremap <c-j> <esc>ja
+    inoremap <c-k> <esc>ka
     inoremap <c-l> <esc>A
   " }}}
 
