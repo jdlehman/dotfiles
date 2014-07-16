@@ -406,6 +406,14 @@ set nocompatible
     inoremap <c-j> <esc>ja
     inoremap <c-k> <esc>ka
     inoremap <c-l> <esc>A
+
+    " movement in command mode
+    " cycle through command history
+    cnoremap <c-j> <t_kd>
+    cnoremap <c-k> <t_ku>
+    " move to beginning/end of line
+    cnoremap <c-a> <home>
+    cnoremap <c-e> <end>
   " }}}
 
   " SEARCHING/REGEX {{{
