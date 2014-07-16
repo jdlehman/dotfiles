@@ -488,6 +488,9 @@ set nocompatible
     " so is inaccurate if the visual line is moved
     nnoremap gv `[v`]
 
+    " make Y behave like C,D,etc
+    nnoremap Y y$
+
     " show Syntax Highlighting group for item under cursor
     " useful for creating color schemes
     nnoremap sh :call <sid>SynStack()<cr>
