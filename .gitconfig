@@ -8,7 +8,7 @@
 	ui = true
 [alias]
   ; info
-  di = diff
+  d = diff
   st = status
   l = log  --pretty=\"format:%C(yellow)%h%Cblue%d%Creset %s %C(white) %an, %ar%Creset\" --graph
   ; branching

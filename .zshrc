@@ -48,7 +48,26 @@ alias tfdl='tail -f log/development.log'
 alias tftl='tail -f log/test.log'
 
 # git aliases
-alias g="git status"
+alias g="git"
+# info
+alias gd="git diff"
+alias gst="git status"
+alias gl="git log"
+# branching
+alias gco="git checkout"
+alias gcob="git checkout -b"
+alias gcom="git checkout master"
+alias gbr="git branch"
+# committing
+alias gci="git commit --verbose"
+alias gca="git commit --amend"
+# pulling/fetching
+alias gfa="git fetch --all"
+# pushing
+alias gpo="git fetch origin"
+alias gpom="git fetch origin master"
+# merging
+alias gnoff="git merge --no-ff"
 
 # ps alias
 alias see="ps -ef | ag"
