@@ -14,14 +14,16 @@
   ; branching
   co = checkout
   cob = checkout -b
+  com = checkout master
   br = branch
   ; committing
   ci = commit --verbose
-  amend = commit --amend
+  ca = commit --amend
   ; pulling/fetching
   fa = fetch --all
   ; pushing
   pom = push origin master
+  po = push origin
   ; merging
   noff = merge --no-ff
 [push]
