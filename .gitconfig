@@ -21,11 +21,17 @@
   ca = commit --amend
   ; pulling/fetching
   fa = fetch --all
+  pr = pull --rebase
   ; pushing
   pom = push origin master
   po = push origin
   ; merging
   noff = merge --no-ff
+  ; staging
+  ap = add -p
+  ai = add -i
+  ; rebasing
+  ri = rebase -i
 [push]
   default = simple
 [merge]

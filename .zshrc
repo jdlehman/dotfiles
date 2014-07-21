@@ -63,11 +63,17 @@ alias gci="git commit --verbose"
 alias gca="git commit --amend"
 # pulling/fetching
 alias gfa="git fetch --all"
+alias gpr="git pull --rebase"
 # pushing
 alias gpo="git fetch origin"
 alias gpom="git fetch origin master"
 # merging
 alias gnoff="git merge --no-ff"
+# staging
+alias gap="git add -p"
+alias gai="git add -i"
+# rebasing
+alias gri="git rebase -i"
 
 # ps alias
 alias see="ps -ef | ag"
