@@ -66,6 +66,14 @@ set nocompatible
     end
   endfunction
 
+  function! JL_SetCursorPosition()
+    if &filetype !~ 'netrw\|^git'
+      if line("'\"") > 0 && line("'\"") <= line("$") |
+        exe "normal! g`\"" |
+      endif
+    endif
+  endfunction
+
   " Show syntax highlighting groups for word under cursor
   " via: http://vimcasts.org/episodes/creating-colorschemes-for-vim/
   function! <sid>SynStack()
@@ -552,11 +560,8 @@ set nocompatible
   " Autocommands that do not fit anywhere else
   augroup wildcard_group
     autocmd!
-    " Return to last edit position when opening files (github/joelhooks/dotfiles)
-    autocmd BufReadPost *
-      \ if line("'\"") > 0 && line("'\"") <= line("$") |
-      \   exe "normal! g`\"" |
-      \ endif
+    " Return to last edit position when opening files
+    autocmd BufReadPost * call JL_SetCursorPosition()
   augroup END
 " }}}
 
