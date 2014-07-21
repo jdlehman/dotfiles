@@ -10,7 +10,8 @@
   ; info
   d = diff
   st = status
-  l = log  --pretty=\"format:%C(yellow)%h%Cblue%d%Creset %s %C(white) %an, %ar%Creset\" --graph
+  l = log
+  lp = log  --pretty=\"format:%C(yellow)%h%Cblue%d%Creset %s %C(white) %an, %ar%Creset\" --graph
   ; branching
   co = checkout
   cob = checkout -b
@@ -22,6 +23,7 @@
   ; pulling/fetching
   fa = fetch --all
   pr = pull --rebase
+  prom = pull --rebase origin master
   ; pushing
   pom = push origin master
   po = push origin
