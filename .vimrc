@@ -470,6 +470,9 @@ set nocompatible
     " toggle word wrap
     nnoremap <leader>w :setlocal wrap!<cr>
 
+    " toggle spell check
+    nnoremap <leader>sp :setlocal spell!<cr>
+
     " Turn off highlight
     nnoremap <leader>h :nohl<cr>
 
