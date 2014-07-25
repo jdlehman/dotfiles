@@ -541,7 +541,9 @@ set nocompatible
     " set md to markdown file type
     autocmd BufNewFile,BufReadPost *.md set filetype=markdown
     " wrap on markdown files
-    autocmd Filetype markdown setlocal wrap
+    autocmd Filetype markdown
+      \ setlocal wrap |
+      \ setlocal spell
     "spell check when writing commit logs
     autocmd filetype *commit* setlocal spell
   augroup END
