@@ -55,7 +55,7 @@ alias bo='bundle open'
 alias bp='bundle package'
 alias bu='bundle update'
 # Bundle exec aliases
-alias rake='bundle exec rake'
+alias rake='noglob bundle exec rake'
 alias rails='bundle exec rails'
 alias jekyll='bundle exec jekyll'
 
