@@ -18,7 +18,7 @@ ZSH_THEME="simple"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(brew bundler chruby git jekyll)
+plugins=(brew chruby git jekyll)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -46,6 +46,18 @@ alias zr='source ~/.zshrc'
 alias rtest="ruby -I 'lib:test'"
 alias tfdl='tail -f log/development.log'
 alias tftl='tail -f log/test.log'
+
+# Bundler aliases
+alias be='bundle exec'
+alias bi='bundle install'
+alias bl='bundle list'
+alias bo='bundle open'
+alias bp='bundle package'
+alias bu='bundle update'
+# Bundle exec aliases
+alias rake='bundle exec rake'
+alias rails='bundle exec rails'
+alias jekyll='bundle exec jekyll'
 
 # git aliases
 # info
