@@ -562,6 +562,15 @@ set nocompatible
     " toggle trailing whitespace on bufwin enter/leave
     autocmd BufWinEnter * match TrailingWhiteSpace /\s\+$/
     autocmd BufWinLeave * call clearmatches()
+
+    " auto-clean fugitive buffers
+    " http://vimcasts.org/episodes/fugitive-vim-browsing-the-git-object-database/
+    autocmd BufReadPost fugitive://* set bufhidden=delete
+    " mapping to view parent tree in fugitive
+    autocmd BufReadPost fugitive://*
+      \ if fugitive#buffer().type() =~# '^\%(tree\|blob\)$' |
+      \   nnoremap <buffer> - :edit %:h<CR> |
+      \ endif
   augroup END
 
   " Autocommands that do not fit anywhere else
