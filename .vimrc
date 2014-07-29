@@ -74,6 +74,24 @@ set nocompatible
     endif
   endfunction
 
+  " close all hidden buffers
+  function! JL_CloseHiddenBuffers()
+    " store ids of visible buffers
+    let visible_buffers = {}
+    for tab_id in range(1, tabpagenr('$'))
+      for buffer_id in tabpagebuflist(tab_id)
+        let visible_buffers[buffer_id] = 1
+      endfor
+    endfor
+
+    " close buffers that are not in visible dictionary
+    for buffer_id in range(1, bufnr('$'))
+      if bufloaded(buffer_id) && !has_key(visible_buffers, buffer_id)
+        execute 'bd ' . buffer_id
+      endif
+    endfor
+  endfunction
+
   " from Gary Bernhardt's vimrc
   function! RenameFile()
       let old_name = expand('%')
@@ -465,6 +483,8 @@ set nocompatible
     nnoremap <leader>l :ls<cr>:b<space>
     " switch to alternate file
     nnoremap <leader><leader> <c-^>
+    " close hidden buffers
+    nnoremap <leader>bd :call CloseHiddenBuffers()<cr>
   " }}}
 
   " COPY/PASTING {{{
