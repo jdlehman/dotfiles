@@ -37,39 +37,40 @@ set nocompatible
   " set working directory to git project root
   " or directory of current file if not git project
   function! JLSetProjectRoot()
-    let currentFile = expand('%:p')
+    let current_file = expand('%:p')
     " do not mess with 'fugitive://' etc
-    if currentFile =~ '^\w\+:/' || &filetype =~ '^git'
+    if current_file =~ '^\w\+:/' || &filetype =~ '^git'
       return
     endif
 
     lcd %:p:h
-    let gitdir=system("git rev-parse --show-toplevel")
+    let git_dir = system("git rev-parse --show-toplevel")
     " See if the command output starts with 'fatal' (if it does, not in a git repo)
-    let isnotgitdir=matchstr(gitdir, '^fatal:.*')
+    let is_not_git_dir = matchstr(git_dir, '^fatal:.*')
     " if git project, change local directory to git project root
-    if empty(isnotgitdir)
-      lcd `=gitdir`
+    if empty(is_not_git_dir)
+      lcd `=git_dir`
     endif
   endfunction
 
   " follow symlinked file
   function! JLFollowSymlink()
-    let currentFile = expand('%:p')
+    let current_file = expand('%:p')
     " do not mess with 'fugitive://' etc
-    if currentFile =~ '^\w\+:/' || &filetype =~ '^git'
+    if current_file =~ '^\w\+:/' || &filetype =~ '^git'
       return
     endif
-    if getftype(currentFile) == 'link'
-      let actualFile = resolve(currentFile)
-      silent! exec 'file ' . actualFile
+    if getftype(current_file) == 'link'
+      let actual_file = resolve(current_file)
+      silent! execute 'file ' . actual_file
     end
   endfunction
 
+  " put cursor on line last edited when buffer was last open
   function! JL_SetCursorPosition()
     if &filetype !~ 'netrw\|^git'
       if line("'\"") > 0 && line("'\"") <= line("$") |
-        exe "normal! g`\"" |
+        execute "normal! g`\"" |
       endif
     endif
   endfunction
@@ -94,13 +95,13 @@ set nocompatible
 
   " from Gary Bernhardt's vimrc
   function! RenameFile()
-      let old_name = expand('%')
-      let new_name = input('New file name: ', expand('%'), 'file')
-      if new_name != '' && new_name != old_name
-          exec ':saveas ' . new_name
-          exec ':silent !rm ' . old_name
-          redraw!
-      endif
+    let old_name = expand('%')
+    let new_name = input('New file name: ', expand('%'), 'file')
+    if new_name != '' && new_name != old_name
+      execute ':saveas ' . new_name
+      execute ':silent !rm ' . old_name
+      redraw!
+    endif
   endfunction
 
   " Show syntax highlighting groups for word under cursor
@@ -179,7 +180,7 @@ set nocompatible
       let save_a = @a
       try
         silent! redir @a
-        silent! exe a:command
+        silent! execute a:command
         redir END
       finally
         " restore register
@@ -256,10 +257,10 @@ set nocompatible
     endfunction
 
     function! JLGitGutter()
-      let gitdata = GitGutterGetHunkSummary()
-      let added = gitdata[0] > 0 ? gitdata[0] . '+ ' : ''
-      let modified = gitdata[1] > 0 ? gitdata[1] . '~ ' : ''
-      let deleted = gitdata[2] > 0 ? gitdata[2] . '-' : ''
+      let git_data = GitGutterGetHunkSummary()
+      let added = git_data[0] > 0 ? git_data[0] . '+ ' : ''
+      let modified = git_data[1] > 0 ? git_data[1] . '~ ' : ''
+      let deleted = git_data[2] > 0 ? git_data[2] . '-' : ''
       return winwidth(0) > 80 ? (added . modified . deleted) : ''
     endfunction
   " }}}
