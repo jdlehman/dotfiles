@@ -116,6 +116,9 @@ set nocompatible
     endif
   endfunction
 
+  " Qargs command to add quickfix items to argslist
+  " then can use argdo <stuff> to run command on all items in argslist
+  " argdo update to save all buffers
   " http://stackoverflow.com/a/5686810
   command! -nargs=0 -bar Qargs execute 'args ' . QuickfixFilenames()
   function! QuickfixFilenames()
