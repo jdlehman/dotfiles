@@ -74,6 +74,17 @@ set nocompatible
     endif
   endfunction
 
+  " from Gary Bernhardt's vimrc
+  function! RenameFile()
+      let old_name = expand('%')
+      let new_name = input('New file name: ', expand('%'), 'file')
+      if new_name != '' && new_name != old_name
+          exec ':saveas ' . new_name
+          exec ':silent !rm ' . old_name
+          redraw!
+      endif
+  endfunction
+
   " Show syntax highlighting groups for word under cursor
   " via: http://vimcasts.org/episodes/creating-colorschemes-for-vim/
   function! <sid>SynStack()
@@ -464,9 +475,11 @@ set nocompatible
     noremap <leader>p :set paste<cr>:put  *<cr>:set nopaste<cr>
   " }}}
 
-  " FILE EXPLORATION {{{
+  " FILE MANIPULATION {{{
     " map - to explore
     nnoremap - :Explore<cr>
+    " rename current file
+    nnoremap <leader>r :call RenameFile()<cr>
   " }}}
 
   " PRESENTATION UTILITIES {{{
