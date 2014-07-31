@@ -104,6 +104,13 @@ set nocompatible
     endif
   endfunction
 
+  " export all vim mappings
+  function! JL_ExportMappings()
+    redir! > vim_keys.txt
+      silent verbose map
+    redir END
+  endfunction
+
   " Show syntax highlighting groups for word under cursor
   " via: http://vimcasts.org/episodes/creating-colorschemes-for-vim/
   function! <sid>SynStack()
