@@ -6,6 +6,18 @@ export FZF_DEFAULT_OPTS='-x -m'
 # also forces FZF to respect .gitignore
 export FZF_DEFAULT_COMMAND='ag -l -g ""'
 
+# Copy the original fzf function to __fzf
+declare -f __fzf > /dev/null ||
+  eval "$(echo "__fzf() {"; declare -f fzf | grep -v '^{' | tail -n +2)"
+
+# Use git ls-tree when possible
+fzf() {
+  if [ -n "$(git rev-parse HEAD 2> /dev/null)" ]; then
+    FZF_DEFAULT_COMMAND="git ls-tree -r --name-only HEAD" __fzf "$@"
+  else
+    __fzf "$@"
+  fi
+}
 
 # -------------
 # Opening Files
