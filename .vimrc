@@ -268,7 +268,7 @@ set nocompatible
 
     function! JLFilename()
       " use full path or just file name depending on screen width
-      let filename = winwidth(0) > 90 ? expand('%:p') : expand('%:t')
+      let filename = winwidth(0) > 90 ? @% : expand('%:t')
       " do not show filename for help, gundo, fugitive etc.
       if &filetype =~ 'help\|gundo\|^git' || filename =~ '^\w\+:/'
         return ''
