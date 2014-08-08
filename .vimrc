@@ -414,10 +414,10 @@ set nocompatible
   " VIMRC {{{
     " Quickly open and reload vimrc
     nnoremap <leader>ev :vsplit $MYVIMRC<cr>
-    nnoremap <leader>sv :source $MYVIMRC<cr> :nohl <cr>
+    nnoremap <leader>sv :source $MYVIMRC<cr>:nohl<cr>
 
     " Reinstall/update bundles using vim-plug
-    nnoremap <leader>bv :PlugUpdate<cr>:PlugClean!<cr>:PlugInstall<cr>
+    nnoremap <leader>bv :PlugUpdate<cr>:PlugClean!<cr>:PlugInstall<cr>:q<cr>
   " }}}
 
   " PLUGINS {{{
@@ -524,7 +524,7 @@ set nocompatible
     " switch to alternate file
     nnoremap <leader><leader> <c-^>
     " close hidden buffers
-    nnoremap <leader>bd :call CloseHiddenBuffers()<cr>
+    nnoremap <leader>bd :call JL_CloseHiddenBuffers()<cr>
   " }}}
 
   " COPY/PASTING {{{
@@ -589,7 +589,7 @@ set nocompatible
   " }}}
 " }}}
 
-" ABBREVIATIONS {{
+" ABBREVIATIONS {{{
   " Q=q and W=w in command mode
   " Prevents typos when writing or quitting
   cnoreabbrev W w
