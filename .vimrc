@@ -104,33 +104,28 @@ set nocompatible
     endif
   endfunction
 
-  " fuzzy search lines of opened buffers {{{
-    command! FZFLines call fzf#run({
-      \ 'source':  FZFBuffersLines(),
-      \ 'sink':    function('FZFLineHandler'),
-    \})
+  " fuzzy serach buffers
+  command! FZFBuffers call fzf#run({
+    \ 'source':  BuffersList(),
+    \ 'sink':    'e ',
+  \})
 
-    function! FZFLineHandler(l)
-      let keys = split(a:l, ':\t')
-      exec 'sbuffer ' . keys[0]
-      exec keys[1]
-      normal! ^zz
-    endfunction
-
-    function! FZFBuffersLines()
-      let res = []
-      for b in filter(range(1, bufnr('$')), 'buflisted(v:val)')
-        call extend(res, map(getbufline(b,0,"$"), 'b . ":\t" . (v:key + 1) . ":\t" . v:val '))
-      endfor
-      return res
-    endfunction
-  " }}}
+  function! BuffersList()
+    let all = range(0, bufnr('$'))
+    let list = []
+    for buffer in all
+      if buflisted(buffer)
+        call add(list, bufname(buffer))
+      endif
+    endfor
+    return list
+  endfunction
 
   " fuzzy search most recently opened files
   command! FZFMru call fzf#run({
     \'source': v:oldfiles,
     \'sink' : 'e ',
-    \})
+  \})
 
   " export all vim mappings
   function! JL_ExportMappings()
@@ -437,7 +432,7 @@ set nocompatible
 
     " FZF {{{
       nnoremap <leader>f :FZF<cr>
-      nnoremap <leader>fl :FZFLines<cr>
+      nnoremap <leader>fb :FZFBuffers<cr>
       nnoremap <leader>fm :FZFMru<cr>
     " }}}
 
