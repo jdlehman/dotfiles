@@ -81,8 +81,8 @@ alias gfa="git fetch --all"
 alias gpr="git pull --rebase"
 alias gprom="git pull --rebase origin master"
 # pushing
-alias gpo="git pull origin"
-alias gpom="git pull origin master"
+alias gpo="git push origin"
+alias gpom="git push origin master"
 # merging
 alias gnoff="git merge --no-ff"
 # staging
