@@ -75,7 +75,7 @@ alias gcom="git checkout master"
 alias gbr="git branch"
 # committing
 alias gci="git commit --verbose"
-alias gca="git commit --amend"
+alias gcia="git commit --verbose --amend"
 # pulling/fetching
 alias gfa="git fetch --all"
 alias gpr="git pull --rebase"
@@ -88,6 +88,7 @@ alias gnoff="git merge --no-ff"
 # staging
 alias gap="git add -p"
 alias gai="git add -i"
+alias gaa="git add --all --intent-to-add"
 # rebasing
 alias gri="git rebase -i"
 

@@ -19,7 +19,7 @@
   br = branch
   ; committing
   ci = commit --verbose
-  ca = commit --amend
+  cia = commit --verbose --amend
   ; pulling/fetching
   fa = fetch --all
   pr = pull --rebase
@@ -30,6 +30,7 @@
   ; merging
   noff = merge --no-ff
   ; staging
+  aa = add --all --intent-to-add
   ap = add -p
   ai = add -i
   ; rebasing
