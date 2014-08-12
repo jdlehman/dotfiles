@@ -108,6 +108,7 @@ set nocompatible
   command! FZFBuffers call fzf#run({
     \ 'source':  BuffersList(),
     \ 'sink':    'e ',
+    \ 'tmux_height': '30%'
   \})
 
   function! BuffersList()
@@ -125,6 +126,7 @@ set nocompatible
   command! FZFMru call fzf#run({
     \'source': v:oldfiles,
     \'sink' : 'e ',
+    \ 'tmux_height': '30%'
   \})
 
   " export all vim mappings
