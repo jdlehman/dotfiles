@@ -483,20 +483,6 @@ set nocompatible
     vnoremap <right> >gv^
     vnoremap <up> xkP`[V`]
     vnoremap <down> xp`[V`]
-
-    " move around in insert mode
-    inoremap <c-h> <esc>^i
-    inoremap <c-j> <esc>ja
-    inoremap <c-k> <esc>ka
-    inoremap <c-l> <esc>A
-
-    " movement in command mode
-    " cycle through command history
-    cnoremap <c-j> <t_kd>
-    cnoremap <c-k> <t_ku>
-    " move to beginning/end of line
-    cnoremap <c-a> <home>
-    cnoremap <c-e> <end>
   " }}}
 
   " SEARCHING/REGEX {{{
@@ -648,7 +634,7 @@ set nocompatible
     " mapping to view parent tree in fugitive
     autocmd BufReadPost fugitive://*
       \ if fugitive#buffer().type() =~# '^\%(tree\|blob\)$' |
-      \   nnoremap <buffer> - :edit %:h<CR> |
+      \   nnoremap <buffer> - :edit %:h<cr> |
       \ endif
   augroup END
 
