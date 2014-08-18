@@ -20,7 +20,7 @@ set nocompatible
 
     " Searching
     Plug 'rking/ag.vim', { 'on': ['Ag', 'AgAdd', 'AgHelp'] }
-    Plug 'junegunn/fzf', { 'on': ['FZF', 'FZFLines', 'FZFMru'] }
+    Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
 
     " Helpful tools
     Plug 'tpope/vim-surround'
