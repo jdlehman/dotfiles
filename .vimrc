@@ -26,6 +26,7 @@ set nocompatible
     Plug 'tpope/vim-surround'
     Plug 'tpope/vim-commentary'
     Plug 'sjl/gundo.vim', { 'on': 'GundoToggle' }
+    Plug 'benmills/vimux'
   " }}}
   call plug#end()
 
@@ -453,6 +454,52 @@ set nocompatible
       " Highlight git gutter change lines
       nnoremap <leader>c :GitGutterLineHighlightsToggle<cr>
     " }}}
+
+    " VIMUX {{{
+      " Run ruby test for current file
+       " nnoremap <localleader>mt :call VimuxRunCommand("clear; ruby -I 'lib:test' " . bufname("%"))<cr>
+
+       " Prompt for a command to run
+       nnoremap <leader>mp :VimuxPromptCommand<cr>
+
+       " Run last command executed by VimuxRunCommand
+       nnoremap <leader>ml :VimuxRunLastCommand<cr>
+
+       " Inspect runner pane (focus on runner pane with cursor)
+       nnoremap <leader>mi :VimuxInspectRunner<cr>
+
+       " Close vim tmux runner opened by VimuxRunCommand
+       nnoremap <leader>mq :VimuxCloseRunner<cr>
+
+       " Interrupt any command running in the runner pane
+       nnoremap <leader>mx :VimuxInterruptRunner<cr>
+
+       " Zoom the runner pane (vim pane is still there, just minified)
+       nnoremap <leader>mz :VimuxZoomRunner<cr>
+
+       " send text to another tmux pane
+       function! VimuxSlime(...)
+         " select paragraph if not already in visual mode
+         if a:0 > 0
+           normal! gv
+         else
+           normal! vip
+         endif
+         " backup register a
+         let save_a = @a
+         " temporarily store selection to register a
+         normal! "ay
+         call VimuxSendText(@a)
+         " restore register
+         let @a = save_a
+       endfunction
+
+       " If text is selected, save it in the v buffer and send that buffer it to tmux
+       vnoremap <leader>ms :call VimuxSlime(1)<cr>
+
+       " Select current paragraph and send it to tmux
+       nnoremap <leader>ms :call VimuxSlime()<cr>
+    " }}}
   " }}}
 
   " QUICKFIX {{{
@@ -562,7 +609,7 @@ set nocompatible
     " select last text visual selected
     " normal gv does this based on line numbers
     " so is inaccurate if the visual line is moved
-    nnoremap gv `[v`]
+    nmap gv `[v`]
 
     " make Y behave like C,D,etc
     nnoremap Y y$
