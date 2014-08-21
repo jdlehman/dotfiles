@@ -46,6 +46,7 @@ alias zr='source ~/.zshrc'
 
 # Ruby aliases
 alias rtest="ruby -I 'lib:test'"
+alias rspring='bundle exec spring textunit'
 alias tfdl='tail -f log/development.log'
 alias tftl='tail -f log/test.log'
 
