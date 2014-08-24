@@ -477,6 +477,12 @@ set nocompatible
        " Zoom the runner pane (vim pane is still there, just minified)
        nnoremap <leader>mz :VimuxZoomRunner<cr>
 
+       " Send enter key to runner pane
+       nnoremap <leader>me :call VimuxSendKeys("Enter")<cr>
+
+       " Send kill signal to runner pane
+       nnoremap <leader>mc :call VimuxSendKeys("C-c")<cr>
+
        " send text to another tmux pane
        function! VimuxSlime(...)
          " select paragraph if not already in visual mode
