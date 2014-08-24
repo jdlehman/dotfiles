@@ -490,7 +490,11 @@ set nocompatible
          " temporarily store selection to register a
          normal! "ay
          call VimuxSendText(@a)
-         " restore register
+         " send Enter key unless text ends in newline
+         if @a !~ '\n$'
+           call VimuxSendKeys("Enter")
+         end
+         "restore register
          let @a = save_a
        endfunction
 
