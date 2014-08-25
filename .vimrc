@@ -381,11 +381,6 @@ set nocompatible
   " Via Gary Bernhardt
   let g:sh_noisk=1
 
-  " fix system clipboard when using tmux
-  if $TMUX == ''
-    set clipboard+=unnamed
-  endif
-
   " Fix mouse bug in iterm
   " Without this, clicking on parts of
   " rightmost split does not work correctly
