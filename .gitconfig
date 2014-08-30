@@ -16,7 +16,8 @@
   co = checkout
   cob = checkout -b
   com = checkout master
-  br = branch
+  b = branch
+  bd = branch -D
   ; committing
   ci = commit --verbose
   cia = commit --verbose --amend

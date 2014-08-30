@@ -73,7 +73,8 @@ alias glp="git log  --pretty=\"format:%C(yellow)%h%Cblue%d%Creset %s %C(white) %
 alias gco="git checkout"
 alias gcob="git checkout -b"
 alias gcom="git checkout master"
-alias gbr="git branch"
+alias gb="git branch"
+alias gbd="git branch -D"
 # committing
 alias gci="git commit --verbose"
 alias gcia="git commit --verbose --amend"
