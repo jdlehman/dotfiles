@@ -657,13 +657,7 @@ set nocompatible
   augroup file_type_group
     autocmd!
     " set json filetype to javascript
-    autocmd BufNewFile,BufRead *.json set filetype=javascript
-    " set md to markdown file type
-    autocmd BufNewFile,BufReadPost *.md set filetype=markdown
-    " wrap on markdown files
-    autocmd Filetype markdown
-      \ setlocal wrap |
-      \ setlocal spell
+    " autocmd BufNewFile,BufRead *.json set filetype=javascript
     "spell check when writing commit logs
     autocmd filetype *commit* setlocal spell
   augroup END
@@ -688,6 +682,8 @@ set nocompatible
       \ if fugitive#buffer().type() =~# '^\%(tree\|blob\)$' |
       \   nnoremap <buffer> - :edit %:h<cr> |
       \ endif
+    " Reload vimrc on edit
+    autocmd BufWritePost $MYVIMRC source $MYVIMRC
   augroup END
 
   " Autocommands that do not fit anywhere else

@@ -1,0 +1,14 @@
+# excluded files
+.netrwhist
+.backup/*
+.tmp/*
+.undo/*
+plugged/*
+view/*
+
+# included files
+!.backup/.gitkeep
+!.tmp/.gitkeep
+!.undo/.gitkeep
+!plugged/.gitkeep
+!view/.gitkeep
