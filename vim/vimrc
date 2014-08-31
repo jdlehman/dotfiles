@@ -653,15 +653,6 @@ set nocompatible
     autocmd InsertLeave * match TrailingWhiteSpace /\s\+$/
   augroup END
 
-  " File Types
-  augroup file_type_group
-    autocmd!
-    " set json filetype to javascript
-    " autocmd BufNewFile,BufRead *.json set filetype=javascript
-    "spell check when writing commit logs
-    autocmd filetype *commit* setlocal spell
-  augroup END
-
   " buffer events
   augroup buffer_events
     autocmd!
