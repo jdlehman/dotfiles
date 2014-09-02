@@ -11,7 +11,6 @@ set nocompatible
     Plug 'airblade/vim-gitgutter'
 
     " Language specific
-    Plug 'tpope/vim-rails'
     Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
     Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
     Plug 'cakebaker/scss-syntax.vim', { 'for': 'scss' }
