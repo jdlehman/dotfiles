@@ -67,8 +67,10 @@ alias bjekyll='bundle exec jekyll'
 # info
 alias g="git status"
 alias gd="git diff"
+alias gdw="git diff --word-diff"
 alias gl="git log"
-alias glp="git log  --pretty=\"format:%C(yellow)%h%Cblue%d%Creset %s %C(white) %an, %ar%Creset\" --graph"
+alias glp="git log --pretty=\"format:%C(yellow)%h%Cblue%d%Creset %s %C(white) %an, %ar%Creset\" --graph"
+alias gup="git log --stat origin/master..HEAD"
 # branching
 alias gco="git checkout"
 alias gcob="git checkout -b"
@@ -93,6 +95,8 @@ alias gai="git add -i"
 alias gaa="git add --all --intent-to-add"
 # rebasing
 alias gri="git rebase -i"
+# misc
+alias gg="git grep --break --heading -n"
 
 # ps alias
 alias see="ps -ef | ag"

@@ -9,9 +9,11 @@
 [alias]
   ; info
   d = diff
+  dw = diff --word-diff
   st = status
   l = log
-  lp = log  --pretty=\"format:%C(yellow)%h%Cblue%d%Creset %s %C(white) %an, %ar%Creset\" --graph
+  lp = log --pretty=\"format:%C(yellow)%h%Cblue%d%Creset %s %C(white) %an, %ar%Creset\" --graph
+  up = unpushed = log --stat origin/master..HEAD
   ; branching
   co = checkout
   cob = checkout -b
@@ -36,6 +38,8 @@
   ai = add -i
   ; rebasing
   ri = rebase -i
+  ;misc
+  g=grep --break --heading -n
 [push]
   default = simple
 [merge]
