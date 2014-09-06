@@ -661,7 +661,7 @@ set nocompatible
       \ call JLSetProjectRoot()
     " netrw: follow symlink and set working directory
     autocmd CursorMoved *
-      \ if &ft == 'netrw' |
+      \ if &filetype == 'netrw' |
       \   call JLFollowSymlink() |
       \   call JLSetProjectRoot() |
       \ endif
