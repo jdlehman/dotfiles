@@ -71,6 +71,7 @@ alias gdw="git diff --word-diff"
 alias gl="git log"
 alias glp="git log --pretty=\"format:%C(yellow)%h%Cblue%d%Creset %s %C(white) %an, %ar%Creset\" --graph"
 alias gup="git log --stat origin/master..HEAD"
+alias gfo="git log --pretty=oneline --shortstat --abbrev-commit"
 # branching
 alias gco="git checkout"
 alias gcob="git checkout -b"

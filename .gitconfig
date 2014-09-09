@@ -13,7 +13,8 @@
   st = status
   l = log
   lp = log --pretty=\"format:%C(yellow)%h%Cblue%d%Creset %s %C(white) %an, %ar%Creset\" --graph
-  up = unpushed = log --stat origin/master..HEAD
+  up = log --stat origin/master..HEAD ; unpushed
+  fo = log --pretty=oneline --shortstat --abbrev-commit ; file overview (optional file at end)
   ; branching
   co = checkout
   cob = checkout -b
@@ -39,7 +40,7 @@
   ; rebasing
   ri = rebase -i
   ;misc
-  g=grep --break --heading -n
+  g = grep --break --heading -n ; search term at end
 [push]
   default = simple
 [merge]
