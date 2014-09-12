@@ -1,6 +1,6 @@
-#!/bin/sh
+DOTFILES_ROOT="$( cd "$( dirname "$0" )/.." && pwd )"
 
-DOTFILES_ROOT="$( cd "$( dirname "$0" )" && pwd )"
+echo "Symlinking dotfiles..."
 
 # git
 ln -sfn $DOTFILES_ROOT/git/gitconfig ~/.gitconfig

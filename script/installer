@@ -1,0 +1,13 @@
+#!/bin/sh
+
+# exit if any subshell or command exits with a nonzero status
+set -e
+
+cd "$(dirname $0)"/..
+
+echo "Installing scripts..."
+
+# find the installers and run them iteratively
+find . -name install*.sh | while read installer ; do sh "${installer}" ; done
+
+echo "Finished installing scripts"
