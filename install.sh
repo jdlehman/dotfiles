@@ -3,22 +3,22 @@
 DOTFILES_ROOT="$( cd "$( dirname "$0" )" && pwd )"
 
 # git
-ln -sfn $DOTFILES_ROOT/gitconfig ~/.gitconfig
-ln -sfn $DOTFILES_ROOT/gitignore_global ~/.gitignore_global
+ln -sfn $DOTFILES_ROOT/git/gitconfig ~/.gitconfig
+ln -sfn $DOTFILES_ROOT/git/gitignore_global ~/.gitignore_global
 
 # tmux
-ln -sfn $DOTFILES_ROOT/tmux.conf ~/.tmux.conf
+ln -sfn $DOTFILES_ROOT/tmux/tmux.conf ~/.tmux.conf
 
 # vim
 ln -sfn $DOTFILES_ROOT/vim ~/.vim
 
 # slate
-ln -sfn $DOTFILES_ROOT/slate ~/.slate
+ln -sfn $DOTFILES_ROOT/slate/slate ~/.slate
 
 # emacs
-ln -sfn $DOTFILES_ROOT/emacs ~/.emacs
+ln -sfn $DOTFILES_ROOT/emacs/emacs ~/.emacs
 
 # zsh
-ln -sfn $DOTFILES_ROOT/zshrc ~/.zshrc
+ln -sfn $DOTFILES_ROOT/zsh/zshrc ~/.zshrc
 
 echo "Dotfiles symlinked!"
