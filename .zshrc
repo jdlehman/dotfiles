@@ -99,6 +99,12 @@ alias gri="git rebase -i"
 # misc
 alias gg="git grep --break --heading -n"
 
+# tmux aliases
+alias tn="tmux new -s"
+alias ta="tmux attach -t"
+alias tl="tmux ls"
+alias td="tmux detach"
+
 # ps alias
 alias see="ps -ef | ag"
 
