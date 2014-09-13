@@ -16,7 +16,7 @@ ln -sfn $DOTFILES_ROOT/vim $HOME/.vim
 ln -sfn $DOTFILES_ROOT/slate/slate $HOME/.slate
 
 # emacs
-ln -sfn $DOTFILES_ROOT/emacs/emacs $HOME/.emacs
+ln -sfn $DOTFILES_ROOT/emacs.d $HOME/.emacs.d
 
 # zsh
 ln -sfn $DOTFILES_ROOT/zsh $HOME/.zsh
