@@ -3,7 +3,12 @@
 # exit if any subshell or command exits with a nonzero status
 set -e
 
-cd "$(dirname $0)"/..
+echo "Setting up dependencies..."
+
+cd "$( dirname $0 )"/..
+
+# find the setup and run them iteratively
+find . -name setup*.sh | while read setup ; do sh "${setup}" ; done
 
 echo "Installing scripts..."
 

@@ -20,5 +20,3 @@ ln -sfn $DOTFILES_ROOT/emacs/emacs ~/.emacs
 
 # zsh
 ln -sfn $DOTFILES_ROOT/zsh/zshrc ~/.zshrc
-
-echo "Dotfiles symlinked!"
