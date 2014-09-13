@@ -19,4 +19,7 @@ ln -sfn $DOTFILES_ROOT/slate/slate ~/.slate
 ln -sfn $DOTFILES_ROOT/emacs/emacs ~/.emacs
 
 # zsh
+ln -sfn $DOTFILES_ROOT/zsh ~/.zsh
 ln -sfn $DOTFILES_ROOT/zsh/zshrc ~/.zshrc
+ln -sfn $DOTFILES_ROOT/zsh/zshenv ~/.zshenv
+

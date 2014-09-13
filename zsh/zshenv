@@ -1,0 +1,6 @@
+skip_global_compinit=1
+
+typeset -U path
+
+# Favor Homebrew binaries over system
+path=(/usr/local/bin /usr/local/sbin $path)
