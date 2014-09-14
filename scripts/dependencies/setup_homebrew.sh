@@ -7,10 +7,12 @@ fi
 
 install_with_brew() {
   # install each uninstalled dependency
+  installed_packages=$(brew list)
   while [ "$1" ]
   do
-    if test ! $( which $1 )
+    if ! [[ $installed_packages =~ $1 ]]
     then
+      echo "Installing $1"
       brew install $1 2> /dev/null
     fi
     shift
