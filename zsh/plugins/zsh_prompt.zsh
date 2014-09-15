@@ -32,17 +32,25 @@ git_prompt_info () {
  echo "${ref#refs/heads/}"
 }
 
-unpushed () {
-  $git cherry -v @{upstream} 2>/dev/null
-}
+ahead_or_behind() {
+  # http://stackoverflow.com/a/13172299
+  # get the tracking-branch name
+  tracking_branch=$(git for-each-ref --format='%(upstream:short)' $(git symbolic-ref -q HEAD))
+  set -- $(git rev-list --left-right --count $tracking_branch...HEAD)
+  behind=$1
+  ahead=$2
 
-need_push () {
-  if [[ $(unpushed) == "" ]]
+  if [[ $behind > 0 ]]
   then
-    echo " "
+    return_str=" with %{$fg_bold[magenta]%}$behind behind%{$reset_color%}"
+  elif [[ $ahead > 0 ]]
+  then
+    return_str=" with %{$fg_bold[magenta]%}$ahead ahead%{$reset_color%}"
   else
-    echo " with %{$fg_bold[magenta]%}unpushed%{$reset_color%} "
+    return_str=""
   fi
+
+  echo $return_str
 }
 
 directory_name() {
@@ -50,7 +58,7 @@ directory_name() {
 }
 
 set_prompt () {
-  export PROMPT="in $(directory_name) $(git_dirty)$(need_push)> "
+  export PROMPT="in $(directory_name) $(git_dirty)$(ahead_or_behind) > "
 }
 
 precmd() {
