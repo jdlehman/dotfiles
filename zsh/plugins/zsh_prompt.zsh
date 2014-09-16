@@ -34,7 +34,7 @@ git_prompt_info () {
 
 display_ahead_or_behind() {
   if git rev-parse --git-dir > /dev/null 2>/dev/null
-    echo "with %{$fg_bold[magenta]%}$(ahead_or_behind)%{$reset_color%}"
+    echo "%{$fg_bold[magenta]%}$(ahead_or_behind)%{$reset_color%}"
   then
     echo ""
   fi
