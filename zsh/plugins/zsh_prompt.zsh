@@ -32,6 +32,14 @@ git_prompt_info () {
  echo "${ref#refs/heads/}"
 }
 
+display_ahead_or_behind() {
+  if git rev-parse --git-dir > /dev/null 2>/dev/null
+    echo "with %{$fg_bold[magenta]%}$(ahead_or_behind)%{$reset_color%}"
+  then
+    echo ""
+  fi
+}
+
 ahead_or_behind() {
   # http://stackoverflow.com/a/13172299
   # get the tracking-branch name
@@ -42,10 +50,10 @@ ahead_or_behind() {
 
   if [[ $behind > 0 ]]
   then
-    return_str=" with %{$fg_bold[magenta]%}$behind behind%{$reset_color%}"
+    return_str=" $behind behind"
   elif [[ $ahead > 0 ]]
   then
-    return_str=" with %{$fg_bold[magenta]%}$ahead ahead%{$reset_color%}"
+    return_str=" $ahead ahead"
   else
     return_str=""
   fi
@@ -58,7 +66,7 @@ directory_name() {
 }
 
 set_prompt () {
-  export PROMPT="in $(directory_name) $(git_dirty)$(ahead_or_behind) > "
+  export PROMPT="in $(directory_name) $(git_dirty)$(display_ahead_or_behind) > "
 }
 
 precmd() {
