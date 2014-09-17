@@ -33,18 +33,14 @@ git_prompt_info () {
 }
 
 display_ahead_or_behind() {
-  if git rev-parse --git-dir > /dev/null 2>/dev/null
-    echo "%{$fg_bold[magenta]%}$(ahead_or_behind)%{$reset_color%}"
-  then
-    echo ""
-  fi
+  echo "%{$fg_bold[magenta]%}$(ahead_or_behind 2>/dev/null)%{$reset_color%}"
 }
 
 ahead_or_behind() {
   # http://stackoverflow.com/a/13172299
   # get the tracking-branch name
-  tracking_branch=$(git for-each-ref --format='%(upstream:short)' $(git symbolic-ref -q HEAD))
-  set -- $(git rev-list --left-right --count $tracking_branch...HEAD)
+  tracking_branch=$($git for-each-ref --format='%(upstream:short)' $($git symbolic-ref -q HEAD))
+  set -- $($git rev-list --left-right --count $tracking_branch...HEAD)
   behind=$1
   ahead=$2
 

@@ -35,8 +35,6 @@ alias gp="git pull"
 # pushing
 # =======
 alias gpo="git push origin"
-# git push the current branch (x)
-alias gpox="git push origin $(git rev-parse --abbrev-ref HEAD)"
 alias gpom="git push origin master"
 # =======
 # merging
