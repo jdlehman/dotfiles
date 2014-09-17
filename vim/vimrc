@@ -570,6 +570,7 @@ set nocompatible
     nnoremap <leader>y "*y
     " Paste from the system clipboard using paste mode
     noremap <leader>p :set paste<cr>:put  *<cr>:set nopaste<cr>
+    vnoremap <leader>p :set paste<cr>:put  *<cr>:set nopaste<cr>
   " }}}
 
   " FILE MANIPULATION {{{
