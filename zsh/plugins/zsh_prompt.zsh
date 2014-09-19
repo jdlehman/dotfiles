@@ -44,14 +44,15 @@ ahead_or_behind() {
   behind=$1
   ahead=$2
 
+  return_str=""
   if [[ $behind > 0 ]]
   then
-    return_str=" $behind behind"
-  elif [[ $ahead > 0 ]]
+    return_str+=" $behind behind"
+  fi
+
+  if [[ $ahead > 0 ]]
   then
-    return_str=" $ahead ahead"
-  else
-    return_str=""
+    return_str+=" $ahead ahead"
   fi
 
   echo $return_str
