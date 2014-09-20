@@ -15,7 +15,7 @@ set nocompatible
     Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
     Plug 'cakebaker/scss-syntax.vim', { 'for': 'scss' }
     Plug 'tristen/vim-sparkup', { 'for': ['html', 'eruby'] }
-    Plug 'mustache/vim-mustache-handlebars', { 'for': 'html' }
+    Plug 'mustache/vim-mustache-handlebars', { 'for': 'html.handlebars' }
 
     " Searching
     Plug 'rking/ag.vim', { 'on': ['Ag', 'AgAdd', 'AgHelp'] }
