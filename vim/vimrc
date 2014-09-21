@@ -673,7 +673,7 @@ set nocompatible
     autocmd BufWinLeave * call clearmatches()
 
     " Reload vimrc on edit
-    autocmd BufWritePost $MYVIMRC source $MYVIMRC
+    autocmd BufWritePost $MYVIMRC source $MYVIMRC | call lightline#highlight()
   augroup END
 
   " Autocommands that do not fit anywhere else
