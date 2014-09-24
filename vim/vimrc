@@ -1,4 +1,9 @@
 set nocompatible
+" LEADERS {{{
+  let mapleader=','
+  let maplocalleader = "\\"
+" }}}
+
 " SET UP vim-plug {{{
   source ~/.vim/vim-plug.vim
 " }}}
@@ -7,11 +12,6 @@ filetype plugin indent on
 " at top to ensure functions are defined before use
 " UTILITY FUNCTIONS {{{
   source ~/.vim/utilities.vim
-" }}}
-
-" LEADERS {{{
-  let mapleader=','
-  let maplocalleader = "\\"
 " }}}
 
 " ABBREVIATIONS {{{
