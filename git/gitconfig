@@ -27,6 +27,7 @@
   ; pulling/fetching
   fa = fetch --all
   pr = pull --rebase
+  pro = pull origin --rebase
   prom = pull --rebase origin master
   ; pushing
   pom = push origin master

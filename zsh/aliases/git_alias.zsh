@@ -29,6 +29,7 @@ alias gcia="git commit --verbose --amend"
 # ================
 alias gfa="git fetch --all"
 alias gpr="git pull --rebase"
+alias gpro="git pull origin --rebase"
 alias gprom="git pull --rebase origin master"
 alias gp="git pull"
 # =======
