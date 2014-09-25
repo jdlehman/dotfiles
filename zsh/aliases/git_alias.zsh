@@ -51,6 +51,16 @@ alias gaa="git add --all --intent-to-add"
 # rebasing
 # ========
 alias gri="git rebase -i"
+# ========
+# stashing
+# ========
+alias gs="git stash -u"
+alias gsp="git stash pop"
+alias gsd="git stash drop"
+alias gsl="git stash list"
+alias gssh="git stash show"
+alias gss="git stash save -u"
+alias gsb="git stash branch"
 # ====
 # misc
 # ====

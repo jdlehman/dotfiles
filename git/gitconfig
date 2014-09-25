@@ -39,6 +39,14 @@
   ai = add -i
   ; rebasing
   ri = rebase -i
+  ; stashing
+  s = stash -u
+  sp = stash pop
+  sd = stash drop
+  sl = stash list
+  ssh = stash show
+  ss = stash save -u
+  sb = stash branch
   ;misc
   g = grep --break --heading -n ; search term at end
 [push]
