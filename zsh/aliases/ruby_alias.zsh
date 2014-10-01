@@ -1,6 +1,6 @@
 # Test aliases
 alias rtest="ruby -I 'lib:test'"
-alias rspring='bundle exec spring textunit'
+alias rspring='bundle exec spring testunit $*'
 
 # Rails aliases
 alias tfdl='tail -f log/development.log'
