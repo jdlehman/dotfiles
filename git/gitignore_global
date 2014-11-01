@@ -2,3 +2,4 @@
 .bundle/
 .DS_STORE
 .local.zsh
+.projectile
