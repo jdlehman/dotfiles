@@ -97,9 +97,9 @@
 " }}}
 
 " AUTO COMMANDS {{{
-  augroup auto_source_vimrc
-    autocmd!
-    " Reload vimrc on edit
-    autocmd BufWritePost $MYVIMRC source $MYVIMRC | call lightline#highlight()
-  augroup END
+  " augroup auto_source_vimrc
+  "   autocmd!
+  "   " Reload vimrc on edit
+  "   autocmd BufWritePost $MYVIMRC source $MYVIMRC | call lightline#highlight()
+  " augroup END
 " }}}
