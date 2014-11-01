@@ -15,31 +15,42 @@
   lp = log --pretty=\"format:%C(yellow)%h%Cblue%d%Creset %s %C(white) %an, %ar%Creset\" --graph
   up = log --stat origin/master..HEAD ; unpushed
   fo = log --pretty=oneline --shortstat --abbrev-commit ; file overview (optional file at end)
+
   ; branching
   co = checkout
   cob = checkout -b
   com = checkout master
   b = branch
   bd = branch -D
+
   ; committing
   ci = commit --verbose
   cia = commit --verbose --amend
+
   ; pulling/fetching
   fa = fetch --all
   pr = pull --rebase
   pro = pull origin --rebase
   prom = pull --rebase origin master
+
   ; pushing
   pom = push origin master
   po = push origin
+
   ; merging
   noff = merge --no-ff
+
   ; staging
   aa = add --all --intent-to-add
   ap = add -p
   ai = add -i
+
+  ; cherry-picking
+  cp = cherry-pick
+
   ; rebasing
   ri = rebase -i
+
   ; stashing
   s = stash -u
   sp = stash pop
@@ -48,6 +59,7 @@
   ssh = stash show
   ss = stash save -u
   sb = stash branch
+
   ;misc
   g = grep --break --heading -n ; search term at end
 [push]

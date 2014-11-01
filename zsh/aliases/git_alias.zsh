@@ -48,6 +48,10 @@ alias gnoff="git merge --no-ff"
 alias gap="git add -p"
 alias gai="git add -i"
 alias gaa="git add --all --intent-to-add"
+# ==============
+# cherry-picking
+# ==============
+alias gcp="git cherry-pick"
 # ========
 # rebasing
 # ========
