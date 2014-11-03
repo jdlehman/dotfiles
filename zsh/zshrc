@@ -33,3 +33,11 @@ source ~/.fzf.zsh
 if [[ -f .local.zsh && -r .local.zsh ]]; then
   source .local.zsh
 fi
+
+# hook after changing directory
+function chpwd() {
+  # source local zsh for a directory (project specific code)
+  if [[ -f .local.zsh && -r .local.zsh ]]; then
+    source .local.zsh
+  fi
+}
