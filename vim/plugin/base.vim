@@ -44,6 +44,7 @@
   set autoread                          " Automatically update when a file is changed outside of vim
   set formatoptions-=o                  " don't continue comments when pushing o/O
   set dictionary+=/usr/share/dict/words " add unix dictionary
+  set complete-=i                       " do not use included files in completion (for speed in big dirs)
   " set mouse=a                         " Allow scrolling and make vim clickable
   " set colorcolumn=80                  " set highlighted column
 
