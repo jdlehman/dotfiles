@@ -1,38 +1,30 @@
-;; set up package managers {{{
-(setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
-                         ("marmalade" . "http://marmalade-repo.org/packages/")
-                         ("melpa" . "http://melpa.milkbox.net/packages/")))
-(package-initialize)
+(defvar jl-dir (file-name-directory load-file-name)
+  "root dir of this emacs distribution")
 
-(when (not package-archive-contents)
-  (package-refresh-contents))
+(defvar jl-core-dir (expand-file-name "core" jl-dir)
+    "dir containing core functionality")
 
-(defvar my-packages
-  '(evil evil-leader)
-  "A list of packages to ensure are installed at launch.")
+(defvar jl-modules-dir (expand-file-name "modules" jl-dir)
+    "dir containing modules")
 
-(dolist (p my-packages)
-  (when (not (package-installed-p p))
-    (package-install p)))
-;; }}}
+(defvar jl-backups-dir (expand-file-name "backups" jl-dir)
+    "dir containing emacs backups/autosaves")
 
-;; setup evil {{{
-(evil-mode 1) ;; evil mode
-(global-evil-leader-mode) ;; evil leader
+(defvar jl-modules (expand-file-name "jl-modules.el" jl-dir)
+  "file contains a list of modules to be required.")
 
-;; use evil mode in all emacs buffer states (except minibuffer)
-  (setq evil-motion-state-modes (append evil-emacs-state-modes evil-motion-state-modes))
-  (setq evil-emacs-state-modes nil)
-;; }}}
+;; create backups dir if it does not already exist
+(unless (file-exists-p jl-backups-dir)
+  (make-directory jl-backups-dir))
 
-;; evil keybindings {{{
-  (evil-leader/set-leader ",")
-  (evil-leader/set-key
-    "v" 'split-window-horizontally
-    "s" 'split-window-vertically)
-  (define-key evil-insert-state-map (kbd "jk") 'evil-normal-state)
-  (define-key evil-normal-state-map (kbd "C-h") 'evil-window-left)
-  (define-key evil-normal-state-map (kbd "C-j") 'evil-window-down)
-  (define-key evil-normal-state-map (kbd "C-k") 'evil-window-up)
-  (define-key evil-normal-state-map (kbd "C-l") 'evil-window-right)
-;; }}}
+;; add directories to emacs's load-path
+(add-to-list 'load-path jl-core-dir)
+(add-to-list 'load-path jl-modules-dir)
+
+;; require core
+(require 'jl-packages)
+(require 'jl-ui)
+(require 'jl-base)
+
+;; load modules
+(load jl-modules)
