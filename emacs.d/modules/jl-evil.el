@@ -1,3 +1,5 @@
+(require 'evil)
+
 ;;; setup evil {{{
   (evil-mode 1) ; evil mode
   (global-evil-leader-mode) ; evil leader

@@ -24,7 +24,9 @@
   '(evil
      evil-leader
      flycheck
+     guide-key
      magit
+     popwin
      zenburn-theme))
 
 (defvar jl-packs

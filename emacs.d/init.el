@@ -10,7 +10,7 @@
 (defvar jl-backups-dir (expand-file-name "backups" jl-dir)
     "dir containing emacs backups/autosaves")
 
-(defvar jl-modules (expand-file-name "jl-modules.el" jl-dir)
+(defvar jl-modules (expand-file-name "jl-modules.el" jl-core-dir)
   "file contains a list of modules to be required.")
 
 ;; create backups dir if it does not already exist
