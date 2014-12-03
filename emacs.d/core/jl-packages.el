@@ -1,18 +1,17 @@
+(require 'package)
+
 ;; use most recent files
 (setq load-prefer-newer t)
+
+;; set package-user-dir
+(setq package-user-dir (expand-file-name "elpa" jl-dir))
 
 ;; set package archives
 (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
                          ("marmalade" . "http://marmalade-repo.org/packages/")
                          ("melpa" . "http://melpa.org/packages/")))
-;; set package-user-dir to be relative to Prelude install path
-(setq package-user-dir (expand-file-name "elpa" jl-dir))
 
 (package-initialize)
-
-;; update all out-of-date packages
-(unless package-archive-contents
-  (package-refresh-contents))
 
 (defvar jl-language-packs
   '(clojure-mode
@@ -32,12 +31,14 @@
   (append jl-language-packs jl-utility-packs)
   "A list of packages to ensure are installed at launch.")
 
-;; install each package if not already installed
-(defun install-packages (packages)
-  (dolist (p packages)
-    (unless (package-installed-p p)
-      (package-install p))))
+;; install/update each package if not already installed
+(defun install-packages ()
+  (interactive)
+  (package-refresh-contents)
+  (dolist (package jl-packs)
+    (unless (package-installed-p package)
+      (package-install package))))
 
-(install-packages jl-packs)
+(install-packages)
 
 (provide 'jl-packages)
