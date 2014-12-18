@@ -12,6 +12,11 @@
 ;; package management
 (depends-on "pallet")
 
+;; searching
+(depends-on "ido")
+(depends-on "flx-ido")
+(depends-on "ido-ubiquitous")
+
 ;; utilities
 (depends-on "evil")
 (depends-on "evil-leader")

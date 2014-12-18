@@ -2,3 +2,4 @@
 (require 'jl-guide-key)
 (require 'jl-yasnippet)
 (require 'jl-projectile)
+(require 'jl-ido)
