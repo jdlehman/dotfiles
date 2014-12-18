@@ -21,6 +21,10 @@
 (depends-on "evil")
 (depends-on "evil-leader")
 
+;; quick jumping
+(depends-on "ace-jump-mode")
+(depends-on "ace-jump-buffer")
+
 ;; utilities
 (depends-on "flycheck")
 (depends-on "guide-key")

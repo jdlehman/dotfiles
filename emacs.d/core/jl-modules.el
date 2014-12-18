@@ -3,3 +3,4 @@
 (require 'jl-yasnippet)
 (require 'jl-projectile)
 (require 'jl-ido)
+(require 'jl-ace-jump)
