@@ -1,6 +1,9 @@
 (source gnu)
 (source melpa)
 
+;; package management
+(depends-on "pallet")
+
 ;; language modes
 (depends-on "clojure-mode")
 (depends-on "coffee-mode")
@@ -9,17 +12,15 @@
 (depends-on "ruby-mode")
 (depends-on "scss-mode")
 
-;; package management
-(depends-on "pallet")
-
 ;; searching
-(depends-on "ido")
 (depends-on "flx-ido")
 (depends-on "ido-ubiquitous")
 
-;; utilities
+;; vim/modal editing
 (depends-on "evil")
 (depends-on "evil-leader")
+
+;; utilities
 (depends-on "flycheck")
 (depends-on "guide-key")
 (depends-on "magit")
