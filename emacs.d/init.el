@@ -2,13 +2,16 @@
   "root dir of this emacs distribution")
 
 (defvar jl-core-dir (expand-file-name "core" jl-dir)
-    "dir containing core functionality")
+  "dir containing core functionality")
 
 (defvar jl-modules-dir (expand-file-name "modules" jl-dir)
-    "dir containing modules")
+  "dir containing modules")
 
 (defvar jl-backups-dir (expand-file-name "backups" jl-dir)
-    "dir containing emacs backups/autosaves")
+  "dir containing emacs backups/autosaves")
+
+(defvar jl-history-dir (expand-file-name "history" jl-dir)
+  "dir containing history files")
 
 (defvar jl-modules (expand-file-name "jl-modules.el" jl-core-dir)
   "file contains a list of modules to be required.")
@@ -16,6 +19,10 @@
 ;; create backups dir if it does not already exist
 (unless (file-exists-p jl-backups-dir)
   (make-directory jl-backups-dir))
+
+;; create history dir if it does not already exist
+(unless (file-exists-p jl-history-dir)
+  (make-directory jl-history-dir))
 
 ;; add directories to emacs's load-path
 (add-to-list 'load-path jl-core-dir)

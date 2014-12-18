@@ -15,6 +15,7 @@
 ;; searching
 (depends-on "flx-ido")
 (depends-on "ido-ubiquitous")
+(depends-on "smex")
 
 ;; vim/modal editing
 (depends-on "evil")
