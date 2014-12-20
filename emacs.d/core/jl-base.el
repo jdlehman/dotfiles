@@ -9,6 +9,9 @@
 ;; do not create lockfiles (.#file-name)
 (setq create-lockfiles nil)
 
+;; create new lines on movement at EOF
+(setq next-line-add-newlines t)
+
 ;; smooth scrolling
 (setq scroll-conservatively 10
       scroll-margin 7)
