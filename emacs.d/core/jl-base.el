@@ -1,14 +1,14 @@
-;; setup backups
-(setq
-   ;; don't clobber symlinks
-   backup-by-copying t
-   ;; store backups in centralized folder
-   backup-directory-alist `(("." . ,jl/backups-dir))
-   delete-old-versions t
-   kept-new-versions 6
-   kept-old-versions 2
-   ;; use versioned backups
-   version-control t)
+;; store backups in temp dir
+(setq backup-directory-alist
+      `((".*" . ,temporary-file-directory)))
+
+;; store auto-saves in temp dir
+(setq auto-save-file-name-transforms `((".*" ,temporary-file-directory t))
+      auto-save-list-file-prefix (concat temporary-file-directory ".auto-saves-"))
+
+;; do not create lockfiles (.#file-name)
+(setq create-lockfiles nil)
+
 
 ;; show trailing whitespace
 (setq show-trailing-whitespace t
