@@ -9,6 +9,10 @@
 ;; do not create lockfiles (.#file-name)
 (setq create-lockfiles nil)
 
+;; smooth scrolling
+(setq scroll-conservatively 10
+      scroll-margin 7)
+
 
 ;; show trailing whitespace
 (setq show-trailing-whitespace t
