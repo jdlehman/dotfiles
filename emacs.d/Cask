@@ -13,6 +13,7 @@
 (depends-on "scss-mode")
 (depends-on "web-mode")
 (depends-on "js2-mode")
+(depends-on "emmet-mode")
 
 ;; searching
 (depends-on "flx-ido")

@@ -6,3 +6,4 @@
 (require 'jl-ace-jump)
 (require 'jl-web-mode)
 (require 'jl-js-mode)
+(require 'jl-emmet-mode)
