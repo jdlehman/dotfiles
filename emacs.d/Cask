@@ -11,6 +11,7 @@
 (depends-on "markdown-mode")
 (depends-on "ruby-mode")
 (depends-on "scss-mode")
+(depends-on "web-mode")
 
 ;; searching
 (depends-on "flx-ido")

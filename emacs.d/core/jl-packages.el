@@ -4,3 +4,4 @@
 (require 'jl-projectile)
 (require 'jl-ido)
 (require 'jl-ace-jump)
+(require 'jl-web-mode)
