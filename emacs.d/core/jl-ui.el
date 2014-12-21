@@ -18,8 +18,8 @@
 (fset 'yes-or-no-p 'y-or-n-p)
 
 ;; show trailing whitespace
-(setq show-trailing-whitespace t
-      whitespace-style '(face trailing))
+(setq-default show-trailing-whitespace t)
+(setq whitespace-style '(face trailing))
 
 ;; syntax highlighting everywhere
 (global-font-lock-mode 1)
