@@ -21,7 +21,7 @@
 ;; save cursor position between sessions
 (require 'saveplace)
 (setq-default save-place t)
-(setq save-place-file (expand-file-name ".places" jl/root-dir))
+(setq save-place-file (expand-file-name ".places" jl/history-dir))
 
 ;; set modifier bindings
 (setq ns-command-modifier 'meta
