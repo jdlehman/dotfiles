@@ -16,7 +16,26 @@
 (setq scroll-conservatively 10
       scroll-margin 7)
 
+;; savehist keeps track of some history
+(require 'savehist)
+(setq savehist-additional-variables
+      ;; search entries
+      '(search-ring regexp-search-ring)
+      ;; save every minute
+      savehist-autosave-interval 60
+      savehist-file (expand-file-name "savehist" jl/history-dir))
+(savehist-mode 1)
 
+;; save recent files
+(require 'recentf)
+(setq recentf-save-file (expand-file-name "recentf" jl/history-dir)
+      recentf-max-saved-items 100
+      recentf-max-menu-items 15)
+
+;; save bookmarks
+(require 'bookmark)
+(setq bookmark-default-file (expand-file-name "bookmarks" jl/history-dir)
+      bookmark-save-flag 1)
 
 ;; save cursor position between sessions
 (require 'saveplace)
