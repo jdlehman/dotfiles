@@ -47,3 +47,4 @@
 (load jl/packages)
 
 ;; load modules
+(require 'jl-buffers)
