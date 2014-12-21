@@ -31,7 +31,12 @@
 ;; instantly display current keystrokes in mini buffer
 (setq echo-keystrokes 0.1)
 
-;; auto-indent on RET
-(define-key global-map (kbd "RET") 'newline-and-indent)
+;;; keybindings {{{
+  ;; auto-indent on RET
+  (define-key global-map (kbd "RET") 'newline-and-indent)
+;;; }}}
+
+;; delete the selection area with a keypress
+; (delete-selection-mode t)
 
 (provide 'jl-base)
