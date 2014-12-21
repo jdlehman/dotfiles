@@ -31,4 +31,4 @@ install_with_brew \
   python python3 \
   node \
   mysql mongodb postgresql \
-  emacs vim cask
+  emacs vim cask ispell
