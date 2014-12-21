@@ -39,6 +39,7 @@
 ;;; }}}
 
 ;; require core
+(require 'jl-util)
 (require 'jl-ui)
 (require 'jl-base)
 
