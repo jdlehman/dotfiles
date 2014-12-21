@@ -12,6 +12,7 @@
 (depends-on "ruby-mode")
 (depends-on "scss-mode")
 (depends-on "web-mode")
+(depends-on "js2-mode")
 
 ;; searching
 (depends-on "flx-ido")
