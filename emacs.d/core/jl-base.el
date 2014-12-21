@@ -17,9 +17,6 @@
       scroll-margin 7)
 
 
-;; show trailing whitespace
-(setq show-trailing-whitespace t
-      whitespace-style '(face trailing))
 
 ;; save cursor position between sessions
 (require 'saveplace)
