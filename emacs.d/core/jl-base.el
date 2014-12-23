@@ -53,6 +53,8 @@
 ;;; keybindings {{{
   ;; auto-indent on RET
   (define-key global-map (kbd "RET") 'newline-and-indent)
+  ;; remove ESC keybindings (use Meta instead). now equivalent to C-g
+  (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
 ;;; }}}
 
 ;; delete the selection area with a keypress
