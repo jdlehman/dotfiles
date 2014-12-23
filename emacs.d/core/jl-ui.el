@@ -33,6 +33,11 @@
 ;; Add proper word wrapping
 (global-visual-line-mode t)
 
+;; set tabs to 2 spaces
+(setq-default indent-tabs-mode nil)
+(setq-default tab-width 2)
+(setq indent-line-function 'insert-tab)
+
 ;; load zenburn theme
 (load-theme 'zenburn t)
 
