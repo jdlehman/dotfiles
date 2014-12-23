@@ -48,3 +48,4 @@
 
 ;; load modules
 (require 'jl-buffers)
+(require 'jl-marks)
