@@ -14,6 +14,10 @@
 (global-linum-mode t)
 (setq linum-format "%2d ")
 
+;; highlight current line
+(global-hl-line-mode 1)
+(set-face-background 'hl-line "#330")
+
 ;; enable y/n answers
 (fset 'yes-or-no-p 'y-or-n-p)
 
