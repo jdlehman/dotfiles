@@ -10,15 +10,6 @@ To setup and install these dotfiles, simply run `sh scripts/installer` from the 
 
 The following is a high-level overview of the project's structure. You can look into the source for the specifics. Each folder with the exception of `scripts` contains dotfiles to be symlinked into the `$HOME` directory. One thing to note is that each of these folders can contain install shell scripts to setup anything related to that particular dotfile. These additional shell scripts can be in the form `install*.sh` or `setup*.sh`. Setup scripts are run first, and typically contain dependencies that might be needed before other scripting occurs. The install scripts contain whatever else needs to be done to set up these dotfiles.
 
-### zsh structure
-
-The zsh load structure is worth discussing briefly. It will source all files zsh files within the `zsh` directory that are not in the form `*completion.zsh`. Then it will add completions to the path, `$fpath`, and source all zsh files in the form `*completion.zsh`
-
-You can create a `.local.zsh` file to source environment variables or setup anything you might need for that directory/project.
-
-There also exists a `custom.zsh` file in this repository, where you can store machine specific settings that you might not want to commit to the repo.
-
-
 ## Credits
 
 I drew inspiration as well as some of the structure from [Holman's](http://zachholman.com/2010/08/dotfiles-are-meant-to-be-forked/) [dotfiles](https://github.com/holman/dotfiles). I highly recommend taking a look at his dotfiles as well, you might prefer the overall structure and design of his setup.
