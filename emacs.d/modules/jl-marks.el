@@ -22,10 +22,10 @@
 
 ;;; KEYBINDINGS {{{
   ;; add mark without activating region
-  (global-set-key (kbd "C-`") 'jl/push-mark-no-activate)
+  (define-key global-map (kbd "C-`") 'jl/push-mark-no-activate)
 
   ;; jump to mark, without activating region
-  (global-set-key (kbd "M-`") 'jl/jump-to-mark)
+  (define-key global-map (kbd "M-`") 'jl/jump-to-mark)
 ;;; }}}
 
 (provide 'jl-marks)
