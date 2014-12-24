@@ -7,3 +7,4 @@
 (require 'jl-web-mode)
 (require 'jl-js-mode)
 (require 'jl-emmet-mode)
+(require 'jl-magit)
