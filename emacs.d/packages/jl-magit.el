@@ -10,7 +10,7 @@
 ;;; }}}
 
 ;;; KEYBINDINGS {{{
-  (define-key global-map (kbd "C-c g s") 'magit-status)
+  (global-set-key (kbd "C-c g s") 'magit-status)
 ;;; }}}
 
 (provide 'jl-magit)

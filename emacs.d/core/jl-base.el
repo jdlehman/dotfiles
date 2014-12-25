@@ -58,9 +58,9 @@
 
 ;;; keybindings {{{
   ;; auto-indent on RET
-  (define-key global-map (kbd "RET") 'newline-and-indent)
+  (global-set-key (kbd "RET") 'newline-and-indent)
   ;; remove ESC keybindings (use Meta instead). now equivalent to C-g
-  (define-key global-map (kbd "<escape>") 'keyboard-escape-quit)
+  (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
 ;;; }}}
 
 (provide 'jl-base)

@@ -24,8 +24,8 @@
 (require 'smex)
 
 (smex-initialize)
-(define-key global-map (kbd "M-x") 'smex)
-(define-key global-map (kbd "M-X") 'smex-major-mode-commands)
+(global-set-key (kbd "M-x") 'smex)
+(global-set-key (kbd "M-X") 'smex-major-mode-commands)
 
 (setq smex-save-file (expand-file-name ".smex-items" jl/history-dir)
       smex-show-unbound-commands t)

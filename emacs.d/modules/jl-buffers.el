@@ -69,7 +69,7 @@
 
 ;;; KEYBINDINGS {{{
   ;; toggle fullscreen buffer
-  (define-key global-map (kbd "C-c f s") 'jl/toggle-fullscreen-buffer)
+  (global-set-key (kbd "C-c f s") 'jl/toggle-fullscreen-buffer)
 ;;; }}}
 
 (provide 'jl-buffers)
