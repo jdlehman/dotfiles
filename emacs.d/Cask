@@ -20,6 +20,7 @@
 (depends-on "ido-ubiquitous")
 (depends-on "smex")
 (depends-on "ag")
+(depends-on "helm")
 
 ;; vim/modal editing
 (depends-on "evil")
