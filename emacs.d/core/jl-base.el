@@ -59,6 +59,11 @@
 ;; visible bell
 (setq visible-bell t)
 
+;; use undo-tree
+(global-undo-tree-mode)
+(setq undo-tree-visualizer-timestamps t
+      undo-tree-visualizer-diff t)
+
 ;; from magnars
 ;; Keep region when undoing in region
 (defadvice undo-tree-undo (around keep-region activate)
