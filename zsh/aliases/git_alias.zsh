@@ -45,6 +45,7 @@ alias gnoff="git merge --no-ff"
 # =======
 # staging
 # =======
+alias ga="git add"
 alias gap="git add -p"
 alias gai="git add -i"
 alias gaa="git add --all --intent-to-add"

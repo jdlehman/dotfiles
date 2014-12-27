@@ -41,6 +41,7 @@
   noff = merge --no-ff
 
   ; staging
+  a = add
   aa = add --all --intent-to-add
   ap = add -p
   ai = add -i
