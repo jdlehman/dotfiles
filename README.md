@@ -12,4 +12,4 @@ The following is a high-level overview of the project's structure. You can look 
 
 ## Credits
 
-I drew inspiration as well as some of the structure from [Holman's](http://zachholman.com/2010/08/dotfiles-are-meant-to-be-forked/) [dotfiles](https://github.com/holman/dotfiles). I highly recommend taking a look at his dotfiles as well, you might prefer the overall structure and design of his setup.
+I drew inspiration as well as from the structure of [Holman's](http://zachholman.com/2010/08/dotfiles-are-meant-to-be-forked/) [dotfiles](https://github.com/holman/dotfiles). I highly recommend taking a look at his dotfiles as well, you might prefer the overall structure and design of his setup.
