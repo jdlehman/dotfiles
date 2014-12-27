@@ -50,3 +50,4 @@
 (require 'jl-buffers)
 (require 'jl-marks)
 (require 'jl-movement)
+(require 'jl-spelling)
