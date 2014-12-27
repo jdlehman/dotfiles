@@ -38,6 +38,11 @@
 (setq-default tab-width 2)
 (setq indent-line-function 'insert-tab)
 
+;;; rename modes on modeline {{{
+  (rename-modeline "js2-mode" js2-mode "JS2")
+  (rename-modeline "clojure-mode" clojure-mode "Clj")
+;;; }}}
+
 ;; load zenburn theme
 (load-theme 'zenburn t)
 
