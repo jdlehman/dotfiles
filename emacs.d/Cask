@@ -29,6 +29,7 @@
 ;; quick jumping
 (depends-on "ace-jump-mode")
 (depends-on "ace-jump-buffer")
+(depends-on "ace-window")
 
 ;; ui
 (depends-on "zenburn-theme")
