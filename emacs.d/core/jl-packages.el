@@ -10,3 +10,4 @@
 (require 'jl-emmet-mode)
 (require 'jl-magit)
 (require 'jl-sh-mode)
+(require 'jl-hungry-delete)
