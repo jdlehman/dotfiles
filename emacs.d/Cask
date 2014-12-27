@@ -32,6 +32,7 @@
 (depends-on "ace-window")
 
 ;; ui
+(depends-on "diminish")
 (depends-on "zenburn-theme")
 
 ;; utilities
