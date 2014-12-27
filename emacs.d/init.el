@@ -51,3 +51,4 @@
 (require 'jl-marks)
 (require 'jl-movement)
 (require 'jl-spelling)
+(require 'jl-comment)
