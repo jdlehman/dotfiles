@@ -38,6 +38,11 @@
 (setq-default tab-width 2)
 (setq indent-line-function 'insert-tab)
 
+;; prefer utf8
+(prefer-coding-system 'utf-8)
+(when (display-graphic-p)
+  (setq x-select-request-type '(UTF8_STRING COMPOUND_TEXT TEXT STRING)))
+
 ;; load zenburn theme
 (load-theme 'zenburn t)
 
