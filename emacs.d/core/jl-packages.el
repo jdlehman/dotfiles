@@ -13,3 +13,4 @@
 (require 'jl-hungry-delete)
 (require 'jl-diminish)
 (require 'jl-git-gutter-fringe)
+(require 'jl-visual-regexp)
