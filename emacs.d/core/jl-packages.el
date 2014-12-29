@@ -12,3 +12,4 @@
 (require 'jl-sh-mode)
 (require 'jl-hungry-delete)
 (require 'jl-diminish)
+(require 'jl-git-gutter-fringe)

@@ -35,10 +35,13 @@
 (depends-on "diminish")
 (depends-on "zenburn-theme")
 
+;; git
+(depends-on "magit")
+(depends-on "git-gutter-fringe")
+
 ;; utilities
 (depends-on "flycheck")
 (depends-on "guide-key")
-(depends-on "magit")
 (depends-on "projectile")
 (depends-on "smartparens")
 (depends-on "yasnippet")
