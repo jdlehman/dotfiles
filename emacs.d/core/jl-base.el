@@ -34,6 +34,7 @@
 (setq recentf-save-file (expand-file-name "recentf" jl/history-dir)
       recentf-max-saved-items 100
       recentf-max-menu-items 15)
+(recentf-mode)
 
 ;; save bookmarks
 (require 'bookmark)
