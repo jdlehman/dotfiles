@@ -55,7 +55,7 @@
 (setq echo-keystrokes 0.1)
 
 ;; delete the selection area with a keypress
-; (delete-selection-mode t)
+(delete-selection-mode t)
 
 ;; visible bell
 (setq visible-bell t)
