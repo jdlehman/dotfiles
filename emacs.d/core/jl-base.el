@@ -23,9 +23,11 @@
 (require 'savehist)
 (setq savehist-additional-variables
       ;; search entries
-      '(search-ring regexp-search-ring)
+      '(kill-ring search-ring regexp-search-ring)
       ;; save every minute
       savehist-autosave-interval 60
+      history-delete-duplicates t
+      savehist-save-minibuffer-history 1
       savehist-file (expand-file-name "savehist" jl/history-dir))
 (savehist-mode 1)
 
