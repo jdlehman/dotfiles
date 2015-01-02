@@ -43,6 +43,7 @@
 (depends-on "expand-region")
 (depends-on "hungry-delete")
 (depends-on "smartparens")
+(depends-on "multiple-cursors")
 
 ;; utilities
 (depends-on "flycheck")

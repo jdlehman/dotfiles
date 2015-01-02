@@ -15,3 +15,4 @@
 (require 'jl-git-gutter-fringe)
 (require 'jl-visual-regexp)
 (require 'jl-expand-region)
+(require 'jl-multiple-cursors)
