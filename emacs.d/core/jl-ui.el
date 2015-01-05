@@ -16,7 +16,7 @@
 
 ;; highlight current line
 (global-hl-line-mode 1)
-(set-face-background 'hl-line "#330")
+(set-face-background 'hl-line "#ggg")
 
 ;; enable y/n answers
 (fset 'yes-or-no-p 'y-or-n-p)
