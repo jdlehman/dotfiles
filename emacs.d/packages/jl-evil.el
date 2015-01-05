@@ -1,7 +1,10 @@
 (require 'evil)
 (require 'evil-leader)
 
-;;; setup evil {{{
+;;; FUNCTIONS {{{
+;;; }}}
+
+;;; SETTINGS {{{
   (evil-mode 1) ; evil mode
   (global-evil-leader-mode) ; evil leader
 
@@ -11,7 +14,10 @@
         evil-emacs-state-modes nil)
 ;;; }}}
 
-;;; evil keybindings {{{
+;;; KEYBINDINGS {{{
+;;; }}}
+
+;;; EVIL MAPPINGS {{{
   (evil-leader/set-leader ",")
 
   ;; toggle between buffers

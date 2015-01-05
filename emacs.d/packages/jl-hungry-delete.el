@@ -1,5 +1,16 @@
 (require 'hungry-delete)
 
-(global-hungry-delete-mode)
+;;; FUNCTIONS {{{
+;;; }}}
+
+;;; SETTINGS {{{
+  (global-hungry-delete-mode)
+;;; }}}
+
+;;; KEYBINDINGS {{{
+;;; }}}
+
+;;; EVIL MAPPINGS {{{
+;;; }}}
 
 (provide 'jl-hungry-delete)

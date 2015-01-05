@@ -69,7 +69,10 @@
 
 ;;; KEYBINDINGS {{{
   ;; toggle fullscreen buffer
-  (global-set-key (kbd "C-c f s") 'jl/toggle-fullscreen-buffer)
+  (global-set-key (kbd "C-c m") 'jl/toggle-fullscreen-buffer)
+;;; }}}
+
+;;; EVIL MAPPINGS {{{
 ;;; }}}
 
 (provide 'jl-buffers)

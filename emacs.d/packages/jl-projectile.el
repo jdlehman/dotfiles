@@ -15,4 +15,7 @@
   (define-key projectile-command-map (kbd "s a") 'jl/projectile-helm-ag)
 ;;; }}}
 
+;;; EVIL MAPPINGS {{{
+;;; }}}
+
 (provide 'jl-projectile)

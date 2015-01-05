@@ -1,6 +1,17 @@
 (require 'git-gutter-fringe)
 
-(set-face-foreground 'git-gutter-fr:modified "yellow")
-(global-git-gutter-mode t)
+;;; FUNCTIONS {{{
+;;; }}}
+
+;;; SETTINGS {{{
+  (set-face-foreground 'git-gutter-fr:modified "yellow")
+  (global-git-gutter-mode t)
+;;; }}}
+
+;;; KEYBINDINGS {{{
+;;; }}}
+
+;;; EVIL MAPPINGS {{{
+;;; }}}
 
 (provide 'jl-git-gutter-fringe)

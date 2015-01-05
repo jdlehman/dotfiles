@@ -22,4 +22,7 @@
   (global-set-key (kbd "C-x l") 'goto-line)
 ;;; }}}
 
+;;; EVIL MAPPINGS {{{
+;;; }}}
+
 (provide 'jl-movement)

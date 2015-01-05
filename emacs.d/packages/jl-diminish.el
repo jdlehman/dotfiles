@@ -11,18 +11,26 @@
                (lambda () (setq mode-name ,abbrev))))
 ;;; }}}
 
-;; rename
-(jl/diminish-minor-mode 'undo-tree 'undo-tree-mode " UT")
-(jl/diminish-major-mode 'emacs-lisp-mode-hook "el")
-(jl/diminish-major-mode 'js2-mode-hook "js2")
-(jl/diminish-major-mode 'clojure-mode-hook "clj")
+;;; SETTINGS {{{
+  ;; rename
+  (jl/diminish-minor-mode 'undo-tree 'undo-tree-mode " UT")
+  (jl/diminish-major-mode 'emacs-lisp-mode-hook "el")
+  (jl/diminish-major-mode 'js2-mode-hook "js2")
+  (jl/diminish-major-mode 'clojure-mode-hook "clj")
 
-;; hide
-(jl/diminish-minor-mode 'magit 'magit-auto-revert-mode)
-(jl/diminish-minor-mode 'guide-key 'guide-key-mode)
-(jl/diminish-minor-mode 'whitespace 'whitespace-mode)
-(jl/diminish-minor-mode 'yasnippet 'yas-minor-mode)
-(jl/diminish-minor-mode 'eldoc 'eldoc-mode)
-(jl/diminish-minor-mode 'helm 'helm-mode)
+  ;; hide
+  (jl/diminish-minor-mode 'magit 'magit-auto-revert-mode)
+  (jl/diminish-minor-mode 'guide-key 'guide-key-mode)
+  (jl/diminish-minor-mode 'whitespace 'whitespace-mode)
+  (jl/diminish-minor-mode 'yasnippet 'yas-minor-mode)
+  (jl/diminish-minor-mode 'eldoc 'eldoc-mode)
+  (jl/diminish-minor-mode 'helm 'helm-mode)
+;;; }}}
+
+;;; KEYBINDINGS {{{
+;;; }}}
+
+;;; EVIL MAPPINGS {{{
+;;; }}}
 
 (provide 'jl-diminish)

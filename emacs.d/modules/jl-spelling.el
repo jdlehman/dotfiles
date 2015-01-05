@@ -24,4 +24,7 @@
   (define-key ctl-x-map (kbd "C-i") 'jl/ispell-word-then-abbrev)
 ;;; }}}
 
+;;; EVIL MAPPINGS {{{
+;;; }}}
+
 (provide 'jl-spelling)

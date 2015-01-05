@@ -2,10 +2,20 @@
 (require 'ace-jump-buffer)
 (require 'ace-window)
 
-(global-set-key (kbd "C-c SPC") 'ace-jump-mode)
-(global-set-key (kbd "C-c w") 'ace-window)
+;;; FUNCTIONS {{{
+;;; }}}
 
-;; set ace window keys to be home keys
-(setq aw-keys '(?a ?s ?d ?f ?g ?h ?j ?k ?l))
+;;; SETTINGS {{{
+  ;; set ace window keys to be home keys
+  (setq aw-keys '(?a ?s ?d ?f ?g ?h ?j ?k ?l))
+;;; }}}
+
+;;; KEYBINDINGS {{{
+  (global-set-key (kbd "C-c SPC") 'ace-jump-mode)
+  (global-set-key (kbd "C-c w") 'ace-window)
+;;; }}}
+
+;;; EVIL MAPPINGS {{{
+;;; }}}
 
 (provide 'jl-ace-jump)

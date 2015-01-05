@@ -19,4 +19,7 @@
   (global-set-key (kbd "C-c C-r") 'jl/comment-or-uncomment-region-or-line)
 ;;; }}}
 
+;;; EVIL MAPPINGS {{{
+;;; }}}
+
 (provide 'jl-comment)
