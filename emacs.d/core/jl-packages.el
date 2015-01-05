@@ -6,6 +6,7 @@
 (require 'jl-projectile)
 (require 'jl-ace-jump)
 (require 'jl-web-mode)
+(require 'jl-coffee-mode)
 (require 'jl-js-mode)
 (require 'jl-emmet-mode)
 (require 'jl-magit)
