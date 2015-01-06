@@ -28,3 +28,10 @@ ln -sfn $DOTFILES_ROOT/iterm2/com.googlecode.iterm2.plist $HOME/Library/Preferen
 
 # ctags
 ln -sfn $DOTFILES_ROOT/ctags/ctags $HOME/.ctags
+
+# irb
+if test ! -d $HOME/.irb
+then
+  mkdir $HOME/.irb
+fi
+ln -sfn $DOTFILES_ROOT/irb/irbrc $HOME/.irbrc
