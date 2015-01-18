@@ -46,7 +46,7 @@
 ;;; }}}
 
 ;;; KEYBINDINGS {{{
-  (global-set-key (kbd "C--") 'jl/resize-window-overlay-map)
+  (global-set-key (kbd "C-c w s") 'jl/resize-window-overlay-map)
 ;;; }}}
 
 ;;; EVIL MAPPINGS {{{

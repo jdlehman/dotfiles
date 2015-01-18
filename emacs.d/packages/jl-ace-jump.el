@@ -12,7 +12,7 @@
 
 ;;; KEYBINDINGS {{{
   (global-set-key (kbd "C-c SPC") 'ace-jump-mode)
-  (global-set-key (kbd "C-c w") 'ace-window)
+  (global-set-key (kbd "C-c w w") 'ace-window)
 ;;; }}}
 
 ;;; EVIL MAPPINGS {{{
