@@ -7,7 +7,7 @@
     Equivalent to \\[set-mark-command] when \\[transient-mark-mode] is disabled"
     (interactive)
     (push-mark (point) t nil)
-    (message "Pushed mark to ring"))
+    (jl/echo "Pushed mark to ring"))
 
   (defun jl/jump-to-mark ()
     "Jumps to the local mark, respecting the `mark-ring' order.
