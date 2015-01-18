@@ -52,4 +52,5 @@
 (require 'jl-movement)
 (require 'jl-spelling)
 (require 'jl-comment)
+(require 'jl-window)
 (require 'jl-misc)
