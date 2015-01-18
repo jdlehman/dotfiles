@@ -18,3 +18,4 @@
 (require 'jl-expand-region)
 (require 'jl-multiple-cursors)
 (require 'jl-smartscan)
+(require 'jl-company)
