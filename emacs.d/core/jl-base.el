@@ -84,7 +84,7 @@
   ;; auto-indent on RET
   (global-set-key (kbd "RET") 'newline-and-indent)
   ;; remove ESC keybindings (use Meta instead). now equivalent to C-g
-  (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
+  (global-set-key (kbd "<escape>") 'keyboard-quit)
 ;;; }}}
 
 (provide 'jl-base)
