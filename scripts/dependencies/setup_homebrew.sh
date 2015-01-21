@@ -1,5 +1,5 @@
 # install homebrew
-if test ! $( which brew )
+if ! [[ $( which brew ) ]]
 then
   echo "Installing homebrew..."
   ruby -e "$( curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install )"
@@ -19,6 +19,20 @@ install_with_brew() {
   done
 
 }
+
+# tap emacs-mac (emacs with mac osx fixes/opts)
+if ! [[ $(brew tap) =~ "emacsmacport" ]]
+then
+  # tap
+  echo "Tapping railwaycat/emacsmacport"
+  brew tap railwaycat/emacsmacport
+  # install
+  echo "Installing emacs-mac"
+  brew install emacs-mac 2> /dev/null
+  # link mac app to applications folder
+  echo "Symlinking emacs-mac to /Applications"
+  brew linkapps emacs-mac 2> /dev/null
+fi
 
 # install dependencies with homebrew
 install_with_brew \
