@@ -6,19 +6,6 @@ export FZF_DEFAULT_OPTS='-x -m'
 # also forces FZF to respect .gitignore
 export FZF_DEFAULT_COMMAND='ag -l -g ""'
 
-# Copy the original fzf function to __fzf
-declare -f __fzf > /dev/null ||
-  eval "$(echo "__fzf() {"; declare -f fzf | grep -v '^{' | tail -n +2)"
-
-# Use git ls-tree when possible
-fzf() {
-  if [ -n "$(git rev-parse HEAD 2> /dev/null)" ]; then
-    FZF_DEFAULT_COMMAND="git ls-tree -r --name-only HEAD" __fzf "$@"
-  else
-    __fzf "$@"
-  fi
-}
-
 # -------------
 # Opening Files
 # -------------
@@ -51,20 +38,17 @@ fd() {
   cd "$dir"
 }
 
+# fda - including hidden directories
+fda() {
+  local dir
+  dir=$(find ${1:-.} -type d 2> /dev/null | fzf +m) && cd "$dir"
+}
+
 # cdf - cd into the directory of the selected file
 cdf() {
    local file
    local dir
    file=$(fzf +m -q "$1") && dir=$(dirname "$file") && cd "$dir"
-}
-
-# -------
-# History
-# -------
-
-# fh - repeat history
-fh() {
-  eval $(([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s | sed 's/ *[0-9]* *//')
 }
 
 # ---------
@@ -94,4 +78,18 @@ fco() {
   commits=$(git log --pretty=oneline --abbrev-commit --reverse) &&
   commit=$(echo "$commits" | fzf +s +m -e) &&
   git checkout $(echo "$commit" | sed "s/ .*//")
+}
+
+# ----
+# tmux
+# ----
+
+# fs [FUZZY PATTERN] - Select selected tmux session
+#   - Bypass fuzzy finder if there's only one match (--select-1)
+#   - Exit if there's no match (--exit-0)
+fs() {
+  local session
+  session=$(tmux list-sessions -F "#{session_name}" | \
+    fzf --query="$1" --select-1 --exit-0) &&
+  tmux switch-client -t "$session"
 }
