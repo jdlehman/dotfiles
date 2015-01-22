@@ -27,7 +27,7 @@ done
 unset config_files
 
 
-source ~/.fzf.zsh
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # source local zsh for a directory (project specific code)
 if [[ -f .local.zsh && -r .local.zsh ]]; then

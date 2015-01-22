@@ -1,10 +1,19 @@
 # fzf fuzzy search
-source ~/.fzf.zsh
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 export FZF_DEFAULT_OPTS='-x -m'
 # Setting ag as the default source for fzf
 # also forces FZF to respect .gitignore
 export FZF_DEFAULT_COMMAND='ag -l -g ""'
+
+# Use git ls-tree when possible
+fzf() {
+  if [ -n "$(git rev-parse HEAD 2> /dev/null)" ]; then
+    FZF_DEFAULT_COMMAND="git ls-tree -r --name-only HEAD" $commands[fzf] "$@"
+  else
+    $commands[fzf] "$@"
+  fi
+}
 
 # -------------
 # Opening Files
