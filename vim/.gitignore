@@ -3,6 +3,7 @@
 .backup/*
 .tmp/*
 .undo/*
+autoload/*
 plugged/*
 view/*
 
@@ -10,5 +11,6 @@ view/*
 !.backup/.gitkeep
 !.tmp/.gitkeep
 !.undo/.gitkeep
+!autoload/.gitkeep
 !plugged/.gitkeep
 !view/.gitkeep
