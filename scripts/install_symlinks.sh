@@ -24,7 +24,7 @@ ln -sfn $DOTFILES_ROOT/zsh/zshrc $HOME/.zshrc
 ln -sfn $DOTFILES_ROOT/zsh/zshenv $HOME/.zshenv
 
 # iterm2
-ln -sfn $DOTFILES_ROOT/iterm2/com.googlecode.iterm2.plist $HOME/Library/Preferences
+ln -sfn $DOTFILES_ROOT/iterm2 $HOME/.iterm2
 
 # ctags
 ln -sfn $DOTFILES_ROOT/ctags/ctags $HOME/.ctags
