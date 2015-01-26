@@ -1,5 +1,4 @@
 autoload colors && colors
-# based on: http://github.com/ehrenmurdick/config/blob/master/zsh/prompt.zsh
 
 if (( $+commands[git] ))
 then
@@ -23,7 +22,13 @@ git_dirty() {
 }
 
 git_branch () {
-  echo $($git describe --contains --all HEAD)
+  local branch=$($git rev-parse --abbrev-ref HEAD)
+  if [[ $branch == "HEAD" ]]
+  then
+    echo $($git status | head -1)
+  else
+    echo $($git rev-parse --abbrev-ref HEAD)
+  fi
 }
 
 display_ahead_or_behind() {
@@ -33,7 +38,7 @@ display_ahead_or_behind() {
 ahead_or_behind() {
   # http://stackoverflow.com/a/13172299
   # get the tracking-branch name
-  tracking_branch=$($git for-each-ref --format='%(upstream:short)' $($git symbolic-ref -q HEAD))
+  local tracking_branch=$($git for-each-ref --format='%(upstream:short)' $($git symbolic-ref -q HEAD))
   set -- $($git rev-list --left-right --count $tracking_branch...HEAD)
   local behind=$1
   local ahead=$2
