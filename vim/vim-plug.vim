@@ -30,6 +30,7 @@
     " Searching
     Plug 'rking/ag.vim', { 'on': ['Ag', 'AgAdd', 'AgHelp'] }
     Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
+    Plug 'rhysd/clever-f.vim'
 
     " Helpful tools
     Plug 'tpope/vim-surround'
