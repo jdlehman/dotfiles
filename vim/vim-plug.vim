@@ -30,7 +30,10 @@
     " Searching
     Plug 'rking/ag.vim', { 'on': ['Ag', 'AgAdd', 'AgHelp'] }
     Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
+
+    " movement
     Plug 'rhysd/clever-f.vim'
+    Plug 'gcmt/wildfire.vim'
 
     " Helpful tools
     Plug 'tpope/vim-surround'
