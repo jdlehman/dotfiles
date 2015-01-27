@@ -38,10 +38,8 @@
   set display+=lastline                 " display as much of lastline as possible
   set scrolloff=5                       " minimum rows to keep above/below cursor
   set sidescrolloff=5                   " minimum cols to keep left/right of cursor
-  set hidden                            " allow unsaved buffers to be hidden
   set showcmd                           " Show command that is being typed
   set switchbuf=useopen,usetab          " Use already open buffers when switching buffers
-  set autoread                          " Automatically update when a file is changed outside of vim
   set formatoptions-=o                  " don't continue comments when pushing o/O
   set dictionary+=/usr/share/dict/words " add unix dictionary
   set complete-=i                       " do not use included files in completion (for speed in big dirs)
