@@ -22,12 +22,12 @@ git_dirty() {
 }
 
 git_branch () {
-  local branch=$($git rev-parse --abbrev-ref HEAD)
+  local branch=$($git rev-parse --abbrev-ref HEAD 2>/dev/null)
   if [[ $branch == "HEAD" ]]
   then
     echo $($git status | head -1)
   else
-    echo $($git rev-parse --abbrev-ref HEAD)
+    echo $branch
   fi
 }
 
