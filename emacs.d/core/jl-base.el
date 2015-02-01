@@ -68,15 +68,6 @@
 (setq undo-tree-visualizer-timestamps t
       undo-tree-visualizer-diff t)
 
-;;; dired settings {{{
-
-  (when (eq system-type 'darwin)
-    (setq insert-directory-program "/usr/local/bin/gls"))
-  (setq dired-listing-switches "-aBFGgh1v --group-directories-first")
-  (setq dired-recursive-copies 'always)
-  (setq dired-recursive-deletes 'always)
-;;; }}}
-
 ;; from magnars
 ;; Keep region when undoing in region
 (defadvice undo-tree-undo (around keep-region activate)

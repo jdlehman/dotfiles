@@ -19,3 +19,4 @@
 (require 'jl-multiple-cursors)
 (require 'jl-smartscan)
 (require 'jl-company)
+(require 'jl-dired)
