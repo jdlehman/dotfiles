@@ -10,13 +10,26 @@
       (if (< (point) (mark))
         (comment-or-uncomment-region (point) (mark))
         (comment-or-uncomment-region (mark) (point)))))
+
+  ;; http://endlessparentheses.com/implementing-comment-line.html
+  (defun jl/comment-line (n)
+    "Comment or uncomment current line and leave point after it.
+    With positive prefix, apply to N lines including current one.
+    With negative prefix, apply to -N lines above."
+    (interactive "p")
+    (comment-or-uncomment-region
+      (line-beginning-position)
+      (goto-char (line-end-position n)))
+    (forward-line 1)
+    (back-to-indentation))
 ;;; }}}
 
 ;;; SETTINGS {{{
 ;;; }}}
 
 ;;; KEYBINDINGS {{{
-  (global-set-key (kbd "C-c C-r") 'jl/comment-or-uncomment-region-or-line)
+  (global-set-key (kbd "C-c C-r") #'jl/comment-or-uncomment-region-or-line)
+  (global-set-key (kbd "C-;") #'jl/comment-line)
 ;;; }}}
 
 ;;; EVIL MAPPINGS {{{
