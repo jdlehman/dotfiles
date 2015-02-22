@@ -67,3 +67,5 @@
   default = simple
 [merge]
   tool = vimdiff
+[credential]
+	helper = osxkeychain
