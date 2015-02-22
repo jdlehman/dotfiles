@@ -12,6 +12,10 @@
   vnoremap j gj
   vnoremap k gk
 
+  " move to the beginning or end of the line without strecthing
+  nnoremap H 0
+  nnoremap L $
+
   " Arrow keys resize current viewport
   nnoremap <left> :vertical resize -5<cr>
   nnoremap <right> :vertical resize +5<cr>
