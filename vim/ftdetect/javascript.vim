@@ -1,1 +1,1 @@
-autocmd! BufNewFile,BufRead *.json set filetype=javascript
+autocmd! BufNewFile,BufRead {*.json,.eslintrc,.jshintrc} set filetype=javascript
