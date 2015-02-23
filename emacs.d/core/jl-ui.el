@@ -3,6 +3,10 @@
 (tool-bar-mode -1)
 (menu-bar-mode -1)
 
+;; start emacs maximized
+(custom-set-variables
+ '(initial-frame-alist (quote ((fullscreen . maximized)))))
+
 ;; open emacs blank scratch
 (setq inhibit-splash-screen t
       initial-scratch-message nil)
