@@ -5,6 +5,9 @@ then
   ruby -e "$( curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install )"
 fi
 
+# update brew formulae
+brew update
+
 install_with_brew() {
   # install each uninstalled dependency
   installed_packages=$(brew list)
