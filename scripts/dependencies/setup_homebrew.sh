@@ -49,3 +49,5 @@ install_with_brew \
   node \
   mysql mongodb postgresql \
   emacs vim cask ispell
+
+brew install --HEAD neovim
