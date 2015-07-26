@@ -58,3 +58,4 @@
 (depends-on "flycheck")
 (depends-on "guide-key")
 (depends-on "projectile")
+(depends-on "hydra")

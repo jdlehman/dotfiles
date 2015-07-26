@@ -21,3 +21,4 @@
 (require 'jl-company)
 (require 'jl-dired)
 (require 'jl-swiper)
+(require 'jl-hydra)
