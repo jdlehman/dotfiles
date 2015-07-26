@@ -42,6 +42,7 @@
 (require 'jl-util)
 (require 'jl-ui)
 (require 'jl-base)
+(require 'jl-mode)
 
 ;; load package configs
 (load jl/packages)
