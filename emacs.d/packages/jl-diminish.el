@@ -19,7 +19,6 @@
   (jl/diminish-major-mode 'clojure-mode-hook "clj")
 
   ;; hide
-  (jl/diminish-minor-mode 'magit 'magit-auto-revert-mode)
   (jl/diminish-minor-mode 'guide-key 'guide-key-mode)
   (jl/diminish-minor-mode 'whitespace 'whitespace-mode)
   (jl/diminish-minor-mode 'yasnippet 'yas-minor-mode)
