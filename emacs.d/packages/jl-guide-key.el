@@ -4,7 +4,7 @@
 ;;; }}}
 
 ;;; SETTINGS {{{
-  (setq guide-key/guide-key-sequence '("C-x" "C-c")
+  (setq guide-key/guide-key-sequence '("C-x" "C-c" ",")
         guide-key/recursive-key-sequence-flag t
         guide-key/popup-window-position 'right
         guide-key/idle-delay 0.5

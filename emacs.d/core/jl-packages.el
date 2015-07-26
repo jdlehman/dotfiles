@@ -1,4 +1,4 @@
-; (require 'jl-evil)
+(require 'jl-evil)
 ; (require 'jl-ido)
 (require 'jl-helm)
 (require 'jl-guide-key)
