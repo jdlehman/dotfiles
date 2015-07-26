@@ -24,6 +24,7 @@
 (depends-on "helm-projectile")
 (depends-on "helm-descbinds")
 (depends-on "visual-regexp")
+(depends-on "swiper")
 
 ;; vim/modal editing
 (depends-on "evil")
