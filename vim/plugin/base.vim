@@ -83,6 +83,9 @@
   nnoremap <leader>ev :vsplit $MYVIMRC<cr>
   nnoremap <leader>sv :source $MYVIMRC<cr>:nohl<cr>
 
+  " Disable Ex mode
+  nnoremap Q <nop>
+
   " Map space to colon
   nnoremap <space> :
 
