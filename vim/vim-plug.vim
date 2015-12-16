@@ -27,6 +27,9 @@
     Plug 'tristen/vim-sparkup', { 'for': ['html', 'eruby'] }
     Plug 'mustache/vim-mustache-handlebars', { 'for': 'html.handlebars' }
 
+    " syntax highlighting
+    Plug 'benekastah/neomake'
+
     " Searching
     Plug 'rking/ag.vim', { 'on': ['Ag', 'AgAdd', 'AgHelp'] }
     Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
