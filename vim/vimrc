@@ -5,15 +5,15 @@ set nocompatible
 " }}}
 
 " SET UP vim-plug {{{
-  source ~/.vim/vim-plug.vim
+  runtime vim-plug.vim
 " }}}
 filetype plugin indent on
 
 " at top to ensure functions are defined before use
 " UTILITY FUNCTIONS {{{
-  source ~/.vim/utilities.vim
+  runtime utilities.vim
 " }}}
 
 " ABBREVIATIONS {{{
-  source ~/.vim/abbreviations.vim
+  runtime abbreviations.vim
 " }}}

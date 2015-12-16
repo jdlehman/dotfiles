@@ -33,7 +33,7 @@
   set autoread                          " reload files changed outside of vim
   set viminfo^=%                        " Remember info about open buffers on close
   set linebreak                         " do not split up words when wrapping
-  set encoding=utf-8                    " use utf-8 encoding
+  " set encoding=utf-8                    " use utf-8 encoding
   set path=**                           " set path to ** off current directory
   set display+=lastline                 " display as much of lastline as possible
   set scrolloff=5                       " minimum rows to keep above/below cursor
