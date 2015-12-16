@@ -11,7 +11,11 @@ ln -sfn $DOTFILES_ROOT/tmux/tmux.conf $HOME/.tmux.conf
 
 # vim
 ln -sfn $DOTFILES_ROOT/vim $HOME/.vim
-ln -sfn $DOTFILES_ROOT/vim $HOME/.nvim
+
+# neovim
+mkdir -p $HOME/.config
+ln -sfn $DOTFILES_ROOT/vim $HOME/.config/nvim
+ln -sfn $DOTFILES_ROOT/vim/vimrc $HOME/.config/nvim/init.vim
 
 # slate
 ln -sfn $DOTFILES_ROOT/slate/slate $HOME/.slate
