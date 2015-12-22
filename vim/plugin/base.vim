@@ -33,7 +33,6 @@
   set autoread                          " reload files changed outside of vim
   set viminfo^=%                        " Remember info about open buffers on close
   set linebreak                         " do not split up words when wrapping
-  " set encoding=utf-8                    " use utf-8 encoding
   set path=**                           " set path to ** off current directory
   set display+=lastline                 " display as much of lastline as possible
   set scrolloff=5                       " minimum rows to keep above/below cursor
@@ -43,6 +42,7 @@
   set formatoptions-=o                  " don't continue comments when pushing o/O
   set dictionary+=/usr/share/dict/words " add unix dictionary
   set complete-=i                       " do not use included files in completion (for speed in big dirs)
+  " set encoding=utf-8                  " use utf-8 encoding
   " set mouse=a                         " Allow scrolling and make vim clickable
   " set colorcolumn=80                  " set highlighted column
 
