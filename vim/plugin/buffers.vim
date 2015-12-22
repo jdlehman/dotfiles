@@ -30,6 +30,8 @@
   nnoremap <c-j> <c-w>j
   nnoremap <c-k> <c-w>k
   nnoremap <c-l> <c-w>l
+  " fix issue in terminal updates that cause <c-h> to be <bs>
+  nnoremap <bs> <c-w>h
 
   " Open new tabs
   nnoremap <leader>t :tabnew<cr>
