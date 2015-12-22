@@ -51,4 +51,4 @@ install_with_brew \
   emacs vim cask ispell
 
 brew tap neovim/neovim
-brew install --HEAD neovim
+brew install --HEAD neovim/neovim/neovim
