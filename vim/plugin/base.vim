@@ -28,7 +28,6 @@
   set ttimeoutlen=10                    " Set key stroke timeout
   set wildmenu                          " enable bash style tab completion
   set wildmode=list:longest,full        " enable bash style tab completion
-  set lazyredraw                        " only redraw when necessary
   set cursorline                        " highlight current line
   set autoread                          " reload files changed outside of vim
   set viminfo^=%                        " Remember info about open buffers on close
@@ -42,6 +41,7 @@
   set formatoptions-=o                  " don't continue comments when pushing o/O
   set dictionary+=/usr/share/dict/words " add unix dictionary
   set complete-=i                       " do not use included files in completion (for speed in big dirs)
+  " set lazyredraw                       " only redraw when necessary
   " set encoding=utf-8                  " use utf-8 encoding
   " set mouse=a                         " Allow scrolling and make vim clickable
   " set colorcolumn=80                  " set highlighted column
