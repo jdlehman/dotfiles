@@ -3,8 +3,8 @@ setopt AUTO_CD
 
 # History config
 HISTFILE=~/.zsh_history
-HISTSIZE=4000
-SAVEHIST=4000
+HISTSIZE=10000
+SAVEHIST=10000
 
 setopt APPEND_HISTORY
 setopt INC_APPEND_HISTORY SHARE_HISTORY # share history across sessions
