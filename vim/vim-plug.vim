@@ -26,6 +26,7 @@
     Plug 'cakebaker/scss-syntax.vim', { 'for': 'scss' }
     Plug 'tristen/vim-sparkup', { 'for': ['html', 'eruby'] }
     Plug 'mustache/vim-mustache-handlebars', { 'for': 'html.handlebars' }
+    Plug 'lambdatoast/elm.vim', { 'for': 'elm' }
 
     " syntax highlighting
     Plug 'benekastah/neomake'
