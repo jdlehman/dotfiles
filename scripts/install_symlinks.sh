@@ -8,12 +8,20 @@ ln -sfn $DOTFILES_ROOT/git/gitignore_global $HOME/.gitignore_global
 
 # tmux
 ln -sfn $DOTFILES_ROOT/tmux/tmux.conf $HOME/.tmux.conf
+if test ! -d $HOME/.tmux/plugins
+then
+  mkdir -p $HOME/.tmux/plugins
+fi
+ln -sfn $DOTFILES_ROOT/tmux/tpm $HOME/.tmux/plugins
 
 # vim
 ln -sfn $DOTFILES_ROOT/vim $HOME/.vim
 
 # neovim
-mkdir -p $HOME/.config
+if test ! -d $HOME/.config
+then
+  mkdir -p $HOME/.config
+fi
 ln -sfn $DOTFILES_ROOT/vim $HOME/.config/nvim
 ln -sfn $DOTFILES_ROOT/vim/vimrc $HOME/.config/nvim/init.vim
 
