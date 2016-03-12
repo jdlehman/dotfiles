@@ -40,6 +40,7 @@
     Plug 'gcmt/wildfire.vim'
 
     " Helpful tools
+    Plug 'ferranpm/vim-isolate'
     Plug 'tpope/vim-surround'
     Plug 'tpope/vim-commentary'
     Plug 'sjl/gundo.vim', { 'on': 'GundoToggle' }
