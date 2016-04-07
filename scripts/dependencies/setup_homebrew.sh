@@ -37,6 +37,10 @@ then
   brew linkapps emacs-mac 2> /dev/null
 fi
 
+# install elm-format
+brew tap homebrew/devel-only
+brew install --devel elm-format
+
 # install dependencies with homebrew
 install_with_brew \
   ag bash-completion \
