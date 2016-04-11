@@ -48,9 +48,9 @@ install_with_brew \
   automake cmake \
   reattach-to-user-namespace \
   leiningen clojurescript \
-  ruby-build chruby \
+  ruby-install chruby \
   python python3 \
-  node \
+  node tmux \
   mysql mongodb postgresql \
   emacs vim cask ispell
 
