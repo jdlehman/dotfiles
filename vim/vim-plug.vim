@@ -27,6 +27,7 @@
     Plug 'tristen/vim-sparkup', { 'for': ['html', 'eruby'] }
     Plug 'mustache/vim-mustache-handlebars', { 'for': 'html.handlebars' }
     Plug 'ElmCast/elm-vim', { 'for': 'elm' }
+    Plug 'slim-template/vim-slim', { 'for': 'slim' }
 
     " syntax highlighting
     Plug 'benekastah/neomake'
