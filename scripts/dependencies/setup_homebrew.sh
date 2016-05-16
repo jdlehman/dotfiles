@@ -50,7 +50,7 @@ install_with_brew \
   leiningen clojurescript \
   ruby-install chruby \
   python python3 \
-  node tmux \
+  node tmux go \
   mysql mongodb postgresql \
   emacs vim cask ispell
 

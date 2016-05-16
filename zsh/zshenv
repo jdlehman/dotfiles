@@ -3,4 +3,4 @@ skip_global_compinit=1
 typeset -U path
 
 # Favor Homebrew binaries over system
-path=(./node_modules/.bin /usr/local/bin /usr/local/sbin $path)
+path=(./node_modules/.bin /usr/local/bin /usr/local/sbin $GOPATH/bin $GOROOT/bin $path)
