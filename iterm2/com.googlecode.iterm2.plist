@@ -830,9 +830,9 @@
 	<key>NSTableView Sort Ordering KeyBingingTable</key>
 	<array/>
 	<key>NSWindow Frame Preferences</key>
-	<string>343 255 924 485 0 0 1440 877 </string>
+	<string>606 276 924 485 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>6 21 1431 855 0 0 1440 877 </string>
+	<string>4 5 1914 1052 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>183 68 570 451 0 0 1920 1057 </string>
 	<key>NeverWarnAboutShortLivedSessions_2D441044-E7BC-49E0-A32F-0B08E94C1DBD</key>
@@ -1591,7 +1591,7 @@
 	<key>NoSyncTimeOfLastPromo</key>
 	<real>482078318.08765501</real>
 	<key>NoSyncTimeOfLastPromoDownload</key>
-	<real>483635221.203973</real>
+	<real>486653139.93370402</real>
 	<key>OnlyWhenMoreTabs</key>
 	<true/>
 	<key>OpenArrangementAtStartup</key>
@@ -1658,7 +1658,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2016-04-29T15:06:12Z</date>
+	<date>2016-06-03T13:25:26Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>ShowBookmarkName</key>
@@ -1692,7 +1692,7 @@
 	<key>WebKitDefaultFontSize</key>
 	<integer>11</integer>
 	<key>WebKitStandardFont</key>
-	<string>Lucida Grande</string>
+	<string>.AppleSystemUIFont</string>
 	<key>WindowNumber</key>
 	<true/>
 	<key>WindowStyle</key>
