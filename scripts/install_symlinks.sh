@@ -23,7 +23,6 @@ then
   mkdir -p $HOME/.config
 fi
 ln -sfn $DOTFILES_ROOT/vim $HOME/.config/nvim
-ln -sfn $DOTFILES_ROOT/vim/vimrc $HOME/.config/nvim/init.vim
 
 # slate
 ln -sfn $DOTFILES_ROOT/slate/slate $HOME/.slate
