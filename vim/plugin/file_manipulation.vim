@@ -68,7 +68,7 @@
       \ call JLFollowSymlink() |
       \ call JLSetProjectRoot()
     " netrw: follow symlink and set working directory
-    autocmd CursorMoved *
+    autocmd CursorMoved silent *
       \ if &filetype == 'netrw' |
       \   call JLFollowSymlink() |
       \   call JLSetProjectRoot() |
