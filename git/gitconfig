@@ -69,3 +69,5 @@
   tool = vimdiff
 [credential]
 	helper = osxkeychain
+[diff]
+	compactionHeuristic = true
