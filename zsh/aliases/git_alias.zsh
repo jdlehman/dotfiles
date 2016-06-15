@@ -4,6 +4,7 @@
 alias g="git status"
 alias gd="git diff"
 alias gdw="git diff --word-diff"
+alias gdp="git diff --patience"
 alias gl="git log"
 # git log pretty
 alias glp="git log --pretty=\"format:%C(yellow)%h%Cblue%d%Creset %s %C(white) %an, %ar%Creset\" --graph"

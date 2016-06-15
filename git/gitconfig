@@ -10,6 +10,7 @@
   ; info
   d = diff
   dw = diff --word-diff
+  dp = diff --patience
   st = status
   l = log
   lp = log --pretty=\"format:%C(yellow)%h%Cblue%d%Creset %s %C(white) %an, %ar%Creset\" --graph
