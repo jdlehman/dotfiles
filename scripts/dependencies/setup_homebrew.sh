@@ -52,7 +52,7 @@ install_with_brew \
   python python3 \
   node tmux go \
   mysql mongodb postgresql \
-  emacs vim cask ispell
+  emacs vim cask ispell elm
 
 brew tap neovim/neovim
 brew install --HEAD neovim/neovim/neovim
