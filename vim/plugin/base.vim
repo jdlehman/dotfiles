@@ -4,7 +4,7 @@
 " SETTINGS {{{
   set hidden                            " Allow buffers to be hidden with unwritten changes
   set tabstop=2                         " Tabs are 2 space characters
-  set shiftwidth=2                      " Indentatons are 2 space characters
+  set shiftwidth=2                      " Indentations are 2 space characters
   set softtabstop=2                     " Tabs in insert mode are 2 space characters
   set expandtab                         " Expand tabs to spaces
   set autoindent                        " Use indentation from previous line
