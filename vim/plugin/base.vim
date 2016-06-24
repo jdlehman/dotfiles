@@ -86,6 +86,9 @@
   " Disable Ex mode
   nnoremap Q <nop>
 
+  " Disable man lookup
+  nnoremap K <nop>
+
   " Map space to colon
   nnoremap <space> :
 
