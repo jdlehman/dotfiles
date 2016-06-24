@@ -34,8 +34,8 @@
   set linebreak                         " do not split up words when wrapping
   set path=**                           " set path to ** off current directory
   set display+=lastline                 " display as much of lastline as possible
-  set scrolloff=5                       " minimum rows to keep above/below cursor
-  set sidescrolloff=5                   " minimum cols to keep left/right of cursor
+  set scrolloff=10                      " minimum rows to keep above/below cursor
+  set sidescrolloff=10                  " minimum cols to keep left/right of cursor
   set showcmd                           " Show command that is being typed
   set switchbuf=useopen,usetab          " Use already open buffers when switching buffers
   set formatoptions-=o                  " don't continue comments when pushing o/O
