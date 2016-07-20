@@ -28,6 +28,7 @@
     Plug 'mustache/vim-mustache-handlebars', { 'for': 'html.handlebars' }
     Plug 'ElmCast/elm-vim', { 'for': 'elm' }
     Plug 'slim-template/vim-slim', { 'for': 'slim' }
+    Plug 'elixir-lang/vim-elixir', { 'for': 'elixir' }
 
     " syntax highlighting
     Plug 'benekastah/neomake'
