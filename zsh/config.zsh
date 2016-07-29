@@ -19,5 +19,5 @@ export EDITOR=vim
 export VISUAL=vim
 export GIT_EDITOR=vim
 
-# vim mode in terminal
-set -o vi
+# emacs mode in terminal
+set -o emacs
