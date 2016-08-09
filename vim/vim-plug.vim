@@ -29,6 +29,7 @@
     Plug 'ElmCast/elm-vim', { 'for': 'elm' }
     Plug 'slim-template/vim-slim', { 'for': 'slim' }
     Plug 'elixir-lang/vim-elixir', { 'for': 'elixir' }
+    Plug 'vim-erlang/vim-erlang-runtime', { 'for': 'erlang' }
 
     " syntax highlighting
     Plug 'benekastah/neomake'
