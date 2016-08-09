@@ -4,4 +4,4 @@ The zsh load structure is worth discussing briefly. It will source all files zsh
 
 You can create a `.local.zsh` file to source environment variables or setup anything you might need for that directory/project.
 
-There also exists a `custom.zsh` file in this repository, where you can store machine specific settings that you might not want to commit to the repo.
+There also exists a `custom` folder in this repository, where you can store machine specific settings/zsh files that you might not want to commit to the repo.
