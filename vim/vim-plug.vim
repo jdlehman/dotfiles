@@ -36,7 +36,8 @@
 
     " Searching
     Plug 'rking/ag.vim', { 'on': ['Ag', 'AgAdd', 'AgHelp'] }
-    Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
+    Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+    Plug 'junegunn/fzf.vim'
 
     " movement
     Plug 'rhysd/clever-f.vim'
