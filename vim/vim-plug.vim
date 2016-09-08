@@ -35,7 +35,7 @@
     Plug 'benekastah/neomake'
 
     " Searching
-    Plug 'rking/ag.vim', { 'on': ['Ag', 'AgAdd', 'AgHelp'] }
+    Plug 'mileszs/ack.vim'
     Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
     Plug 'junegunn/fzf.vim'
 
