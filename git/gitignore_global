@@ -1,4 +1,4 @@
-*.sw*
+*.sw
 .bundle/
 .DS_STORE
 .local.zsh
