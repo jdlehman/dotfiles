@@ -29,13 +29,14 @@
     Plug 'cakebaker/scss-syntax.vim', { 'for': 'scss' }
     Plug 'tristen/vim-sparkup', { 'for': ['html', 'eruby'] }
     Plug 'mustache/vim-mustache-handlebars', { 'for': 'html.handlebars' }
+    Plug 'keith/swift.vim', { 'for': 'swift' }
     Plug 'ElmCast/elm-vim', { 'for': 'elm' }
     Plug 'slim-template/vim-slim', { 'for': 'slim' }
     Plug 'elixir-lang/vim-elixir', { 'for': 'elixir' }
     Plug 'vim-erlang/vim-erlang-runtime', { 'for': 'erlang' }
 
     " syntax highlighting
-    Plug 'benekastah/neomake'
+    Plug 'neomake/neomake'
 
     " Searching
     Plug 'mileszs/ack.vim'
