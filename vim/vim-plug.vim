@@ -20,6 +20,9 @@
     Plug 'tpope/vim-fugitive'
     Plug 'airblade/vim-gitgutter'
 
+    " completions
+    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+
     " Language specific
     Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
     Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
