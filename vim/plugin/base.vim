@@ -14,7 +14,6 @@
   set hlsearch                          " Highlight search results
   set ignorecase smartcase              " Case insensitive searches unless capital letter used
   set number                            " Show line numbers
-  set relativenumber                    " Show relative line numbers (in conjuction with number, shows relative numbers and line number on cursor)
   set nowrap                            " Do not wrap text
   set listchars=extends:»,precedes:«    " Chars to display on text off screen
   set showmatch                         " Shows matching {,(,if etc. when typing closing },),end
