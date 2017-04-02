@@ -36,7 +36,7 @@
     Plug 'vim-erlang/vim-erlang-runtime', { 'for': 'erlang' }
 
     " syntax highlighting
-    Plug 'neomake/neomake'
+    Plug 'w0rp/ale'
 
     " Searching
     Plug 'mileszs/ack.vim'
