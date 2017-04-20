@@ -22,6 +22,9 @@
 
     " completions
     Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+    Plug 'mitsuse/autocomplete-swift'
+    Plug 'Shougo/neosnippet'
+    Plug 'Shougo/neosnippet-snippets'
 
     " Language specific
     Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
