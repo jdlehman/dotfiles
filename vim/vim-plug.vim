@@ -38,8 +38,9 @@
     Plug 'elixir-lang/vim-elixir', { 'for': 'elixir' }
     Plug 'vim-erlang/vim-erlang-runtime', { 'for': 'erlang' }
 
-    " syntax highlighting
+    " syntax highlighting/styling
     Plug 'w0rp/ale'
+    Plug 'sbdchd/neoformat'
 
     " Searching
     Plug 'mileszs/ack.vim'
