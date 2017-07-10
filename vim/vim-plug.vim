@@ -38,6 +38,7 @@
     Plug 'elixir-lang/vim-elixir', { 'for': 'elixir' }
     Plug 'vim-erlang/vim-erlang-runtime', { 'for': 'erlang' }
     Plug 'reasonml/vim-reason', { 'for': 'reason' }
+    Plug 'fatih/vim-go'
 
     " syntax highlighting/styling
     Plug 'w0rp/ale'
