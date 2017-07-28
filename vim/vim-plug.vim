@@ -65,5 +65,5 @@
 
 " MAPPINGS {{{
   " Reinstall/update bundles using vim-plug
-  nnoremap <leader>bv :PlugUpdate<cr>:PlugClean!<cr>:PlugInstall<cr>:q<cr>
+  nnoremap <leader>bv :PlugUpgrade<cr>:PlugInstall<cr>:PlugUpdate<cr>:PlugClean<cr>:q<cr>
 " }}}
