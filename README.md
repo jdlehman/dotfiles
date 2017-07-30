@@ -4,7 +4,7 @@ These are my personal dotfiles. While you are free fork the repo and use the par
 
 ## Installation
 
-To setup and install these dotfiles, simply run `sh scripts/installer` from the project's directory. This will setup any dependencies you need (shoot me a PR if I forgot to include something that may have already been set up on my machine) and symlink the dotfiles in the appropriate places.
+To setup and install these dotfiles, simply run `sh scripts/installer` from the project's directory. This will setup any dependencies you need and symlink the dotfiles in the appropriate places. Any existing dotfiles will be backed up by date unless the installer is run with `--force`.
 
 ## Structure
 
@@ -12,4 +12,4 @@ The following is a high-level overview of the project's structure. You can look 
 
 ## Credits
 
-I drew inspiration as well as from the structure of [Holman's](http://zachholman.com/2010/08/dotfiles-are-meant-to-be-forked/) [dotfiles](https://github.com/holman/dotfiles). I highly recommend taking a look at his dotfiles as well, you might prefer the overall structure and design of his setup.
+I drew inspiration as well as structure from[ Holman's](http://zachholman.com/2010/08/dotfiles-are-meant-to-be-forked/) [dotfiles](https://github.com/holman/dotfiles). I highly recommend taking a look at his dotfiles as well, you might prefer the overall structure and design of his setup.
