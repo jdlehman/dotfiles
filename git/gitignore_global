@@ -1,8 +1,7 @@
-*.sw
-.bundle/
-.DS_STORE
+.DS_Store
+*.swp
+*~
 .local.zsh
 .projectile
 tags
-.powenv
 .ruby-version

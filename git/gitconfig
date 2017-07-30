@@ -1,11 +1,15 @@
-[user]
-	name = Jonathan Lehman
-	email = jonathan.lehman91@gmail.com
 [core]
-	editor = vim
+	editor = nvim
 	excludesfile = ~/.gitignore_global
+[include]
+  path = ~/.gitconfig.local
 [color]
-	ui = true
+  diff = auto
+  status = auto
+  branch = auto
+  ui = true
+[help]
+  autocorrect = 1
 [alias]
   ; info
   d = diff
