@@ -26,8 +26,10 @@
     Plug 'Shougo/neosnippet'
     Plug 'Shougo/neosnippet-snippets'
 
+    " language completions
+    Plug 'zchee/deoplete-go', { 'do': 'make'}
+
     " Language specific
-    Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
     Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
     Plug 'cakebaker/scss-syntax.vim', { 'for': 'scss' }
     Plug 'tristen/vim-sparkup', { 'for': ['html', 'eruby'] }
@@ -38,7 +40,7 @@
     Plug 'elixir-lang/vim-elixir', { 'for': 'elixir' }
     Plug 'vim-erlang/vim-erlang-runtime', { 'for': 'erlang' }
     Plug 'reasonml/vim-reason', { 'for': 'reason' }
-    Plug 'fatih/vim-go'
+    Plug 'fatih/vim-go', { 'for': 'go' }
 
     " syntax highlighting/styling
     Plug 'w0rp/ale'
