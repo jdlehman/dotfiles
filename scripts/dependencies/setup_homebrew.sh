@@ -20,26 +20,7 @@ install_with_brew() {
     fi
     shift
   done
-
 }
-
-# tap emacs-mac (emacs with mac osx fixes/opts)
-if ! [[ $(brew tap) =~ "emacsmacport" ]]
-then
-  # tap
-  echo "Tapping railwaycat/emacsmacport"
-  brew tap railwaycat/emacsmacport
-  # install
-  echo "Installing emacs-mac"
-  brew install emacs-mac 2> /dev/null
-  # link mac app to applications folder
-  echo "Symlinking emacs-mac to /Applications"
-  brew linkapps emacs-mac 2> /dev/null
-fi
-
-# install elm-format
-brew tap homebrew/devel-only
-brew install --devel elm-format
 
 # install dependencies with homebrew
 install_with_brew \
@@ -50,9 +31,10 @@ install_with_brew \
   leiningen clojurescript \
   ruby-install chruby \
   python python3 \
-  node tmux go \
-  mysql mongodb postgresql \
-  emacs vim cask ispell elm
+  node tmux go godep \
+  mysql postgresql \
+  emacs vim cask ispell elm \
+  swiftlint opam
 
 brew tap neovim/neovim
 brew install --HEAD neovim/neovim/neovim
