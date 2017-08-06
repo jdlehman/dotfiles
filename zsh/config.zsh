@@ -15,9 +15,9 @@ setopt HIST_REDUCE_BLANKS # Drop extraneous whitespace
 export CLICOLOR=1
 
 # vim settings
-export EDITOR=vim
-export VISUAL=vim
-export GIT_EDITOR=vim
+export EDITOR=nvim
+export VISUAL=nvim
+export GIT_EDITOR=nvim
 
 # emacs mode in terminal
 set -o emacs
