@@ -1,1 +1,2 @@
-pip install neovim
+pip2 install --upgrade neovim
+pip3 install --upgrade neovim

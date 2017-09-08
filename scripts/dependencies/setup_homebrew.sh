@@ -24,17 +24,11 @@ install_with_brew() {
 
 # install dependencies with homebrew
 install_with_brew \
-  ag bash-completion \
-  fzf git wget curl \
-  automake cmake \
+  ag fzf git wget curl \
   reattach-to-user-namespace \
-  leiningen clojurescript \
   ruby-install chruby \
   python python3 \
   node tmux go godep \
   mysql postgresql \
-  emacs vim cask ispell elm \
-  swiftlint opam
-
-brew tap neovim/neovim
-brew install --HEAD neovim/neovim/neovim
+  emacs nvim vim ispell \
+  opam
