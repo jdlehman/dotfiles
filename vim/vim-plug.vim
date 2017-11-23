@@ -21,7 +21,13 @@
     Plug 'airblade/vim-gitgutter'
 
     " completions
-    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+    if has('neovim')
+      Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+    else
+      Plug 'Shougo/deoplete.nvim'
+      Plug 'roxma/nvim-yarp'
+      Plug 'roxma/vim-hug-neovim-rpc'
+    end
     Plug 'mitsuse/autocomplete-swift'
     Plug 'Shougo/neosnippet'
     Plug 'Shougo/neosnippet-snippets'
@@ -30,7 +36,9 @@
     Plug 'zchee/deoplete-go', { 'do': 'make'}
 
     " Language specific
-    Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
+    if has('neovim')
+      Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
+    end
     Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
     Plug 'cakebaker/scss-syntax.vim', { 'for': 'scss' }
     Plug 'tristen/vim-sparkup', { 'for': ['html', 'eruby'] }
