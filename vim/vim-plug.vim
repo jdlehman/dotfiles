@@ -30,16 +30,16 @@
     Plug 'zchee/deoplete-go', { 'do': 'make'}
 
     " Language specific
+    Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
     Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
     Plug 'cakebaker/scss-syntax.vim', { 'for': 'scss' }
     Plug 'tristen/vim-sparkup', { 'for': ['html', 'eruby'] }
-    Plug 'mustache/vim-mustache-handlebars', { 'for': 'html.handlebars' }
     Plug 'keith/swift.vim', { 'for': 'swift' }
     Plug 'ElmCast/elm-vim', { 'for': 'elm' }
     Plug 'slim-template/vim-slim', { 'for': 'slim' }
     Plug 'elixir-lang/vim-elixir', { 'for': 'elixir' }
     Plug 'vim-erlang/vim-erlang-runtime', { 'for': 'erlang' }
-    Plug 'reasonml/vim-reason', { 'for': 'reason' }
+    Plug 'reasonml-editor/vim-reason-plus', { 'for': 'reason' }
     Plug 'fatih/vim-go', { 'for': 'go' }
 
     " syntax highlighting/styling
