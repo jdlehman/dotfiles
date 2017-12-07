@@ -65,9 +65,13 @@
     set ttymouse=sgr
   endif
 
-  " use Ag if available instead of grep
-  if executable("ag")
+  " use faster search alternatives
+  if executable('ag')
     set grepprg=ag\ --nogroup\ --nocolor\ --column\ --smart-case
+    set grepformat=%f:%l:%c:%m,%f:%l:%m
+  elseif executable('ack')
+    set grepprg=ack\ --nogroup\ --nocolor\ --ignore-case\ --column
+    set grepformat=%f:%l:%c:%m,%f:%l:%m
   endif
 
   " persist undos across sessions (github/joelhooks/dotfiles)
