@@ -1,4 +1,4 @@
-if has('neovim')
+if has('nvim')
   "FUNCTIONS {{{
   " }}}
 

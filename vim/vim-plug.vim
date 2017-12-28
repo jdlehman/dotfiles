@@ -21,7 +21,7 @@
     Plug 'airblade/vim-gitgutter'
 
     " completions
-    if has('neovim')
+    if has('nvim')
       Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
     else
       Plug 'Shougo/deoplete.nvim'
@@ -36,7 +36,7 @@
     Plug 'zchee/deoplete-go', { 'do': 'make'}
 
     " Language specific
-    if has('neovim')
+    if has('nvim')
       Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
     end
     Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
