@@ -60,7 +60,6 @@
     Plug 'junegunn/fzf.vim'
 
     " movement
-    Plug 'rhysd/clever-f.vim'
     Plug 'gcmt/wildfire.vim'
 
     " Helpful tools
