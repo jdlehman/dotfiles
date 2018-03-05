@@ -3,3 +3,5 @@
 cnoreabbrev W w
 cnoreabbrev Q q
 cnoreabbrev Wq wq
+cnoreabbrev Wqa wqa
+cnoreabbrev WQa wqa
