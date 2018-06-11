@@ -20,3 +20,5 @@
 " }}}
 
 autocmd! BufWritePre *.js,*.css,*.json ALEFix
+" autoclose error list when empty
+autocmd! User ALELintPost if empty(getloclist(0)) | lclose | endif

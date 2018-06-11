@@ -48,7 +48,7 @@
     Plug 'elixir-lang/vim-elixir', { 'for': 'elixir' }
     Plug 'vim-erlang/vim-erlang-runtime', { 'for': 'erlang' }
     Plug 'reasonml-editor/vim-reason-plus', { 'for': 'reason' }
-    Plug 'fatih/vim-go', { 'for': 'go' }
+    Plug 'fatih/vim-go', { 'for': 'go', 'do': ':GoUpdateBinaries' }
 
     " syntax highlighting/styling
     Plug 'w0rp/ale'
