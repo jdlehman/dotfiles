@@ -52,6 +52,7 @@
 
     " formatting
     Plug 'editorconfig/editorconfig-vim'
+    Plug 'tommcdo/vim-lion'
 
     " syntax highlighting/styling
     Plug 'w0rp/ale'
