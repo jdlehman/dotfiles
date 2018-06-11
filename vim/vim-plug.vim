@@ -59,9 +59,6 @@
     Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
     Plug 'junegunn/fzf.vim'
 
-    " movement
-    Plug 'gcmt/wildfire.vim'
-
     " Helpful tools
     Plug 'ferranpm/vim-isolate'
     Plug 'tpope/vim-surround'
