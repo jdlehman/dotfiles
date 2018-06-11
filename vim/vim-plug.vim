@@ -50,6 +50,9 @@
     Plug 'reasonml-editor/vim-reason-plus', { 'for': 'reason' }
     Plug 'fatih/vim-go', { 'for': 'go', 'do': ':GoUpdateBinaries' }
 
+    " formatting
+    Plug 'editorconfig/editorconfig-vim'
+
     " syntax highlighting/styling
     Plug 'w0rp/ale'
     Plug 'sbdchd/neoformat'
