@@ -69,6 +69,7 @@
     Plug 'tpope/vim-commentary'
     Plug 'sjl/gundo.vim', { 'on': 'GundoToggle' }
     Plug 'benmills/vimux'
+    Plug 'tpope/vim-repeat'
   " }}}
   call plug#end()
 " }}}
