@@ -1,3 +1,4 @@
+alias kc="source <(kubectl completion zsh)"
 alias k="kubectl"
 alias kp="kubectl proxy"
 alias kl="kubectl logs"
