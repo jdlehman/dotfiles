@@ -1,4 +1,12 @@
 " FUNCTIONS {{{
+  " function! JLInsertTabWrapper()
+  "   let col = col('.') - 1
+  "   if !col || getline('.')[col - 1] !~ '\k'
+  "     return "\<tab>"
+  "   else
+  "     return  pumvisible() ? "\<c-n>" : "\<c-x>\<c-o>"
+  "   endif
+  " endfunction
 " }}}
 
 " SETTINGS {{{
@@ -48,8 +56,7 @@
   " HTML INDENT {{{
     let g:html_indent_inctags = "html,body,head,tbody"
   " }}}
-
-  " Prevent ag from leaking into terminal
+" Prevent ag from leaking into terminal
   set shellpipe=>
 
   " Normally, Vim messes with iskeyword when you open a shell file. This can
@@ -102,6 +109,8 @@
 
   " make Y behave like C,D,etc
   nnoremap Y y$
+
+  " inoremap <expr> <tab> JLInsertTabWrapper()
 " }}}
 
 " AUTO COMMANDS {{{
