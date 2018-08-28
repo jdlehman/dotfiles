@@ -1,1 +1,1 @@
-autocmd! BufNewFile,BufRead {.eslintrc,.jshintrc} set filetype=javascript
+autocmd! BufNewFile,BufRead {.eslintrc,.jshintrc,bsconfig.json} set filetype=javascript
