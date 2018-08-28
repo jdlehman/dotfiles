@@ -34,6 +34,7 @@
 
     " language completions
     Plug 'zchee/deoplete-go', { 'do': 'make'}
+    Plug 'copy/deoplete-ocaml'
 
     " Language specific
     if has('nvim')
