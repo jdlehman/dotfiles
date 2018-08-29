@@ -38,7 +38,10 @@
 
     " Language specific
     if has('nvim')
-      Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
+      Plug 'autozimu/LanguageClient-neovim', {
+            \ 'branch': 'next',
+            \ 'do': 'bash install.sh',
+            \ }
     end
     Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
     Plug 'cakebaker/scss-syntax.vim', { 'for': 'scss' }
