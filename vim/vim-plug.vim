@@ -60,7 +60,6 @@
 
     " syntax highlighting/styling
     Plug 'w0rp/ale'
-    Plug 'sbdchd/neoformat'
 
     " Searching
     Plug 'mileszs/ack.vim'
