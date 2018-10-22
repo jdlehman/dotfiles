@@ -53,6 +53,7 @@
     Plug 'vim-erlang/vim-erlang-runtime', { 'for': 'erlang' }
     Plug 'reasonml-editor/vim-reason-plus', { 'for': 'reason' }
     Plug 'fatih/vim-go', { 'for': 'go', 'do': ':GoUpdateBinaries' }
+    Plug 'StanAngeloff/php.vim', { 'for': 'php' }
 
     " formatting
     Plug 'editorconfig/editorconfig-vim'
