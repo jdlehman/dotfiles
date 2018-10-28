@@ -20,6 +20,7 @@
     Plug 'tpope/vim-fugitive'
     Plug 'airblade/vim-gitgutter'
     Plug 'junegunn/gv.vim'
+    Plug 'sodapopcan/vim-twiggy'
 
     " completions
     if has('nvim')
