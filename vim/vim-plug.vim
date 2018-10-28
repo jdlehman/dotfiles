@@ -19,6 +19,7 @@
     " git related
     Plug 'tpope/vim-fugitive'
     Plug 'airblade/vim-gitgutter'
+    Plug 'junegunn/gv.vim'
 
     " completions
     if has('nvim')
