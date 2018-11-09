@@ -110,6 +110,9 @@
   " make Y behave like C,D,etc
   nnoremap Y y$
 
+  " Toggle paste mode on and off
+  map <leader>pp :setlocal paste!<cr>
+
   " inoremap <expr> <tab> JLInsertTabWrapper()
 " }}}
 
@@ -119,4 +122,7 @@
   "   " Reload vimrc on edit
   "   autocmd BufWritePost $MYVIMRC source $MYVIMRC | call lightline#highlight()
   " augroup END
+
+  " Disable paste mode when leaving insert mode
+   autocmd InsertLeave * set nopaste
 " }}}
