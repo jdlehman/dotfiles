@@ -24,19 +24,34 @@
 
     " completions
     if has('nvim')
-      Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
     else
-      Plug 'Shougo/deoplete.nvim'
-      Plug 'roxma/nvim-yarp'
       Plug 'roxma/vim-hug-neovim-rpc'
     end
-    Plug 'mitsuse/autocomplete-swift'
-    Plug 'Shougo/neosnippet'
-    Plug 'Shougo/neosnippet-snippets'
+    Plug 'ncm2/ncm2'
+    Plug 'roxma/nvim-yarp'
+    Plug 'ncm2/ncm2-bufword'
+    Plug 'ncm2/ncm2-path'
+    Plug 'ncm2/ncm2-html-subscope'
+    Plug 'ncm2/ncm2-markdown-subscope'
+
+    " snippets
+    Plug 'SirVer/ultisnips'
+    Plug 'ncm2/ncm2-ultisnips'
+    Plug 'honza/vim-snippets'
 
     " language completions
-    Plug 'zchee/deoplete-go', { 'do': 'make'}
-    Plug 'copy/deoplete-ocaml'
+    Plug 'ncm2/ncm2-cssomni'
+    Plug 'ncm2/ncm2-tern',  {'do': 'npm install'}
+    Plug 'mhartington/nvim-typescript'
+    Plug 'HerringtonDarkholme/yats.vim'
+    Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
+    Plug 'ncm2/ncm2-jedi'
+    Plug 'ncm2/ncm2-racer'
+    Plug 'ncm2/ncm2-pyclang'
+    Plug 'ncm2/ncm2-vim'
+    Plug 'ncm2/ncm2-go'
+    Plug 'phpactor/ncm2-phpactor'
+    Plug 'ObserverOfTime/ncm2-jc2'
 
     " Language specific
     if has('nvim')
