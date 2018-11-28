@@ -9,6 +9,7 @@ if has('nvim')
           \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
           \ 'javascript': ['javascript-typescript-stdio'],
           \ 'typescript': ['javascript-typescript-stdio'],
+          \ 'typescript.tsx': ['javascript-typescript-stdio'],
           \ 'reason': ['reason-language-server.exe'],
           \ 'ocaml': ['ocaml-language-server', '--stdio'],
           \ 'go': ['go-langserver'],
