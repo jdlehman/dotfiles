@@ -42,7 +42,6 @@
     " language completions
     Plug 'ncm2/ncm2-cssomni'
     Plug 'ncm2/ncm2-tern',  {'do': 'npm install'}
-    Plug 'mhartington/nvim-typescript'
     Plug 'HerringtonDarkholme/yats.vim'
     Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
     Plug 'ncm2/ncm2-jedi'
