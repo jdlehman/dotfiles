@@ -13,6 +13,7 @@ if has('nvim')
           \ 'reason': ['reason-language-server.exe'],
           \ 'ocaml': ['ocaml-language-server', '--stdio'],
           \ 'go': ['go-langserver'],
+          \ 'ruby': ['solargraph', 'stdio'],
           \ }
   " }}}
 
