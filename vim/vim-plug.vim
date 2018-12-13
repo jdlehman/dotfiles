@@ -71,6 +71,7 @@
     Plug 'fatih/vim-go', { 'for': 'go', 'do': ':GoUpdateBinaries' }
     Plug 'StanAngeloff/php.vim', { 'for': 'php' }
     Plug 'iamcco/markdown-preview.nvim', { 'for': 'markdown', 'do': 'cd app & yarn install'  }
+    Plug 'jparise/vim-graphql'
 
     " formatting
     Plug 'editorconfig/editorconfig-vim'
