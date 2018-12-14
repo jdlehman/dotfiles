@@ -43,7 +43,6 @@
     Plug 'ncm2/ncm2-cssomni'
     Plug 'ncm2/ncm2-tern',  {'do': 'npm install'}
     Plug 'HerringtonDarkholme/yats.vim'
-    Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
     Plug 'ncm2/ncm2-jedi'
     Plug 'ncm2/ncm2-racer'
     Plug 'ncm2/ncm2-pyclang'
