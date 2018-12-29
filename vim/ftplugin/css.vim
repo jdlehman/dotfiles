@@ -1,2 +1,3 @@
-let b:ale_fixers = ['prettier']
-let b:ale_javascript_prettier_options = '--parser css'
+if (&ft == 'css')
+  let b:ale_javascript_prettier_options = '--parser css'
+endif
