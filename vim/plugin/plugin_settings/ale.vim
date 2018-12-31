@@ -9,7 +9,7 @@
   "
   let g:ale_fixers = {
         \ 'css': ['prettier'],
-        \ 'go': ['gofmt', 'golint', 'go build'],
+        \ 'go': ['goimports'],
         \ 'html': ['prettier'],
         \ 'javascript': ['prettier', 'eslint', 'importjs'],
         \ 'markdown': ['prettier', 'eslint'],
