@@ -68,6 +68,8 @@
     Plug 'elixir-lang/vim-elixir', { 'for': 'elixir' }
     Plug 'vim-erlang/vim-erlang-runtime', { 'for': 'erlang' }
     Plug 'reasonml-editor/vim-reason-plus', { 'for': 'reason' }
+    " native reason
+    Plug 'jordwalke/vim-reasonml'
     Plug 'fatih/vim-go', { 'for': 'go', 'do': ':GoUpdateBinaries' }
     Plug 'StanAngeloff/php.vim', { 'for': 'php' }
     Plug 'iamcco/markdown-preview.nvim', { 'for': 'markdown', 'do': 'cd app & yarn install'  }
