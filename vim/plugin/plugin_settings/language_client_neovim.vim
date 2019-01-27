@@ -5,6 +5,10 @@ if has('nvim')
   " SETTINGS {{{
     let g:LanguageClient_autoStart = 1
 
+    let g:LanguageClient_rootMarkers = {
+        \ 'go': ['.git', 'go.mod'],
+        \ }
+
     let g:LanguageClient_serverCommands = {
           \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
           \ 'javascript': ['javascript-typescript-stdio'],
@@ -12,7 +16,7 @@ if has('nvim')
           \ 'typescript.tsx': ['javascript-typescript-stdio'],
           \ 'reason': ['reason-language-server.exe'],
           \ 'ocaml': ['ocaml-language-server', '--stdio'],
-          \ 'go': ['go-langserver'],
+          \ 'go': ['bingo', '--format-style', 'goimports'],
           \ 'ruby': ['solargraph', 'stdio'],
           \ }
   " }}}
