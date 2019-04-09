@@ -41,6 +41,7 @@
   ; pushing
   pom = push origin master
   po = push origin
+  track = "!git branch --set-upstream-to=origin/`git symbolic-ref --short HEAD`"
 
   ; merging
   noff = merge --no-ff

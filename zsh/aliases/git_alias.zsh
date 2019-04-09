@@ -38,6 +38,7 @@ alias gp="git pull"
 # =======
 alias gpo="git push origin"
 alias gpom="git push origin master"
+alias gt="git track"
 # =======
 # merging
 # =======
