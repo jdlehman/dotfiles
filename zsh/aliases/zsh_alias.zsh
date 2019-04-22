@@ -9,4 +9,7 @@ alias ze='vim ~/.zshrc'
 alias zr='source ~/.zshrc'
 
 # ps alias
-alias see="ps -ef | ag"
+alias see="ps -ef | grep -i"
+
+# kill process by name
+function destroy() { pgrep -f $1 | xargs kill -9}
