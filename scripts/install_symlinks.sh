@@ -72,3 +72,11 @@ then
 fi
 backup_file $HOME/.irbrc
 ln -sfn $DOTFILES_ROOT/irb/irbrc $HOME/.irbrc
+
+# vscode
+# eval is need because of the space in the directory path...
+VSCODE_ROOT="$HOME/Library/Application\ Support/Code/User"
+eval echo $VSCODE_ROOT
+# TODO: get this working
+# backup_file $VSCODE_ROOT/settings.json
+eval ln -sfn $DOTFILES_ROOT/vscode/settings.json $VSCODE_ROOT/settings.json

@@ -1,0 +1,20 @@
+{
+  "files.autoSave": "onFocusChange",
+  "editor.formatOnSave": true,
+  "files.insertFinalNewline": true,
+  "window.zoomLevel": 0,
+  "go.formatTool": "goimports",
+  "go.toolsEnvVars": {
+    "GO111MODULE": "on"
+  },
+  "editor.tabSize": 2,
+  "breadcrumbs.enabled": true,
+  "tslint.configFile": "./tslint.json",
+  "tslint.autoFixOnSave": true,
+  "tslint.alwaysShowStatus": true,
+  "eslint.alwaysShowStatus": true,
+  "eslint.packageManager": "yarn",
+  "eslint.autoFixOnSave": true,
+  "eslint.run": "onSave",
+  "prettier.eslintIntegration": true
+}
