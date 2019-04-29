@@ -42,11 +42,11 @@ function chpwd() {
   fi
 }
 
-. $HOME/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
-
-eval $(opam config env)
-
 typeset -U path
 
 # Favor Homebrew binaries over system
 path=($HOME/.yarn/bin $HOME/.cargo/env node_modules/.bin /usr/local/bin /usr/local/sbin $GOPATH/bin $GOROOT/bin $path)
+
+. $HOME/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+
+eval $(opam config env)
