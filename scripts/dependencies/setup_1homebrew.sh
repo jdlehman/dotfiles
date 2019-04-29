@@ -31,4 +31,4 @@ install_with_brew \
   node tmux go godep \
   mysql postgresql \
   emacs nvim vim ispell \
-  opam
+  Caskroom/cask/xquartz
