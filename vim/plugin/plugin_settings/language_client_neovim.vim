@@ -16,7 +16,7 @@ if has('nvim')
           \ 'typescript.tsx': ['typescript-language-server', '--stdio'],
           \ 'reason': ['reason-language-server.exe'],
           \ 'ocaml': ['ocaml-language-server', '--stdio'],
-          \ 'go': ['bingo', '--format-style', 'goimports'],
+          \ 'go': ['golpls'],
           \ 'ruby': ['solargraph', 'stdio'],
           \ }
   " }}}
