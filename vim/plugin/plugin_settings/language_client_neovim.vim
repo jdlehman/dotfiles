@@ -11,7 +11,7 @@ if has('nvim')
 
     let g:LanguageClient_serverCommands = {
           \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
-          \ 'javascript': ['flow-language-server', '--stdio'],
+          \ 'javascript': ['flow', 'lsp'],
           \ 'typescript': ['typescript-language-server', '--stdio'],
           \ 'typescript.tsx': ['typescript-language-server', '--stdio'],
           \ 'reason': ['reason-language-server.exe'],
