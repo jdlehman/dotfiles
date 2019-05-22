@@ -27,8 +27,7 @@ install_with_brew \
   ag fzf git wget curl \
   reattach-to-user-namespace \
   ruby-install chruby \
-  python python3 \
-  node tmux go godep \
+  python@2 python3 \
+  node tmux go \
   mysql postgresql \
-  emacs nvim vim ispell \
-  Caskroom/cask/xquartz
+  nvim vim ispell
