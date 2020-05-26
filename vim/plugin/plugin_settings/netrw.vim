@@ -10,6 +10,6 @@
 
 " MAPPINGS {{{
   " map - to explore
-  nnoremap - :Explore<cr>
+  nmap <expr> - &ft ==# 'netrw' ? "\<Plug>NetrwBrowseUpDir" : ":Explore<cr>"
 " }}}
 
