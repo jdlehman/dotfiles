@@ -45,7 +45,7 @@
   set laststatus=2
   let g:lightline = {
     \ 'active': {
-    \   'left': [ ['mode', 'paste'], ['gitgutter', 'fugitive', 'filename'] ],
+    \   'left': [ ['mode', 'paste'], ['cocstatus', 'gitgutter', 'fugitive', 'filename'] ],
     \   'right': [ ['lineinfo'], ['percent'], ['filetype'] ]
     \ },
     \ 'component_function': {
@@ -54,12 +54,19 @@
     \   'filename': 'JLFilename',
     \   'filetype': 'JLFiletype',
     \   'fugitive': 'JLFugitive',
-    \   'gitgutter': 'JLGitGutter'
+    \   'gitgutter': 'JLGitGutter',
+    \   'cocstatus': 'coc#status'
     \ },
     \ 'separator': { 'left': "\ue0b0", 'right': "\ue0b2" },
     \ 'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3" },
   \ }
+
+
 " }}}
 
 " MAPPINGS {{{
+" }}}
+
+" AUTOCOMMANDS {{{
+  autocmd User CocStatusChange,CocDiagnosticChange call lightline#update()
 " }}}

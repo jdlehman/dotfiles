@@ -23,42 +23,14 @@
     Plug 'sodapopcan/vim-twiggy'
 
     " completions
-    if has('nvim')
-    else
-      Plug 'roxma/vim-hug-neovim-rpc'
-    end
-    Plug 'ncm2/ncm2'
-    Plug 'roxma/nvim-yarp'
-    Plug 'ncm2/ncm2-bufword'
-    Plug 'ncm2/ncm2-path'
-    Plug 'ncm2/ncm2-html-subscope'
-    Plug 'ncm2/ncm2-markdown-subscope'
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
     " snippets
     Plug 'SirVer/ultisnips'
     Plug 'ncm2/ncm2-ultisnips'
     Plug 'honza/vim-snippets'
 
-    " language completions
-    Plug 'ncm2/ncm2-cssomni'
-    Plug 'ncm2/ncm2-tern',  {'do': 'npm install'}
-    Plug 'HerringtonDarkholme/yats.vim'
-    Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
-    Plug 'ncm2/ncm2-jedi'
-    Plug 'ncm2/ncm2-racer'
-    Plug 'ncm2/ncm2-pyclang'
-    Plug 'ncm2/ncm2-vim'
-    Plug 'ncm2/ncm2-go'
-    Plug 'phpactor/ncm2-phpactor'
-    Plug 'ObserverOfTime/ncm2-jc2'
-
     " Language specific
-    if has('nvim')
-      Plug 'autozimu/LanguageClient-neovim', {
-            \ 'branch': 'next',
-            \ 'do': 'bash install.sh',
-            \ }
-    end
     Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
     Plug 'cakebaker/scss-syntax.vim', { 'for': 'scss' }
     Plug 'tristen/vim-sparkup', { 'for': ['html', 'eruby'] }
