@@ -8,13 +8,14 @@
   let g:ale_javascript_prettier_use_local_config = 1
   let g:ale_virtualtext_cursor = 'true'
   " explicit linters
-  " let g:ale_linters_explicit = 1
+  let g:ale_linters_explicit = 1
   "
   let g:ale_fixers = {
         \ 'css': ['prettier'],
         \ 'go': ['goimports'],
         \ 'html': ['prettier'],
         \ 'javascript': ['prettier', 'eslint'],
+        \ 'java': ['uncrustify', 'google_java_format'],
         \ 'markdown': ['prettier', 'eslint'],
         \ 'reason': 'refmt',
         \ 'typescript': ['prettier', 'tslint', 'eslint'],
