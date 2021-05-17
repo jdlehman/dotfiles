@@ -48,6 +48,7 @@
   set formatoptions-=o                  " don't continue comments when pushing o/O
   set dictionary+=/usr/share/dict/words " add unix dictionary
   set complete-=i                       " do not use included files in completion (for speed in big dirs)
+  set synmaxcol=200                     " Prevent syntax highlighting past X columns for performance
   " set lazyredraw                       " only redraw when necessary
   " set encoding=utf-8                  " use utf-8 encoding
   " set mouse=a                         " Allow scrolling and make vim clickable

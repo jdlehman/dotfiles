@@ -5,16 +5,36 @@
       "rootPatterns": ["compile_flags.txt", "compile_commands.json"],
       "filetypes": ["c", "cc", "cpp", "c++", "objc", "objcpp"]
     },
+    "flow": {
+      "command": "flow",
+      "args": ["lsp"],
+      "filetypes": ["javascript", "javascriptreact"],
+      "initializationOptions": {},
+      "requireRootPattern": true,
+      "settings": {},
+      "rootPatterns": [".flowconfig"]
+    },
     "go": {
       "command": "gopls",
       "rootPatterns": ["go.mod"],
       "trace.server": "verbose",
       "filetypes": ["go"]
     },
+    "hack": {
+      "command": "/usr/local/bin/hh_client",
+      "args": ["lsp"],
+      "filetypes": ["hack", "php"],
+      "rootPatterns": [".hg/"]
+    },
     "rust": {
       "command": "rls",
       "filetypes": ["rust"],
       "rootPatterns": ["Cargo.toml"]
+    },
+    "typescript": {
+      "command": "tsserver",
+      "rootPatterns": ["tsconfig.json"],
+      "filetypes": ["typescript", "javascript"]
     }
   }
 }
