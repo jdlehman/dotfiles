@@ -8,6 +8,7 @@ autoload/*
 plugged/*
 view/*
 sessions/
+custom/*
 
 # included files
 !.backup/.gitkeep

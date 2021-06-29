@@ -46,6 +46,7 @@
     Plug 'StanAngeloff/php.vim', { 'for': 'php' }
     Plug 'iamcco/markdown-preview.nvim', { 'for': 'markdown', 'do': 'cd app & yarn install'  }
     Plug 'jparise/vim-graphql'
+    Plug 'udalov/kotlin-vim'
 
     " formatting
     Plug 'editorconfig/editorconfig-vim'
