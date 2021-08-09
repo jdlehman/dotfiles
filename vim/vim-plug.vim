@@ -16,6 +16,10 @@
     Plug 'junegunn/seoul256.vim'
     Plug 'itchyny/lightline.vim'
 
+    " Syntax highlighting
+     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+     Plug 'nvim-treesitter/playground'
+
     " git related
     Plug 'tpope/vim-fugitive'
     Plug 'airblade/vim-gitgutter'
