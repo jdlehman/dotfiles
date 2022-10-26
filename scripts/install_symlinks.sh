@@ -41,10 +41,9 @@ fi
 backup_file $HOME/.config/nvim
 ln -sfn $DOTFILES_ROOT/vim $HOME/.config/nvim
 
-# slate
-backup_file $HOME/.slate
-ln -sfn $DOTFILES_ROOT/slate/slate $HOME/.slate
-
+# phoenix (window manager)
+backup_file $HOME/.phoenix.js
+ln -sfn $DOTFILES_ROOT/phoenix/phoenix.js $HOME/.phoenix.js
 # emacs
 backup_file $HOME/.emacs.d
 ln -sfn $DOTFILES_ROOT/emacs.d $HOME/.emacs.d

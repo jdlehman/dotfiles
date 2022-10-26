@@ -8,6 +8,9 @@ fi
 # update brew formulae
 brew update
 
+# set up phoneix window manager
+brew install --cask phoenix
+
 install_with_brew() {
   # install each uninstalled dependency
   installed_packages=$(brew list)
