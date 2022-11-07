@@ -10,6 +10,9 @@ cd "$( dirname $0 )"/..
 # find the setup and run them iteratively
 find . -name setup*.sh | sort | while read setup ; do sh "${setup}" ; done
 
+# run dotbot
+../install
+
 echo "Installing scripts..."
 
 # find the installers and run them iteratively

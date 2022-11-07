@@ -1,0 +1,35 @@
+- defaults:
+    link:
+      relink: true
+
+- clean: ["~"]
+
+- create:
+    - ~/.tmux/plugins
+    - ~/.config
+    - ~/.irb
+
+- link:
+    ~/.gitconfig: git/gitconfig
+    ~/.gitignore_global: git/gitignore_global
+
+    ~/.tmux.conf: tmux/tmux.conf
+    ~/.tmux/plugins: tmux/tpm
+
+    ~/.vim: vim
+    ~/.config/nvim: vim
+
+    ~/.phoenix.js: phoenix/phoenix.js
+
+    ~/.emacs.d: emacs.d
+
+    ~/.zsh: zsh
+    ~/.zshrc: zsh/zshrc
+    ~/.zshenv: zsh/zshenv
+
+    ~/.iterm2: iterm2
+    ~/.irbrc: irb/irbrc
+    ~/.ctags: ctags/ctags
+
+- shell:
+    - [git submodule update --init --recursive, Installing submodules]
