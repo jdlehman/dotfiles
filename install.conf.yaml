@@ -14,7 +14,7 @@
     ~/.gitignore_global: git/gitignore_global
 
     ~/.tmux.conf: tmux/tmux.conf
-    ~/.tmux/plugins: tmux/tpm
+    ~/.tmux/plugins/tpm: tpm
 
     ~/.vim: vim
     ~/.config/nvim: vim
@@ -33,3 +33,4 @@
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
+    - [sh ~/.tmux/plugins/tpm/scripts/install_plugins.sh, Install tpm plugins]
