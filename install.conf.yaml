@@ -32,5 +32,38 @@
     ~/.ctags: ctags/ctags
 
 - shell:
+    - description: Ensure Homebrew is installed
+      command: |
+        if ! [[ $( which brew ) ]]
+        then
+          echo "Installing homebrew..."
+          ruby -e "$( curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install )"
+        fi
+      stderr: true
+      stdout: true
+
+- brew:
+    - ag
+    - fzf
+    - git
+    - go
+    - ispell
+    - node
+    - nvim
+    - python
+    - python3
+    - tmux
+    - vim
+- cask: phoenix
+
+- shell:
+    - description: Setup neovim plugins
+      command: |
+        pip3 install --upgrade neovim
+        pip3 install --upgrade typing
+      stderr: true
+      stdout: true
+
+- shell:
     - [git submodule update --init --recursive, Installing submodules]
     - [sh ~/.tmux/plugins/tpm/scripts/install_plugins.sh, Install tpm plugins]

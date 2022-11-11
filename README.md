@@ -4,11 +4,11 @@ These are my personal dotfiles. While you are free fork the repo and use the par
 
 ## Installation
 
-To setup and install these dotfiles, simply run `sh scripts/installer` from the project's directory. This will setup any dependencies you need and symlink the dotfiles in the appropriate places. Any existing dotfiles will be backed up by date unless the installer is run with `--force`.
+To setup and install these dotfiles, simply run `./install` from the project's directory. This will setup any dependencies you need and symlink the dotfiles in the appropriate places.
 
 ## Structure
 
-The following is a high-level overview of the project's structure. You can look into the source for the specifics. Each folder with the exception of `scripts` contains dotfiles to be symlinked into the `$HOME` directory. One thing to note is that each of these folders can contain install shell scripts to setup anything related to that particular dotfile. These additional shell scripts can be in the form `install*.sh` or `setup*.sh`. Setup scripts are run first, and typically contain dependencies that might be needed before other scripting occurs. The install scripts contain whatever else needs to be done to set up these dotfiles.
+The following is a high-level overview of the project's structure. You can look into the source for the specifics. Each folder with the exception of `scripts` contains dotfiles to be symlinked into the `$HOME` directory.
 
 ## Credits
 
