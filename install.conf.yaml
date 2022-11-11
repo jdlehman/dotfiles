@@ -14,7 +14,7 @@
     ~/.gitignore_global: git/gitignore_global
 
     ~/.tmux.conf: tmux/tmux.conf
-    ~/.tmux/plugins/tpm: tpm
+    ~/.tmux/plugins/tpm: tmux/tpm
 
     ~/.vim: vim
     ~/.config/nvim: vim

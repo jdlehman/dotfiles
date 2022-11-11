@@ -1,10 +1,7 @@
-[submodule "tmux/tpm"]
-	path = tmux/tpm
-	url = https://github.com/tmux-plugins/tpm
 [submodule "dotbot"]
 	path = dotbot
 	url = https://github.com/anishathalye/dotbot
 	ignore = dirty
-[submodule "tpm"]
-	path = tpm
+[submodule "tmux/tpm"]
+	path = tmux/tpm
 	url = https://github.com/tmux-plugins/tpm
