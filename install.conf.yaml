@@ -43,7 +43,7 @@
       stdout: true
 
 - tap:
-  - homebrew/cask-fonts
+    - homebrew/cask-fonts
 - brew:
     - ag
     - fzf
@@ -57,8 +57,10 @@
     - tmux
     - vim
 - cask:
-  - phoenix
-  - font-source-code-pro
+    - phoenix
+    # dev icons
+    - font-source-code-pro
+    - font-sauce-code-pro-nerd-font
 
 - shell:
     - description: Setup neovim plugins
