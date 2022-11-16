@@ -42,6 +42,8 @@
       stderr: true
       stdout: true
 
+- tap:
+  - homebrew/cask-fonts
 - brew:
     - ag
     - fzf
@@ -54,7 +56,9 @@
     - python3
     - tmux
     - vim
-- cask: phoenix
+- cask:
+  - phoenix
+  - font-source-code-pro
 
 - shell:
     - description: Setup neovim plugins
