@@ -11,7 +11,7 @@ vim.opt.wrap = false                                -- Do not wrap text
 vim.opt.backspace = {'indent', 'eol', 'start'}      -- Allow vim to backspace like normal in insert mode
 vim.opt.incsearch =  true                           -- Begin searching as soon as text is entered
 vim.opt.hlsearch = true                             -- Highlight search results
-vim.opt.ignorecase = smartcase                      -- Case insensitive searches unless capital letter used
+vim.opt.ignorecase = true                           -- Case insensitive searches unless capital letter used
 vim.opt.listchars = {extends = '»' ,precedes = '«'} -- Chars to display on text off screen
 vim.opt.showmatch = true                            -- Shows matching {,(,if etc. when typing closing },),end
 vim.opt.history = 10000                             -- Set # of commands to keep in history
@@ -43,13 +43,6 @@ vim.opt.mouse = 'a'                                 -- Allow scrolling and make 
 -- persist undos across sessions (github/joelhooks/dotfiles)
 vim.opt.undodir:prepend('~/.vim/.undo/')
 vim.opt.undofile = true
-
--- Fix mouse bug in iterm
--- Without this, clicking on parts of
--- rightmost split does not work correctly
-if vim.fn.has('mouse_sgr') == 1 then
-  vim.opt.ttymouse=sgr
-end
 
 -- use faster search alternatives if available
 if vim.fn.executable('ag') == 1 then

@@ -24,7 +24,7 @@ return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
 
   -- ui
-  use { 
+  use {
     'folke/tokyonight.nvim',
     config = function()
       vim.cmd[[colorscheme tokyonight-storm]]
@@ -62,13 +62,19 @@ return require('packer').startup(function(use)
    use 'w0rp/ale'
 
   -- source control
-  -- TODO
+  use {
+    'lewis6991/gitsigns.nvim',
+     tag = 'release',
+     config = function()
+       require('gitsigns').setup {}
+     end
+  }
 
   -- language server
   use { "williamboman/mason.nvim" }
   use { "williamboman/mason-lspconfig.nvim" }
-  use ({ 
-    "neovim/nvim-lspconfig", 
+  use ({
+    "neovim/nvim-lspconfig",
     config = [[require('plugins.lsp')]],
   })
 

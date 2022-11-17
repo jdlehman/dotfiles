@@ -9,7 +9,6 @@ require("mason").setup({
   }
 })
 require("mason-lspconfig").setup({
-  ensure_installed = { "sumneko_lua", "rust_analyzer", "tsserver", "vimls" },
   automatic_installation = true
 })
 
@@ -53,14 +52,23 @@ require('lspconfig')['tsserver'].setup{
 }
 require('lspconfig')['rust_analyzer'].setup{
   on_attach = on_attach,
-  -- Server-specific settings...
   settings = {
     ["rust-analyzer"] = {}
   }
 }
-require('lspconfig')['luau_lsp'].setup{
+require('lspconfig')['sumneko_lua'].setup{
   on_attach = on_attach,
+  settings = {
+    Lua = {
+      diagnostics = {
+        globals = { 'vim' }
+      }
+    }
+  }
 }
 require('lspconfig')['vimls'].setup{
+  on_attach = on_attach,
+}
+require('lspconfig')['omnisharp'].setup{
   on_attach = on_attach,
 }
