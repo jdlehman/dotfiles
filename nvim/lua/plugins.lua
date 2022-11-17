@@ -75,14 +75,23 @@ return require('packer').startup(function(use)
   use { "williamboman/mason-lspconfig.nvim" }
   use ({
     "neovim/nvim-lspconfig",
-    config = [[require('plugins.lsp')]],
+    config = [[require('config.lsp')]],
   })
 
   -- Language specific
   use { 'pangloss/vim-javascript',  ft = 'javascript' }
   use { 'keith/swift.vim', ft = 'swift' }
-  use { 'fatih/vim-go', ft = 'go', run = ':GoUpdateBinaries' }
+  use {
+    'fatih/vim-go',
+    ft = 'go',
+    run = ':GoUpdateBinaries',
+    config = [[require('config.vim_go')]]
+  }
   use { 'StanAngeloff/php.vim', ft = 'php' }
   use 'jparise/vim-graphql'
   use 'udalov/kotlin-vim'
+
+  if packer_bootstrap then
+    require('packer').sync()
+  end
 end)
