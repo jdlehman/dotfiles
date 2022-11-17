@@ -17,7 +17,7 @@
     ~/.tmux/plugins/tpm: tmux/tpm
 
     ~/.vim: vim
-    ~/.config/nvim: vim
+    ~/.config/nvim: nvim
 
     ~/.phoenix.js: phoenix/phoenix.js
 

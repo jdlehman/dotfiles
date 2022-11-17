@@ -1,0 +1,17 @@
+# excluded files
+.netrwhist
+.netrwbook
+.backup/*
+.tmp/*
+.undo/*
+autoload/*
+view/*
+sessions/
+custom/*
+
+# included files
+!.backup/.gitkeep
+!.tmp/.gitkeep
+!.undo/.gitkeep
+!autoload/.gitkeep
+!view/.gitkeep
