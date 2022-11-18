@@ -50,9 +50,19 @@ return require('packer').startup(function(use)
 
   -- editing
   use 'tpope/vim-surround'
-  use 'tpope/vim-commentary'
+  use {
+    'terrortylor/nvim-comment',
+    config = function()
+      require('nvim_comment').setup()
+    end
+  }
   use 'tpope/vim-repeat'
-  use { 'sjl/gundo.vim', cmd = 'GundoToggle' }
+  use {
+    'mbbill/undotree',
+    config = function()
+      require('config.undo_tree')
+    end
+  }
 
   -- formatting
   use 'editorconfig/editorconfig-vim'

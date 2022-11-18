@@ -1,4 +1,5 @@
 vim.g.mapleader = ","
+vim.g.maplocalleader = "<space>"
 
 -- modes
 -- escape insert mode
@@ -14,13 +15,13 @@ vim.keymap.set('n', 'k', 'gk')
 vim.keymap.set('v', 'j', 'gj')
 vim.keymap.set('v', 'k', 'gk')
 
-  -- Arrow keys resize current viewport
+-- Arrow keys resize current viewport
 vim.keymap.set('n', '<left>', ':vertical resize -5<cr>')
 vim.keymap.set('n', '<right>', ':vertical resize +5<cr>')
 vim.keymap.set('n', '<up>', ':resize +5<cr>')
 vim.keymap.set('n', '<down>', ':resize -5<cr>')
 
-  -- move visual blocks of text
+-- move visual blocks of text
 vim.keymap.set('v', '<left>', '<gv^')
 vim.keymap.set('v', '<right>', '>gv^')
 vim.keymap.set('v', '<up>', 'xkP`[V`]')
@@ -53,7 +54,7 @@ vim.keymap.set('n', '<c-l>', '<c-w>l')
 vim.keymap.set('n', '<bs>', '<c-w>h')
 -- see open buffers and select one
 vim.keymap.set('n', '<leader>l', ':ls<cr>:b<space>')
-  -- switch to alternate file
+-- switch to alternate file
 vim.keymap.set('n', '<leader><leader>', '<c-^>')
 
 -- tabs
@@ -81,12 +82,14 @@ vim.keymap.set('n', '<leader>sp', ':setlocal spell!<cr>')
 vim.keymap.set('n', '<leader>h', ':nohl<cr>')
 
 -- Remove trailing spaces
--- vim.keymap.set('n', '<leader><space>', ':%s/\s\+$<cr>``')
+vim.keymap.set('n', '<leader><space>', ':%s/\\s\\+$<cr>``')
 
-  -- Fix indent on code block (paragraph)
+-- Fix indent on code block (paragraph)
 vim.keymap.set('n', '<leader>=', '=ip')
 
 -- use magic regex by default
 -- don't have to escape everything anymore
-vim.keymap.set('n', '/', '/\v')
-vim.keymap.set('v', '/', '/\v')
+vim.keymap.set('n', '/', '/\\v')
+vim.keymap.set('c', '%s/', '%smagic/')
+vim.keymap.set('n', ':g/', ':g/\\v')
+vim.keymap.set('n', ':g//', ':g//')
