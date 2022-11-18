@@ -80,6 +80,18 @@ return require('packer').startup(function(use)
      end
   }
 
+  -- completions
+  use {
+    'hrsh7th/nvim-cmp',
+    requires = {
+      'hrsh7th/cmp-nvim-lsp',
+      'hrsh7th/cmp-buffer',
+      'hrsh7th/cmp-path',
+      'hrsh7th/cmp-cmdline'
+    },
+    config = [[require('config.nvim-cmp')]]
+  }
+
   -- language server
   use { "williamboman/mason.nvim" }
   use { "williamboman/mason-lspconfig.nvim" }

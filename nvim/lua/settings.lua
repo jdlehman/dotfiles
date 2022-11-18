@@ -39,6 +39,7 @@ vim.opt.dictionary:append('/usr/share/dict/words')  -- add unix dictionary
 vim.opt.complete:remove('i')                        -- do not use included files in completion (for speed in big dirs)
 vim.opt.synmaxcol = 200                             -- Prevent syntax highlighting past X columns for performance
 vim.opt.mouse = 'a'                                 -- Allow scrolling and make vim clickable
+vim.opt.completeopt = {'menu', 'menuone', 'noselect' } -- for nvim-cmp
 
 -- persist undos across sessions (github/joelhooks/dotfiles)
 vim.opt.undodir:prepend('~/.vim/.undo/')

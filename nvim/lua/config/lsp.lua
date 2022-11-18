@@ -44,20 +44,27 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', '<space>f', function() vim.lsp.buf.format { async = true } end, bufopts)
 end
 
+-- set up completions
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
 require('lspconfig')['pyright'].setup{
   on_attach = on_attach,
+  capabilities = capabilities,
 }
 require('lspconfig')['tsserver'].setup{
   on_attach = on_attach,
+  capabilities = capabilities,
 }
 require('lspconfig')['rust_analyzer'].setup{
   on_attach = on_attach,
+  capabilities = capabilities,
   settings = {
     ["rust-analyzer"] = {}
   }
 }
 require('lspconfig')['sumneko_lua'].setup{
   on_attach = on_attach,
+  capabilities = capabilities,
   settings = {
     Lua = {
       diagnostics = {
@@ -68,7 +75,9 @@ require('lspconfig')['sumneko_lua'].setup{
 }
 require('lspconfig')['vimls'].setup{
   on_attach = on_attach,
+  capabilities = capabilities,
 }
 require('lspconfig')['omnisharp'].setup{
   on_attach = on_attach,
+  capabilities = capabilities,
 }
