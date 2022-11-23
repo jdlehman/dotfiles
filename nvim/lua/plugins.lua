@@ -8,9 +8,9 @@ vim.cmd([[
 
 local ensure_packer = function()
   local fn = vim.fn
-  local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+  local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
   if fn.empty(fn.glob(install_path)) > 0 then
-    fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
+    fn.system({ 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path })
     vim.cmd [[packadd packer.nvim]]
     return true
   end
@@ -27,17 +27,17 @@ return require('packer').startup(function(use)
   use {
     'folke/tokyonight.nvim',
     config = function()
-      vim.cmd[[colorscheme tokyonight-storm]]
+      vim.cmd [[colorscheme tokyonight-storm]]
     end
   }
   use {
     'nvim-lualine/lualine.nvim',
-    requires = { 'kyazdani42/nvim-web-devicons'},
+    requires = { 'kyazdani42/nvim-web-devicons' },
     config = function()
       require('lualine').setup {
-        options = {
-          theme = 'tokyonight'
-        }
+	options = {
+	  theme = 'tokyonight'
+	}
       }
     end
   }
@@ -60,54 +60,70 @@ return require('packer').startup(function(use)
   use {
     'mbbill/undotree',
     config = function()
-      require('config.undo_tree')
+      require('config.undotree')
     end
   }
 
   -- formatting
   use 'editorconfig/editorconfig-vim'
+  use 'tpope/vim-sleuth' -- auto detect tab spacing
+  use {
+    "jose-elias-alvarez/null-ls.nvim",
+    requires = { "neovim/nvim-lspconfig", "nvim-lua/plenary.nvim" },
+    config = function()
+      require("config.null-ls")
+    end,
+  }
 
   -- syntax highlighting
-   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
-   use 'w0rp/ale'
+  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
 
   -- source control
   use {
     'lewis6991/gitsigns.nvim',
-     tag = 'release',
-     config = function()
-       require('gitsigns').setup {}
-     end
+    tag = 'release',
+    config = function()
+      require('gitsigns').setup {}
+    end
   }
 
   -- completions
+  use { 'L3MON4D3/LuaSnip' }
   use {
     'hrsh7th/nvim-cmp',
     requires = {
       'hrsh7th/cmp-nvim-lsp',
       'hrsh7th/cmp-buffer',
       'hrsh7th/cmp-path',
-      'hrsh7th/cmp-cmdline'
+      'hrsh7th/cmp-cmdline',
+      'saadparwaiz1/cmp_luasnip',
     },
-    config = [[require('config.nvim-cmp')]]
+    config = function()
+      require('config.nvim-cmp')
+    end
   }
 
   -- language server
   use { "williamboman/mason.nvim" }
   use { "williamboman/mason-lspconfig.nvim" }
-  use ({
+  use({
     "neovim/nvim-lspconfig",
-    config = [[require('config.lsp')]],
+    after = 'nvim-cmp',
+    config = function()
+      require('config.lsp')
+    end
   })
 
   -- Language specific
-  use { 'pangloss/vim-javascript',  ft = 'javascript' }
+  use { 'pangloss/vim-javascript', ft = 'javascript' }
   use { 'keith/swift.vim', ft = 'swift' }
   use {
     'fatih/vim-go',
     ft = 'go',
     run = ':GoUpdateBinaries',
-    config = [[require('config.vim_go')]]
+    config = function()
+      require('config.vim-go')
+    end
   }
   use { 'StanAngeloff/php.vim', ft = 'php' }
   use 'jparise/vim-graphql'

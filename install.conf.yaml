@@ -56,6 +56,9 @@
     - python3
     - tmux
     - vim
+    - codespell
+    - prettier
+    - markdownlint-cli
 - cask:
     - phoenix
     # dev icons
