@@ -1,38 +1,16 @@
--- automatically compile when plugins.lua is saved
-vim.cmd([[
-  augroup packer_user_config
-    autocmd!
-    autocmd BufWritePost plugins.lua source <afile> | PackerCompile
-  augroup end
-]])
-
-local ensure_packer = function()
-  local fn = vim.fn
-  local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
-  if fn.empty(fn.glob(install_path)) > 0 then
-    fn.system({ 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path })
-    vim.cmd [[packadd packer.nvim]]
-    return true
-  end
-  return false
-end
-
-local packer_bootstrap = ensure_packer()
-
-return require('packer').startup(function(use)
-  -- have packer manage itself
-  use 'wbthomason/packer.nvim'
-
+return {
   -- ui
-  use {
+  {
     'folke/tokyonight.nvim',
+    lazy = false,
+    priority = 1000,
     config = function()
       vim.cmd [[colorscheme tokyonight-storm]]
     end
-  }
-  use {
+  },
+  {
     'nvim-lualine/lualine.nvim',
-    requires = { 'kyazdani42/nvim-web-devicons' },
+    dependencies  = { 'nvim-tree/nvim-web-devicons' },
     config = function()
       require('lualine').setup {
 	options = {
@@ -40,93 +18,105 @@ return require('packer').startup(function(use)
 	}
       }
     end
-  }
-  use {
-    'akinsho/bufferline.nvim', tag = "v3.*", requires = 'kyazdani42/nvim-web-devicons',
+  },
+  {
+    'akinsho/bufferline.nvim',
+    version = "*",
+    dependencies = 'nvim-tree/nvim-web-devicons',
     config = function()
-      require('bufferline').setup()
+      vim.opt.termguicolors = true
+      require("bufferline").setup{}
     end
-  }
+  },
 
   -- editing
-  use 'tpope/vim-surround'
-  use {
+  'tpope/vim-surround',
+  {
     'terrortylor/nvim-comment',
     config = function()
       require('nvim_comment').setup()
     end
-  }
-  use 'tpope/vim-repeat'
-  use {
+  },
+  'tpope/vim-repeat',
+  {
     'mbbill/undotree',
     config = function()
       require('config.undotree')
     end
-  }
+  },
 
   -- search
   -- Fuzzy Finder (files, lsp, etc)
-  use {
-    'nvim-telescope/telescope.nvim', branch = '0.1.x', requires = { 'nvim-lua/plenary.nvim' },
+  {
+    'nvim-telescope/telescope.nvim',
+    branch = '0.1.x',
+    dependencies  = { 'nvim-lua/plenary.nvim' },
     config = function()
       require('config.telescope')
     end,
-  }
-  -- Fuzzy Finder Algorithm which requires local dependencies to be built. Only load if `make` is available
-  use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make', cond = vim.fn.executable 'make' == 1 }
+  },
+  -- Fuzzy Finder Algorithm which dependencies  local dependencies to be built. Only load if `make` is available
+  {
+    'nvim-telescope/telescope-fzf-native.nvim',
+    build = 'make',
+    cond = vim.fn.executable 'make' == 1
+  },
 
   -- formatting
-  use 'editorconfig/editorconfig-vim'
-  use 'tpope/vim-sleuth' -- auto detect tab spacing
-  use {
+  'editorconfig/editorconfig-vim',
+  'tpope/vim-sleuth', -- auto detect tab spacing
+  {
     "jose-elias-alvarez/null-ls.nvim",
-    requires = { "neovim/nvim-lspconfig", "nvim-lua/plenary.nvim" },
+    dependencies  = { "neovim/nvim-lspconfig", "nvim-lua/plenary.nvim" },
     config = function()
       require("config.null-ls")
     end,
-  }
+  },
   -- Add indentation guides even on blank lines
-  use {
+   {
     'lukas-reineke/indent-blankline.nvim',
+    dependencies = { 'nvim-treesitter' },
     config = function()
       -- Enable `lukas-reineke/indent-blankline.nvim`
-      require('indent_blankline').setup {
-	char = '┊',
-	show_trailing_blankline_indent = false,
-      }
+      -- require('ibl').setup()
     end,
-  }
+  },
 
   -- syntax highlighting
-  use {
+  {
     'nvim-treesitter/nvim-treesitter',
-    run = function()
+    build = function()
       pcall(require('nvim-treesitter.install').update { with_sync = true })
     end,
     config = function()
       require('config.treesitter')
     end,
-  }
-  use { -- Additional text objects via treesitter
+  },
+  { -- Additional text objects via treesitter
     'nvim-treesitter/nvim-treesitter-textobjects',
-    after = 'nvim-treesitter',
-  }
+    dependencies = { 'nvim-treesitter' },
+  },
 
   -- source control
-  use 'tpope/vim-fugitive'
-  use 'tpope/vim-rhubarb'
-  use {
+  'tpope/vim-fugitive',
+  'tpope/vim-rhubarb',
+  {
     'lewis6991/gitsigns.nvim',
-    tag = 'release',
+    event = "BufReadPre",
     config = function()
-      require('gitsigns').setup {}
+      require('gitsigns').setup()
     end
-  }
+  },
+  {
+    "sindrets/diffview.nvim",
+    cmd = { "DiffviewOpen", "DiffviewClose", "DiffviewToggleFiles", "DiffviewFocusFiles" },
+  },
 
   -- completions
-  use {
+  {
     'hrsh7th/nvim-cmp',
-    requires = {
+    dependencies = {
+      'nvim-lspconfig',
       'hrsh7th/cmp-nvim-lsp',
       'hrsh7th/cmp-buffer',
       'hrsh7th/cmp-path',
@@ -137,13 +127,13 @@ return require('packer').startup(function(use)
     config = function()
       require('config.nvim-cmp')
     end
-  }
+  },
 
+  { 'j-hui/fidget.nvim', tag = 'legacy', event = "LspAttach" },
   -- language server
-  use({
+  {
     "neovim/nvim-lspconfig",
-    after = 'nvim-cmp',
-    requires = {
+    dependencies  = {
       -- install/manage lsps
       "williamboman/mason.nvim" ,
       "williamboman/mason-lspconfig.nvim" ,
@@ -154,32 +144,22 @@ return require('packer').startup(function(use)
     },
     config = function()
       require('config.lsp')
-      require('neodev').setup()
     end
-  })
+  },
 
   -- Language specific
-  use { 'pangloss/vim-javascript', ft = 'javascript' }
-  use { 'keith/swift.vim', ft = 'swift' }
-  use {
+  { 'pangloss/vim-javascript', ft = 'javascript' },
+  { 'keith/swift.vim', ft = 'swift' },
+  {
     'fatih/vim-go',
     ft = 'go',
-    run = ':GoUpdateBinaries',
+    build = ':GoUpdateBinaries',
     config = function()
       require('config.vim-go')
     end
-  }
-  use { 'StanAngeloff/php.vim', ft = 'php' }
-  use 'jparise/vim-graphql'
-  use 'udalov/kotlin-vim'
+  },
+  { 'StanAngeloff/php.vim', ft = 'php' },
+  'jparise/vim-graphql',
+  'udalov/kotlin-vim'
+}
 
-   -- Add custom plugins to packer from ~/.config/nvim/lua/custom/plugins.lua
-  local has_plugins, plugins = pcall(require, 'custom.plugins')
-  if has_plugins then
-    plugins(use)
-  end
-
-  if packer_bootstrap then
-    require('packer').sync()
-  end
-end)

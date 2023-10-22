@@ -1,22 +1,8 @@
--- setup mason to manage lsp installations
-require("mason").setup({
-  ui = {
-    icons = {
-      package_installed = "✓",
-      package_pending = "➜",
-      package_uninstalled = "✗"
-    }
-  }
-})
-require("mason-lspconfig").setup({
-  automatic_installation = true
-})
-
 local opts = { noremap = true, silent = true }
-vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, opts)
+vim.keymap.set('n', '<localleader>e', vim.diagnostic.open_float, opts)
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
-vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, opts)
+vim.keymap.set('n', '<localleader>q', vim.diagnostic.setloclist, opts)
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
@@ -61,40 +47,68 @@ local on_attach = function(client, bufnr)
   end, { desc = 'Format current buffer with LSP' })
 end
 
--- set up completions
-local capabilities = require('cmp_nvim_lsp').default_capabilities()
+-- setup neovim lua configuration
+require('neodev').setup()
 
-require('lspconfig')['pyright'].setup {
-  on_attach = on_attach,
-  capabilities = capabilities,
-}
-require('lspconfig')['tsserver'].setup {
-  on_attach = on_attach,
-  capabilities = capabilities,
-}
-require('lspconfig')['rust_analyzer'].setup {
-  on_attach = on_attach,
-  capabilities = capabilities,
-  settings = {
-    ["rust-analyzer"] = {}
-  }
-}
-require('lspconfig')['sumneko_lua'].setup {
-  on_attach = on_attach,
-  capabilities = capabilities,
-  settings = {
+-- set up completions
+-- nvim-cmp supports additional completion capabilities, so broadcast that to servers
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
+
+local servers = {
+  -- c/c++
+  clangd = {},
+  -- golang
+  gopls = {},
+  -- python
+  pyright = {},
+  -- rust
+  rust_analyzer = {},
+  -- typescript/javascript
+  tsserver = {},
+  -- c#
+  omnisharp = {},
+  -- vim
+  vimls = {},
+  -- lua
+  lua_ls = {
     Lua = {
+      workspace = { checkThirdParty = false },
+      telemetry = { enable = false },
       diagnostics = {
         globals = { 'vim' }
       }
+    },
+  },
+}
+
+-- setup mason to manage lsp installations
+require("mason").setup({
+  ui = {
+    icons = {
+      package_installed = "✓",
+      package_pending = "➜",
+      package_uninstalled = "✗"
     }
   }
+})
+
+-- Ensure the servers above are installed
+local mason_lspconfig = require 'mason-lspconfig'
+
+mason_lspconfig.setup {
+  ensure_installed = vim.tbl_keys(servers),
 }
-require('lspconfig')['vimls'].setup {
-  on_attach = on_attach,
-  capabilities = capabilities,
+
+mason_lspconfig.setup_handlers {
+  function(server_name)
+    require('lspconfig')[server_name].setup {
+      capabilities = capabilities,
+      on_attach = on_attach,
+      settings = servers[server_name],
+    }
+  end,
 }
-require('lspconfig')['omnisharp'].setup {
-  on_attach = on_attach,
-  capabilities = capabilities,
-}
+
+-- Turn on lsp status information
+require('fidget').setup()

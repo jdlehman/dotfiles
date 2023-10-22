@@ -1,4 +1,4 @@
-local cmp = require'cmp'
+local cmp = require("cmp")
 local luasnip = require("luasnip")
 
 local has_words_before = function()
