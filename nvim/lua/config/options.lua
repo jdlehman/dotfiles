@@ -1,3 +1,6 @@
+vim.g.mapleader = ","
+vim.g.maplocalleader = "<space>"
+
 -- global opts
 vim.opt.hidden = true                               -- Allow buffers to be hidden with unwritten changes
 vim.opt.tabstop = 2                                 -- Tabs are 2 space characters
@@ -58,14 +61,3 @@ elseif vim.fn.executable('ack') == 1 then
   vim.opt.grepprg='ack --nogroup --nocolor --ignore-case --column'
   vim.opt.grepformat='%f:%l:%c:%m,%f:%l:%m'
 end
-
--- [[ Highlight on yank ]]
--- See `:help vim.highlight.on_yank()`
-local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
-vim.api.nvim_create_autocmd('TextYankPost', {
-  callback = function()
-    vim.highlight.on_yank()
-  end,
-  group = highlight_group,
-  pattern = '*',
-})

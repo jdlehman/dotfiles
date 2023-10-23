@@ -1,6 +1,3 @@
-vim.g.mapleader = ","
-vim.g.maplocalleader = "<space>"
-
 -- modes
 -- escape insert mode
 vim.keymap.set('i', 'jk', '<esc>')

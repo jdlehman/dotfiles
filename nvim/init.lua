@@ -1,20 +1,14 @@
 -- base neovim settings
-require('settings')
-require('mappings')
+require('config.options')
+-- lazy.nvim plugin manager
+require("config.lazy")
 
--- ensure lazy.nvim is set up
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not vim.loop.fs_stat(lazypath) then
-  vim.fn.system({
-    "git",
-    "clone",
-    "--filter=blob:none",
-    "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable", -- latest stable release
-    lazypath,
-  })
-end
-vim.opt.rtp:prepend(lazypath)
-
--- setup plugins
-require("lazy").setup("plugins")
+vim.api.nvim_create_autocmd("User", {
+    pattern = "VeryLazy",
+    callback = function()
+      -- autocommand
+      require("config.autocommands")
+      -- key mappings
+      require('config.keymaps')
+    end,
+})
