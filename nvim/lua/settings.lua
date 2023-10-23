@@ -18,8 +18,8 @@ vim.opt.showmatch = true                            -- Shows matching {,(,if etc
 vim.opt.history = 10000                             -- Set # of commands to keep in history
 vim.opt.termguicolors = true                        -- Enable term gui colors
 vim.opt.wildignore:append('*.swp,*.class,*.o')      -- Ignore files with these extensions
-vim.opt.backupdir:prepend('~/.vim/.backup/')        -- Where to store backup files
-vim.opt.directory:prepend('~/.vim/.tmp/')           -- Where to store swap files
+vim.opt.backupdir:prepend('~/.config/nvim/.backup/')        -- Where to store backup files
+vim.opt.directory:prepend('~/.config/nvim/.tmp/')           -- Where to store swap files
 vim.opt.splitright = true                           -- open vertical splits to the right
 vim.opt.splitbelow = true                           -- open horizontal splits below
 vim.opt.timeoutlen = 300                            -- Set key stroke timeout
@@ -47,7 +47,7 @@ vim.o.updatetime = 250
 vim.wo.signcolumn = 'yes'
 
 -- persist undos across sessions (github/joelhooks/dotfiles)
-vim.opt.undodir:prepend('~/.vim/.undo/')
+vim.opt.undodir:prepend('~/.config/nvim/.undo/')
 vim.opt.undofile = true
 
 -- use faster search alternatives if available
