@@ -33,13 +33,16 @@ return {
   'tpope/vim-surround',
   {
     'terrortylor/nvim-comment',
-    config = function()
-      require('nvim_comment').setup()
-    end
+    keys = {
+      { "gcc" },
+    },
+    main = 'nvim_comment',
+    config = true,
   },
   'tpope/vim-repeat',
   {
     'mbbill/undotree',
+    keys = { "<leader>u" },
     config = function()
       require('config.undotree')
     end
@@ -67,20 +70,14 @@ return {
   'tpope/vim-sleuth', -- auto detect tab spacing
   {
     "jose-elias-alvarez/null-ls.nvim",
+    event = { 'BufReadPre', 'BufNewFile' },
     dependencies  = { "neovim/nvim-lspconfig", "nvim-lua/plenary.nvim" },
     config = function()
       require("config.null-ls")
     end,
   },
   -- Add indentation guides even on blank lines
-   {
-    'lukas-reineke/indent-blankline.nvim',
-    dependencies = { 'nvim-treesitter' },
-    config = function()
-      -- Enable `lukas-reineke/indent-blankline.nvim`
-      -- require('ibl').setup()
-    end,
-  },
+  { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
 
   -- syntax highlighting
   {
@@ -103,9 +100,7 @@ return {
   {
     'lewis6991/gitsigns.nvim',
     event = "BufReadPre",
-    config = function()
-      require('gitsigns').setup()
-    end
+    config = true,
   },
   {
     "sindrets/diffview.nvim",
@@ -115,6 +110,7 @@ return {
   -- completions
   {
     'hrsh7th/nvim-cmp',
+    event = { 'BufReadPre', 'BufNewFile' },
     dependencies = {
       'nvim-lspconfig',
       'hrsh7th/cmp-nvim-lsp',
@@ -133,6 +129,7 @@ return {
   -- language server
   {
     "neovim/nvim-lspconfig",
+    event = { 'BufReadPre', 'BufNewFile' },
     dependencies  = {
       -- install/manage lsps
       "williamboman/mason.nvim" ,
@@ -160,6 +157,6 @@ return {
   },
   { 'StanAngeloff/php.vim', ft = 'php' },
   'jparise/vim-graphql',
-  'udalov/kotlin-vim'
+  { 'udalov/kotlin-vim', ft = 'kotlin' }
 }
 
