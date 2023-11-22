@@ -1,3 +1,7 @@
+local backup_dir = vim.fn.stdpath("config") .. "/.backup/"
+local tmp_dir = vim.fn.stdpath("config") .. "/.tmp/"
+local undo_dir = vim.fn.stdpath("config") .. "/.undo/"
+
 vim.g.mapleader = ","
 vim.g.maplocalleader = "<space>"
 
@@ -21,8 +25,6 @@ vim.opt.showmatch = true                            -- Shows matching {,(,if etc
 vim.opt.history = 10000                             -- Set # of commands to keep in history
 vim.opt.termguicolors = true                        -- Enable term gui colors
 vim.opt.wildignore:append('*.swp,*.class,*.o')      -- Ignore files with these extensions
-vim.opt.backupdir:prepend('~/.config/nvim/.backup/')        -- Where to store backup files
-vim.opt.directory:prepend('~/.config/nvim/.tmp/')           -- Where to store swap files
 vim.opt.splitright = true                           -- open vertical splits to the right
 vim.opt.splitbelow = true                           -- open horizontal splits below
 vim.opt.timeoutlen = 300                            -- Set key stroke timeout
@@ -49,8 +51,11 @@ vim.opt.completeopt = {'menu', 'menuone', 'noselect' } -- for nvim-cmp
 vim.o.updatetime = 250
 vim.wo.signcolumn = 'yes'
 
+vim.opt.backupdir:prepend(backup_dir) -- where backup files are stored
+vim.opt.directory:prepend(tmp_dir) -- where swp/temp files are stored
+
 -- persist undos across sessions (github/joelhooks/dotfiles)
-vim.opt.undodir:prepend('~/.config/nvim/.undo/')
+vim.opt.undodir:prepend(undo_dir)
 vim.opt.undofile = true
 
 -- use faster search alternatives if available
