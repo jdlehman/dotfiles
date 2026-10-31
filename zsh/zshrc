@@ -50,3 +50,12 @@ path=(/usr/local/bin /usr/local/sbin $HOME/.yarn/bin $HOME/.cargo/bin node_modul
 . $HOME/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
 
 eval $(opam config env)
+
+# opencode
+export PATH="$HOME/.opencode/bin:$PATH"
+
+# metavr shell completions
+fpath=("$HOME/.metavr/completions" $fpath)
+autoload -Uz compinit && compinit
+
+export PATH="$HOME/.local/bin:$PATH" # added by muse installer
