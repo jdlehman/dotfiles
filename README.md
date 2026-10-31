@@ -10,6 +10,10 @@ To setup and install these dotfiles, simply run `./install` from the project's d
 
 The following is a high-level overview of the project's structure. You can look into the source for the specifics. Each folder with the exception of `scripts` contains dotfiles to be symlinked into the `$HOME` directory.
 
+## Coding agents
+
+`.agents/` holds shared config for coding agents (Claude Code, Codex, Muse). Agent-agnostic skills go in `.agents/skills/` (linked to `~/.agents/skills`), global instructions in `.agents/AGENTS.md`, and per-tool settings in `.agents/<tool>/`. See `.agents/AGENTS.md` for the rules. After adding or removing a skill, run `./install --only clean link` so Claude Code gets its per-skill symlinks.
+
 ## Credits
 
 I drew inspiration as well as structure from[ Holman's](http://zachholman.com/2010/08/dotfiles-are-meant-to-be-forked/) [dotfiles](https://github.com/holman/dotfiles). I highly recommend taking a look at his dotfiles as well, you might prefer the overall structure and design of his setup.

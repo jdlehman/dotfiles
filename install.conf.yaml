@@ -2,12 +2,16 @@
     link:
       relink: true
 
-- clean: ["~"]
+- clean: ["~", "~/.claude/skills"]
 
 - create:
     - ~/.tmux/plugins
     - ~/.config
     - ~/.irb
+    - ~/.agents
+    - ~/.claude/skills
+    - ~/.codex
+    - ~/.config/muse
 
 - link:
     ~/.gitconfig: git/gitconfig
@@ -30,6 +34,17 @@
     ~/.iterm2: iterm2
     ~/.irbrc: irb/irbrc
     ~/.ctags: ctags/ctags
+
+    # Coding agents (Claude Code, Codex, Muse) -- see .agents/AGENTS.md
+    ~/.agents/skills: .agents/skills
+    ~/.claude/skills/:
+      glob: true
+      path: .agents/skills/*
+    ~/.claude/CLAUDE.md: .agents/AGENTS.md
+    ~/.claude/settings.json: .agents/claude/settings.json
+    ~/.codex/AGENTS.md: .agents/AGENTS.md
+    ~/.codex/config.toml: .agents/codex/config.toml
+    ~/.config/muse/settings.json: .agents/muse/settings.json
 
 - shell:
     - description: Ensure Homebrew is installed
