@@ -110,5 +110,7 @@ mason_lspconfig.setup_handlers {
   end,
 }
 
+require'lspconfig'.starlark_rust.setup{}
+
 -- Turn on lsp status information
 require('fidget').setup()
