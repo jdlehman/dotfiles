@@ -12,7 +12,7 @@ The following is a high-level overview of the project's structure. You can look 
 
 ## Coding agents
 
-`.agents/` holds shared config for coding agents (Claude Code, Codex, Muse). Agent-agnostic skills go in `.agents/skills/` (linked to `~/.agents/skills`), global instructions in `.agents/AGENTS.md`, and per-tool settings in `.agents/<tool>/`. See `.agents/AGENTS.md` for the rules. After adding or removing a skill, run `./install --only clean link` so Claude Code gets its per-skill symlinks.
+`.agents/` holds shared config for coding agents (Claude Code, Codex, Muse). It's a submodule pointing at a private repo, so it's empty for anyone without access. Agent-agnostic skills go in `.agents/skills/` (linked to `~/.agents/skills`), global instructions in `.agents/AGENTS.md`, and per-tool settings in `.agents/<tool>/`. See `.agents/AGENTS.md` for the rules. After adding or removing a skill, run `./install --only clean link` so Claude Code gets its per-skill symlinks.
 
 ## Credits
 
